@@ -17,5 +17,11 @@
     "css"
   ],
   "author": "Mohammed Allawi <allawi465@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.2.2"
+  },
+  "devDependencies": {
+    "sass": "^1.56.1"
+  }
 }
