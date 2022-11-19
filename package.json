@@ -1,0 +1,21 @@
+{
+  "name": "sp2",
+  "version": "0.0.1",
+  "description": "An Action website, semester project 2  ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https//github.com/Allawi465/Semester-Project-2.git)"
+  },
+  "keywords": [
+    "js",
+    "api",
+    "bootstrap",
+    "css"
+  ],
+  "author": "Mohammed Allawi <allawi465@gmail.com>",
+  "license": "ISC"
+}
