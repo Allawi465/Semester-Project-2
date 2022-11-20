@@ -1,2 +1,10 @@
 // Bootstrap style 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+// Bootstrap variables overrides
+@import "variables";
+
+// our Original Style
+@import "./components/header";
+@import "./components/main";
+@import "./components/functions";
