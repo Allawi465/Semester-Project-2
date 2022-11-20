@@ -18,10 +18,26 @@ top: 5px;
 }
 
 .nav-container {
-    width: 1000px;
+    width: 90%;
     flex-wrap: nowrap;
 }
 
-/* #navbarNavDropdown{
-    flex-wrap: unset;
-} */
+.search-form-btn {
+    display: block;
+}
+
+
+@include media-breakpoint-down(sm) {
+
+    .search-form-btn {
+        display: none;
+    }
+   
+}
+
+@include media-breakpoint-down(xs) {
+    .search-form {
+        width: 105px;
+    }
+   
+}
