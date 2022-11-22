@@ -14,17 +14,15 @@
 
 <body class="p-0 m-0 border-0">
     <header>
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
             <div class="nav-container container-fluid justify-content-around">
-                <a class="navbar-brand" href="#">Auction</a>
-
+                <a class="navbar-brand" href="#">NOxB</a>
                 <div style="margin: auto;">
                     <form class="d-flex search-form" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="search-form-btn btn btn-outline-light  " type="submit">Search</button>
+                        <button class="search-form-btn btn btn-outline-light" type="submit">Search</button>
                     </form>
                 </div>
-
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -36,12 +34,13 @@
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
+                            <a class="nav-link" href="#auction">Auction</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Pricing</a>
+                            <a class="nav-link" type="button" style="font-weight: bold;" data-bs-toggle="modal"
+                                data-bs-target="#loginModel">Sign in</a>
                         </li>
-                        <div class="dropdown">
+                        <div class="dropdown profile-setting">
                             <a href="#"
                                 class="d-flex align-items-center link-light  text-decoration-none dropdown-toggle"
                                 data-bs-toggle="dropdown" aria-expanded="false">
@@ -63,181 +62,166 @@
                 </div>
             </div>
         </nav>
+        <div class="modal fade" id="loginModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header p-5 pb-4 border-bottom-0">
+                        <h1 class="fw-bold mb-0 fs-2">Sign in</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-5 pt-0">
+                        <form class="">
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control rounded-3" id="floatingInput"
+                                    placeholder="name@example.com">
+                                <label for="floatingInput">Email address</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="password" class="form-control rounded-3" id="floatingPassword"
+                                    placeholder="Password">
+                                <label for="floatingPassword">Password</label>
+                            </div>
+                            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Sign in</button>
+                        </form>
+                        <hr class="my-4">
+                        <h2 class="fs-5 fw-bold mb-3">Sign up</h2>
+                        <button class="w-100 py-2 mb-2 btn btn-outline-dark rounded-3" data-bs-toggle="modal"
+                            data-bs-target="#registerModel">
+                            Sign up
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="registerModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header p-5 pb-4 border-bottom-0">
+                        <h1 class="fw-bold mb-0 fs-2">Sign Up</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-5 pt-0">
+                        <form class="">
+                            <div class="form-floating mb-3">
+                                <input type="name" class="form-control rounded-3" id="floatingInput"
+                                    placeholder="name@example.com">
+                                <label for="floatingInput">Name</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control rounded-3" id="floatingInput"
+                                    placeholder="name@example.com">
+                                <label for="floatingInput">Email address</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="avatar" class="form-control rounded-3" id="floatingPassword"
+                                    placeholder="Password">
+                                <label for="floatingPassword">Avatar</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="password" class="form-control rounded-3" id="floatingPassword"
+                                    placeholder="Password">
+                                <label for="floatingPassword">Password</label>
+                            </div>
+                            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Sign Up</button>
+                            <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
+
     <main>
-        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <rect width="100%" height="100%" fill="#777" />
-                    </svg>
-
-                    <div class="container">
-                        <div class="carousel-caption text-start">
-                            <h1>Example headline.</h1>
-                            <p>Some representative placeholder content for the first slide of the carousel.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
-                        </div>
-                    </div>
+        <div class="container marketing mt-4" id="aboutUs">
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading fw-normal lh-1">NOxB <span class="text-muted">an auction
+                            website</span></h2>
+                    <p class="lead">This auction website gives users a chance to sell items and buy items. Users are
+                        given 1000 credits to use on the site, but they can get credits by selling items as much as they
+                        want. Non-registered users can search through listings and make bids on them, but registered
+                        users can only make bids on listings.</p>
                 </div>
-                <div class="carousel-item">
-                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <rect width="100%" height="100%" fill="#777" />
-                    </svg>
-
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h1>Another example headline.</h1>
-                            <p>Some representative placeholder content for the second slide of the carousel.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <rect width="100%" height="100%" fill="#777" />
-                    </svg>
-
-                    <div class="container">
-                        <div class="carousel-caption text-end">
-                            <h1>One more for good measure.</h1>
-                            <p>Some representative placeholder content for the third slide of this carousel.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-
-
-        <div class="album py-5 bg-light">
-            <div class="container">
-                <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 g-3">
-
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <div class="card-header d-flex justify-content-between">
-                                <div class="d-flex flex-row align-items-center">
-                                    <div
-                                        class="rounded-circle overflow-hidden d-flex justify-content-center align-item-center me-2">
-                                        <img src="https://github.com/mdo.png" width="25" alt=""
-                                            class="rounded-circle profil-images-toppbar">
-                                    </div>
-                                    <span class="font-weight-bol">Allawi</span>
-                                </div>
-                                <p class="card-text"><small class="text-muted">3 mins ago</small></p>
-                            </div>
-                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                                xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                                preserveAspectRatio="xMidYMid slice" focusable="false">
-                                <title>Placeholder</title>
-                                <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                                    dy=".3em">Thumbnail</text>
-                            </svg>
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <div class="card-header d-flex justify-content-between">
-                                <div class="d-flex flex-row align-items-center">
-                                    <div
-                                        class="rounded-circle overflow-hidden d-flex justify-content-center align-item-center me-2">
-                                        <img src="https://github.com/mdo.png" width="25" alt=""
-                                            class="rounded-circle profil-images-toppbar">
-                                    </div>
-                                    <span class="font-weight-bol">Allawi</span>
-                                </div>
-                                <p class="card-text"><small class="text-muted">3 mins ago</small></p>
-                            </div>
-                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                                xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                                preserveAspectRatio="xMidYMid slice" focusable="false">
-                                <title>Placeholder</title>
-                                <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                                    dy=".3em">Thumbnail</text>
-                            </svg>
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <div class="card-header d-flex justify-content-between">
-                                <div class="d-flex flex-row align-items-center">
-                                    <div
-                                        class="rounded-circle overflow-hidden d-flex justify-content-center align-item-center me-2">
-                                        <img src="https://github.com/mdo.png" width="25" alt=""
-                                            class="rounded-circle profil-images-toppbar">
-                                    </div>
-                                    <span class="font-weight-bol">Allawi</span>
-                                </div>
-                                <p class="card-text"><small class="text-muted">3 mins ago</small></p>
-                            </div>
-                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                                xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                                preserveAspectRatio="xMidYMid slice" focusable="false">
-                                <title>Placeholder</title>
-                                <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                                    dy=".3em">Thumbnail</text>
-                            </svg>
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                <div class="col-md-5">
+                    <img src="/images/contact.jpg" alt="" class="img-thumbnail" style="border: unset;">
                 </div>
             </div>
         </div>
 
+
+        <div class="container">
+            <div class="d-flex btn-group pb-2 border-bottom">
+                <h2>Auction</h2>
+                <h4 type="button" class="dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropdown</span>
+                </h4>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item active" type="button">New Auction</a></li>
+                    <li><a class="dropdown-item" type="button">Old Auction</a></li>
+                </ul>
+            </div>
+
+            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 g-3 mt-2" id="auction">
+
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <div class="card-header d-flex justify-content-between">
+                            <div class="d-flex flex-row align-items-center">
+                                <div
+                                    class="rounded-circle overflow-hidden d-flex justify-content-center align-item-center me-2">
+                                    <img src="https://github.com/mdo.png" width="25" alt=""
+                                        class="rounded-circle profil-images-toppbar">
+                                </div>
+                                <span class="font-weight-bol">Allawi</span>
+                            </div>
+                            <p class="card-text"><small class="text-muted">3 mins ago</small></p>
+                        </div>
+                        <div class="mt-1 text-center ">
+                            <p class="badge bg-dark">Tags</p>
+                        </div>
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
+                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                            preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                                dy=".3em">Thumbnail</text>
+                        </svg>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="badge bg-warning" style="color: rgb(0, 0, 0);">Bids: <span class="fw-bolder">1</span></p>
+                            </div>
+                            <p class="card-text">This is a wider card with supporting text below as a natural
+                                lead-in to additional content. This content is a little bit longer.
+                            </p>
+                            <p class="text-center fw-bolder">Ola<span class="fw-normal"> have bid: 100</span></p>
+        
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-success">Bid</button>
+                                </div>
+                                <small class="text-muted">Auction ends at 9 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
     </main>
+
+    <footer class="container">
+        <p class="float-end"><a href="#">Back to top</a></p>
+        <p>&copy; 2022 NOxB</p>
+    </footer>
+
 </body>
 
 </html>

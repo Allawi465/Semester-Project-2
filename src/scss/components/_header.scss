@@ -3,8 +3,9 @@
 }
 
 .dropdown {
-position: relative;
-top: 5px;
+    position: relative;
+    top: 5px;
+    display: none;
 }
 
 .navbar-nav .dropdown-menu {
@@ -26,18 +27,18 @@ top: 5px;
     display: block;
 }
 
+header {
+    height: 80px;
+}
 
 @include media-breakpoint-down(sm) {
-
     .search-form-btn {
         display: none;
     }
-   
 }
 
 @include media-breakpoint-down(xs) {
     .search-form {
         width: 105px;
     }
-   
 }
