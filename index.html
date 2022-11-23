@@ -34,7 +34,7 @@
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#auction">Auction</a>
+                            <a class="nav-link me-1" href="#auction">Auction</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" type="button" style="font-weight: bold;" data-bs-toggle="modal"
@@ -45,11 +45,12 @@
                                 class="d-flex align-items-center link-light  text-decoration-none dropdown-toggle"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 <img src="https://github.com/mdo.png" alt="" width="32" height="32"
-                                    class="rounded-circle me-2">
-                                <strong>mdo</strong>
+                                    class="rounded-circle me-1">
+                                <strong>Allawi <span class="badge bg-white" style="color: black;">1000</span></strong>
                             </a>
                             <ul class="dropdown-menu text-small shadow">
-                                <li><a class="dropdown-item" href="#">New project...</a></li>
+                                <li><a class="dropdown-item" type="button" data-bs-toggle="modal"
+                                        data-bs-target="#addItemModel">Add item</a></li>
                                 <li><a class="dropdown-item" href="#">Settings</a></li>
                                 <li><a class="dropdown-item" href="#">Profile</a></li>
                                 <li>
@@ -126,6 +127,12 @@
                             <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Sign Up</button>
                             <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
                         </form>
+                        <hr class="my-4">
+                        <h2 class="fs-5 fw-bold mb-3">Sign in</h2>
+                        <button class="w-100 py-2 mb-2 btn btn-outline-dark rounded-3" data-bs-toggle="modal"
+                            data-bs-target="#loginModel">
+                            Sign in
+                        </button>
                     </div>
                 </div>
             </div>
@@ -133,6 +140,54 @@
     </header>
 
     <main>
+        <div class="modal fade" id="addItemModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Add item to the auction</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="">
+                            <div class="form-floating mb-3">
+                                <input type="title" class="form-control rounded-3" id="floatingInput"
+                                    placeholder="item">
+                                <label for="floatingInput">Title</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control rounded-3" id="floatingTextarea" name="body"
+                                    rows="3"></textarea>
+                                <label for="floatingTextare">Description</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="url" class="form-control rounded-3" id="floatingImage"
+                                    placeholder="image url">
+                                <label for="floatingImage">Image</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="avatar" class="form-control rounded-3" id="floatingTags"
+                                    placeholder="Tags">
+                                <label for="floatingTags">Tags</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input placeholder="Select date" type="date" id="deadlineDate"
+                                    class="form-control rounded-3">
+                                <label for="deadlineDate">deadline date</label>
+
+                            </div>
+                            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-outline-success" type="submit">Add to the
+                                auction</button>
+                            <small class="text-muted">Your item will be sold to the highest bidder when the deadline
+                                date take off.</small>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="container marketing mt-4" id="aboutUs">
             <div class="row featurette">
                 <div class="col-md-7">
@@ -191,29 +246,92 @@
                         <div class="card-body">
                             <div class="d-flex justify-content-between">
                                 <h5 class="card-title">Card title</h5>
-                                <p class="badge bg-warning" style="color: rgb(0, 0, 0);">Bids: <span class="fw-bolder">1</span></p>
+                                <div>
+                                    <p class="badge bg-warning" style="color: rgb(0, 0, 0);">Bids</p>
+                                    <span class="fw-bolder">1</span>
+                                </div>
                             </div>
                             <p class="card-text">This is a wider card with supporting text below as a natural
                                 lead-in to additional content. This content is a little bit longer.
                             </p>
                             <p class="text-center fw-bolder">Ola<span class="fw-normal"> have bid: 100</span></p>
-        
+
                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-dark">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-success">Bid</button>
+                                <div>
+                                    <button type="button" class="btn btn-outline-success" data-bs-toggle="modal"
+                                        data-bs-target="#bidModel">Bid on item</button>
                                 </div>
                                 <small class="text-muted">Auction ends at 9 mins</small>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
-
             </div>
         </div>
 
+        <div class="modal fade" id="bidModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Bid on item</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card shadow-sm">
+                            <div class="card-header d-flex justify-content-between">
+                                <div class="d-flex flex-row align-items-center">
+                                    <div
+                                        class="rounded-circle overflow-hidden d-flex justify-content-center align-item-center me-2">
+                                        <img src="https://github.com/mdo.png" width="25" alt=""
+                                            class="rounded-circle profil-images-toppbar">
+                                    </div>
+                                    <span class="font-weight-bol">Allawi</span>
+                                </div>
+                                <small class="text-muted">Auction ends at 9 mins</small>
+                            </div>
+                            <div class="mt-1 text-center">
+                                <p class="badge bg-dark">Tags</p>
+                            </div>
+                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
+                                xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                                preserveAspectRatio="xMidYMid slice" focusable="false">
+                                <title>Placeholder</title>
+                                <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                                    dy=".3em">Thumbnail</text>
+                            </svg>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <h5 class="card-title">Card title</h5>
+                                    <div>
+                                        <p class="badge bg-warning" style="color: rgb(0, 0, 0);">Bids</p>
+                                        <span class="fw-bolder">1</span>
+                                    </div>
+                                </div>
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to additional content. This content is a little bit longer.
+                                </p>
+                                <p class="text-center fw-bolder">Ola<span class="fw-normal"> have bid: 100</span></p>
+                                <form action="">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">Bid</span>
+                                        <input type="number"  min="0" class="form-control"
+                                            aria-label="Amount (to the nearest Bid)">
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-success" style="width: 100%;">Send your
+                                            bid</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <hr class="featurette-divider">
     </main>
 
