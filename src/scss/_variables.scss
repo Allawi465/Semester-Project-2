@@ -24,6 +24,18 @@ $green:   #4fe49e;
 $teal:    #9fffe2;
 $cyan:    #8eecff;
 
+// scss-docs-start theme-colors-map
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $red,
+  "light":      $light,
+  "dark":       $dark
+);
+
 
 /* container breakpoints */
 $container-max-widths: (
@@ -33,6 +45,7 @@ $container-max-widths: (
   xl: 1140px,
   xxl: 1320px
 );
+
 
 /* grid breakpoints */
 $grid-breakpoints: (

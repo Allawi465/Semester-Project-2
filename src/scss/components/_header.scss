@@ -5,6 +5,7 @@
 .dropdown {
     position: relative;
     top: 5px;
+    display: none;
 }
 
 .navbar-nav .dropdown-menu {
@@ -22,17 +23,28 @@
     flex-wrap: nowrap;
 }
 
-.search-form-btn {
-    display: block;
-}
-
 header {
     height: 80px;
+}
+
+#signInBtn {
+    display: none;
+}
+
+.errorMessage, .error {
+    color: $red;
+}
+
+.search-form-btn {
+    display: block;
 }
 
 @include media-breakpoint-down(sm) {
     .search-form-btn {
         display: none;
+    }
+    .search-form {
+        width: 200px;
     }
 }
 

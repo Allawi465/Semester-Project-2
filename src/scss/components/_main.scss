@@ -1,0 +1,26 @@
+.aboutUs, .auction-container{ 
+   margin-bottom: 100px;
+}
+
+.aboutUs::before { 
+    display: block; 
+    content: " "; 
+    margin-top: -100px; 
+    height: 100px; 
+    visibility: hidden; 
+    pointer-events: none;
+}
+
+.auction-container::before { 
+    display: block; 
+    content: " "; 
+    margin-top: -100px; 
+    height: 100px;
+    visibility: hidden; 
+    pointer-events: none;
+}
+
+.carousel-item > img {
+    height: 150px;
+    width: 100%;
+}
