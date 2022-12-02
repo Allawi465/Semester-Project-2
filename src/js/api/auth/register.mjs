@@ -1,6 +1,8 @@
 import { API_SOCIAL_URL } from '../constants.mjs';
 export const message = document.querySelector('.error');
 
+const closeBtn = document.querySelector(".registeR-close");
+
 const signInModal = bootstrap.Modal.getOrCreateInstance(
   document.getElementById('loginModel')
 );
@@ -41,4 +43,10 @@ export async function register(user) {
   } catch (error) {
     message.innerHTML = 'Profile already exists';
   }
+}
+
+closeBtn.addEventListener("click", hideErrorMessage)
+
+function hideErrorMessage() {
+  message.innerHTML = '';
 }

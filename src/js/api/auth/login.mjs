@@ -2,6 +2,10 @@ import { API_SOCIAL_URL } from '../constants.mjs';
 import * as localStorage from '../../storage/index.mjs';
 export const message = document.querySelector('.errorMessage');
 
+const closeBtn = document.querySelector(".btn-close");
+
+
+
 const path = '/auth/login';
 const method = 'POST';
 
@@ -36,4 +40,11 @@ export async function login(profile) {
   } catch (error) {
     message.innerHTML = 'Invalid email or password';
   }
+}
+
+
+closeBtn.addEventListener("click", hideErrorMessage)
+
+function hideErrorMessage() {
+  message.innerHTML = '';
 }
