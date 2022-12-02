@@ -1,6 +1,8 @@
 import { API_SOCIAL_URL } from '../constants.mjs';
 import { fetchWToken } from '../headers.mjs';
 
+export const errorMessage = document.querySelector('.message');
+
 const path = '/listings';
 const method = 'Get';
 const limit = 10;
@@ -23,6 +25,7 @@ export async function viewingAll() {
 
     return await response.json();
   } catch (error) {
-    /*    message.innerHTML = `<p>we are aware of the issues with accessing NOxB. our team is actively working on it</p>`; */
+    errorMessage.style.display = 'block';
+    errorMessage.innerHTML = `<p class="text-center fw-semibold">we are aware of the issues with accessing NOxB, our team is actively working on it.</p>`;
   }
 }

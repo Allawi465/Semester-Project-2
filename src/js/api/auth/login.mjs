@@ -1,6 +1,6 @@
 import { API_SOCIAL_URL } from '../constants.mjs';
 import * as localStorage from '../../storage/index.mjs';
-export const message = document.querySelector('.errorMessage');
+const message = document.querySelector('.errorMessage');
 
 const closeBtn = document.querySelector('.btn-close');
 

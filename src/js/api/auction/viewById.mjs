@@ -1,5 +1,6 @@
 import { API_SOCIAL_URL } from '../constants.mjs';
 import { fetchWToken } from '../headers.mjs';
+import { errorMessage } from './view.mjs';
 
 const queryStringPostId = document.location.search;
 const parameters = new URLSearchParams(queryStringPostId);
@@ -26,6 +27,7 @@ export async function viewById() {
 
     return await response.json();
   } catch (error) {
-    /*    message.innerHTML = `<p>we are aware of the issues with accessing NOxB. our team is actively working on it</p>`; */
+    errorMessage.style.display = 'block';
+    errorMessage.innerHTML = `<p class="text-center fw-semibold">we are aware of the issues with accessing NOxB, our team is actively working on it.</p>`;
   }
 }

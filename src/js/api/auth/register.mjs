@@ -1,6 +1,5 @@
 import { API_SOCIAL_URL } from '../constants.mjs';
-export const message = document.querySelector('.error');
-
+const message = document.querySelector('.error');
 const closeBtn = document.querySelector('.registeR-close');
 
 const signInModal = bootstrap.Modal.getOrCreateInstance(

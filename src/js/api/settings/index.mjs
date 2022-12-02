@@ -2,6 +2,8 @@ import { API_SOCIAL_URL } from '../constants.mjs';
 import { fetchWToken } from '../headers.mjs';
 import * as localStorage from '../../storage/index.mjs';
 
+const errorMessage = document.querySelector('.errorMessage-settings');
+
 /**
  * view posts content with api get method
  * @param {get} get posts content
@@ -26,6 +28,6 @@ export async function settingAvatar(settings) {
     localStorage.save('profile', data);
     location.reload();
   } catch (error) {
-    /*    message.innerHTML = `<p>we are aware of the issues with accessing NOxB. our team is actively working on it</p>`; */
+    errorMessage.innerHTML = `<p>we are aware of the issues, our team is actively working on it.</p>`;
   }
 }
