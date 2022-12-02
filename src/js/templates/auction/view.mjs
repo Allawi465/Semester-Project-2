@@ -42,6 +42,7 @@ export function viewTemplate(listings) {
                 <div class="bidList my-4">
                     <p class="text-center fw-bolder">${listings.lastBidder.bidderName}<span class="fw-normal"> have bid:</span><span class="fw-normal fw-bolder"> ${listings.lastBidder.amount}</span></p>
                 </div>
+            </div>
             <div class="card-footer mb-2">
                 <div class="d-flex justify-content-between align-items-center">
                 <div>
@@ -97,6 +98,7 @@ export function templateNoBids(listings) {
                 <div class="bidList my-4">
                   
                 </div>
+            </div>
             <div class="card-footer mb-2">
                 <div class="d-flex justify-content-between align-items-center">
                 <div>
