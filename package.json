@@ -1,7 +1,7 @@
 {
   "name": "sp2",
   "version": "0.0.2",
-  "description": "An Action website, semester project 2  ",
+  "description": "An Action website, semester project 2",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,11 +16,17 @@
     "type": "git",
     "url": "(https://github.com/Allawi465/Semester-Project-2.git)"
   },
+  "bugs": {
+    "url": "https://github.com/Allawi465/Semester-Project-2/issues"
+  },
   "keywords": [
     "js",
     "api",
     "bootstrap",
-    "css"
+    "css",
+    "eslint",
+    "lint-staged", 
+    "prettier"
   ],
   "author": "Mohammed Allawi <allawi465@gmail.com>",
   "license": "ISC",
@@ -36,7 +42,7 @@
     "sass": "^1.56.1"
   },
   "lint-staged": {
-    "*.js": [
+    "*.mjs": [
       "prettier --write",
       "eslint --fix"
     ],
