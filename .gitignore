@@ -2,3 +2,4 @@
 /dist
 .eslintcache
 6
+.vscode/settings.json
