@@ -49,6 +49,10 @@ header {
   #profileDropdown {
     right: 100px;
   }
+
+  header {
+    height: 100px;
+  }
 }
 
 @include media-breakpoint-down(xs) {
