@@ -1,9 +1,6 @@
 import { API_SOCIAL_URL } from '../constants.mjs';
 import { fetchWToken } from '../headers.mjs';
-
-const path = '/listings';
-const method = 'Get';
-const limit = 10;
+import * as localStorage from '../../storage/index.mjs';
 
 /**
  * view posts content with api get method
@@ -11,17 +8,23 @@ const limit = 10;
  * @param {fetchWToken} token from a function
  */
 
-export async function viewingAll() {
+export async function settingAvatar(settings) {
+  const { name } = localStorage.load('profile');
+  const path = `/profiles/${name}/media`;
+  const method = 'PUT';
   try {
-    const getUrl = `${API_SOCIAL_URL}${path}?_seller=true&_bids=true&limit=${limit}`;
-    const response = await fetchWToken(getUrl, {
+    const getPostUrl = `${API_SOCIAL_URL}${path}`;
+    const response = await fetchWToken(getPostUrl, {
       headers: {
         'Content-Type': 'application/json',
       },
       method,
+      body: JSON.stringify(settings),
     });
 
-    return await response.json();
+    const data = await response.json();
+    localStorage.save('profile', data);
+    location.reload();
   } catch (error) {
     /*    message.innerHTML = `<p>we are aware of the issues with accessing NOxB. our team is actively working on it</p>`; */
   }

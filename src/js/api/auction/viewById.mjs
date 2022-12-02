@@ -1,9 +1,12 @@
 import { API_SOCIAL_URL } from '../constants.mjs';
 import { fetchWToken } from '../headers.mjs';
 
-const path = '/listings';
+const queryStringPostId = document.location.search;
+const parameters = new URLSearchParams(queryStringPostId);
+const id = parameters.get('id');
+
+const path = `/listings/${id}`;
 const method = 'Get';
-const limit = 10;
 
 /**
  * view posts content with api get method
@@ -11,9 +14,9 @@ const limit = 10;
  * @param {fetchWToken} token from a function
  */
 
-export async function viewingAll() {
+export async function viewById() {
   try {
-    const getUrl = `${API_SOCIAL_URL}${path}?_seller=true&_bids=true&limit=${limit}`;
+    const getUrl = `${API_SOCIAL_URL}${path}?_seller=true&_bids=true`;
     const response = await fetchWToken(getUrl, {
       headers: {
         'Content-Type': 'application/json',

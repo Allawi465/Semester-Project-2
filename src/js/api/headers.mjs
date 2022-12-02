@@ -1,28 +1,28 @@
-import { load } from "../storage/index.mjs";
+import { load } from '../storage/index.mjs';
 
 /**
  * Setting headers as a function
  * @param {token} get token from local storage
  * @param {Authorization} authorization the token
-*/
+ */
 
 export function headers() {
-    const token = load("token");
-    return {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`
-    }
-};
+  const token = load('token');
+  return {
+    'Content-Type': 'application/json',
+    Authorization: `Bearer ${token}`,
+  };
+}
 
 /**
  * adding our fetch Method as function
  * @param {headers} getting headers from a function
  * @param {adding} adding url and options as argument
-*/
+ */
 
 export async function fetchWToken(url, options = {}) {
-    return fetch(url, {
-        ...options,
-        headers: headers()
-    })
-};
+  return fetch(url, {
+    ...options,
+    headers: headers(),
+  });
+}

@@ -1,4 +1,4 @@
-import { login } from '../api/auth/login.mjs';
+import { settingAvatar } from '../../api/settings/index.mjs';
 
 /**
  * form to login
@@ -6,16 +6,16 @@ import { login } from '../api/auth/login.mjs';
  * @param {login} sending the form to api call
  */
 
-export function loginUsers() {
-  const form = document.getElementById('loginForm');
+export function changeAvatar() {
+  const form = document.getElementById('settings');
 
   if (form) {
     form.addEventListener('submit', (event) => {
       event.preventDefault();
       const form = event.target;
       const formData = new FormData(form);
-      const profile = Object.fromEntries(formData.entries());
-      login(profile);
+      const avatar = Object.fromEntries(formData.entries());
+      settingAvatar(avatar);
       form.reset();
     });
   }
