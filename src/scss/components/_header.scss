@@ -1,55 +1,64 @@
 .navbar-collapse {
-    flex-grow: unset;
+  flex-grow: unset;
 }
 
 .dropdown {
-    position: relative;
-    top: 5px;
-    display: none;
+  position: relative;
+  top: 5px;
+  display: none;
 }
 
 .navbar-nav .dropdown-menu {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
-
 .dropdown-menu[data-bs-popper] {
-    left: unset;
-    right: 5px;
+  left: unset;
 }
 
 .nav-container {
-    width: 90%;
-    flex-wrap: nowrap;
+  width: 90%;
+  flex-wrap: nowrap;
 }
 
 header {
-    height: 80px;
+  height: 80px;
 }
 
 #signInBtn {
-    display: none;
+  display: none;
 }
 
-.errorMessage, .error {
-    color: $red;
+.errorMessage,
+.error {
+  color: $red;
 }
 
 .search-form-btn {
-    display: block;
+  display: block;
 }
 
 @include media-breakpoint-down(sm) {
-    .search-form-btn {
-        display: none;
-    }
-    .search-form {
-        width: 200px;
-    }
+  .search-form-btn {
+    display: none;
+  }
+  .search-form {
+    width: 200px;
+  }
+
+  #profileDropdown {
+    right: 100px;
+  }
 }
 
 @include media-breakpoint-down(xs) {
-    .search-form {
-        width: 105px;
-    }
+  .search-form {
+    width: 105px;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  #profileDropdown {
+    right: 9px;
+  }
 }
