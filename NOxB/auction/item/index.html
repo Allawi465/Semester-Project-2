@@ -310,7 +310,7 @@
               ></button>
             </div>
             <div class="modal-body p-5 pt-0">
-              <p><strong class="errorMessage px-1"></strong></p>
+              <p><strong class="errorMessage-settings"></strong></p>
               <p><strong class="px-1">Change you Avatar:</strong></p>
               <form id="settings">
                 <div class="form-floating mb-3">
@@ -337,7 +337,13 @@
     </header>
 
     <main>
-      <div class="singleItem my-4 mx-4 mx-auto"></div>
+      <div class="singleItem my-4 mx-4 mx-auto">
+        <div
+          class="message alert alert-dark"
+          role="alert"
+          style="display: none"
+        ></div>
+      </div>
 
       <div
         class="modal fade"
