@@ -12,7 +12,7 @@ export function viewTemplate(listings) {
                     <div
                         class="rounded-circle overflow-hidden d-flex justify-content-center align-item-center me-2">
                         <img src="${listings.avatar}"  width="25" height="25" alt=""
-                            class="rounded-circle profil-images-toppbar">
+                            class="rounded-circle profile-images-topBar">
                     </div>
                     <span class="font-weight-bol">${listings.name}</span>
                 </div>
@@ -67,7 +67,7 @@ export function templateNoBids(listings) {
                     <div
                         class="rounded-circle overflow-hidden d-flex justify-content-center align-item-center me-2">
                         <img src="${listings.seller.avatar}"  width="25" height="25" alt=""
-                            class="rounded-circle profil-images-toppbar">
+                            class="rounded-circle profile-images-topBar">
                     </div>
                     <span class="font-weight-bol">${listings.seller.name}</span>
                 </div>
