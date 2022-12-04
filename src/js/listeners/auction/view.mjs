@@ -25,25 +25,11 @@ export async function viewListings() {
   });
 
   const filteredNoBids = sorterDate.filter(
-    (listing) =>
-      listing.title &&
-      listing.media &&
-      listing.tags &&
-      listing.media &&
-      listing.description &&
-      listing._count.bids === 0 &&
-      listing.seller.avatar
+    (listing) => listing._count.bids === 0 && listing.seller.avatar
   );
 
   const filteredListings = sorterDate.filter(
-    (listing) =>
-      listing.title &&
-      listing.media &&
-      listing.tags &&
-      listing.media &&
-      listing.description &&
-      listing._count.bids > 0 &&
-      listing.seller.avatar
+    (listing) => listing._count.bids > 0 && listing.seller.avatar
   );
 
   const itemAuction = filteredListings.map((seller) => ({

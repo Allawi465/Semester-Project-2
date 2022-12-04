@@ -51,7 +51,7 @@ function showImages(arg) {
   const sliderBtnLeft = document.querySelector('.carousel-control-prev');
   const sliderBtnRight = document.querySelector('.carousel-control-next');
 
-  if (arg.length === 1) {
+  if (arg.length === 0 || arg.length === 1) {
     sliderBtnLeft.style.display = 'none';
     sliderBtnRight.style.display = 'none';
   } else {
@@ -71,6 +71,8 @@ function showImages(arg) {
     image.classList.add('d-block', 'w-100');
 
     image.src = `${images}`;
+
+    imageError(image);
 
     carouselItem.append(image);
 
@@ -106,4 +108,10 @@ function lastBidder(arg) {
   } else {
     lastBidder.innerHTML = '';
   }
+}
+
+function imageError(image) {
+  image.onerror = '';
+  image.src = '/images/default-upload-min.jpg';
+  return true;
 }
