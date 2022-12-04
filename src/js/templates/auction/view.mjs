@@ -23,7 +23,7 @@ export function viewTemplate(listings) {
                 <p class="badge bg-dark tags">${listings.tags}</p>
             </div>
             <div class="img-container"> 
-                <img src="${listings.media}" alt="">
+                <img src="${listings.media}" onerror="this.src='/images/default-upload-min.jpg' "alt="${listings.title}">
             </div>
             <div class="card-body">
                 <div class="d-flex justify-content-between">
@@ -31,7 +31,7 @@ export function viewTemplate(listings) {
                 <h5 class="card-title">${listings.title}</h5>
                 </div>
                     <div>
-                        <p class="badge bg-warning" style="color: rgb(0, 0, 0);">Bids</p>
+                        <p class="badge bg-warning text-black">Bids</p>
                         <span class="fw-bolder">${listings._count}</span>
                     </div>
                 </div>
@@ -39,7 +39,7 @@ export function viewTemplate(listings) {
                 <div class="card-description"> 
                     <p class="card-text">${listings.description}</p>
                 </div>
-                <div class="bidList my-4">
+                <div class="bidList my-4" style="height: 50px;">
                     <p class="text-center fw-bolder">${listings.lastBidder.bidderName}<span class="fw-normal"> have bid:</span><span class="fw-normal fw-bolder"> ${listings.lastBidder.amount}</span></p>
                 </div>
             </div>
@@ -76,10 +76,10 @@ export function templateNoBids(listings) {
             </div>
             <div class="d-flex justify-content-between mt-2 mb-2 mx-2">
                 <strong>Tags:</strong>
-                <p class="badge bg-dark tags">${listings.tags}</p>
+                <p class="badge bg-dark tags mb-0">${listings.tags}</p>
             </div>
             <div class="img-container"> 
-                <img src="${listings.media}" alt="">
+                <img src="${listings.media}" onerror="this.src='/images/default-upload-min.jpg' "alt="${listings.title}">
             </div>
             <div class="card-body">
                 <div class="d-flex justify-content-between">
@@ -87,7 +87,7 @@ export function templateNoBids(listings) {
                 <h5 class="card-title">${listings.title}</h5>
                 </div>
                     <div>
-                        <p class="badge bg-warning" style="color: rgb(0, 0, 0);">Bids</p>
+                        <p class="badge bg-warning text-black">Bids</p>
                         <span class="fw-bolder">${listings._count.bids}</span>
                     </div>
                 </div>
