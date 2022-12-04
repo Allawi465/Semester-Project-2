@@ -1,9 +1,10 @@
-// Bootstrap style 
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+// Bootstrap style
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
 
 // Bootstrap variables overrides
-@import "variables";
+@import 'variables';
 
 // our Original Style
-@import "./components/header";
-@import "./components/main";
+@import './components/header';
+@import './components/main';
+@import './components/profile';

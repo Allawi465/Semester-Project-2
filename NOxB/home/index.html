@@ -91,10 +91,7 @@
                     class="navbarImages rounded-circle me-1"
                   />
                   <strong class="navbarName text-capitalize me-1"></strong>
-                  <span
-                    class="navbarCredit badge bg-white"
-                    style="color: black"
-                  ></span>
+                  <span class="navbarCredit badge bg-white text-black"></span>
                 </a>
                 <ul class="dropdown-menu text-small shadow">
                   <li>
@@ -115,7 +112,9 @@
                       >Settings</a
                     >
                   </li>
-                  <li><a class="dropdown-item" href="#">Profile</a></li>
+                  <li>
+                    <a class="dropdown-item" href="/NOxB/profile/">Profile</a>
+                  </li>
                   <li>
                     <hr class="dropdown-divider" />
                   </li>
@@ -362,8 +361,8 @@
         </div>
       </div>
 
-      <div class="container auction-container mt-6">
-        <h2 class="display-5 fw-bold text-center">Auction</h2>
+      <div class="container auction-container mt-4">
+        <h2 class="display-5 text-center my-3">Latest Auction</h2>
         <div
           class="message alert alert-dark"
           role="alert"
@@ -401,12 +400,13 @@
               </h1>
               <button
                 type="button"
-                class="btn-close"
+                class="btn-close close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
             <div class="modal-body">
+              <div class="error-create"></div>
               <form id="itemToAuction">
                 <div class="form-floating mb-3">
                   <input
@@ -415,6 +415,7 @@
                     class="form-control rounded-3"
                     id="floatingInput"
                     placeholder="item"
+                    required
                   />
                   <label for="floatingInput">Title</label>
                 </div>
@@ -422,8 +423,9 @@
                   <textarea
                     class="form-control rounded-3"
                     id="floatingTextarea"
-                    name="body"
+                    name="description"
                     rows="3"
+                    required
                   ></textarea>
                   <label for="floatingTextare">Description</label>
                 </div>
@@ -432,19 +434,11 @@
                     type="url"
                     name="media"
                     class="form-control rounded-3"
-                    id="floatingImages"
-                    placeholder="image url"
-                  />
-                  <label for="floatingImages">Image</label>
-                </div>
-                <div class="form-floating input-group mb-3">
-                  <input
-                    type="url"
-                    class="form-control rounded-3"
                     id="floatingImage"
                     placeholder="image url"
+                    required
                   />
-                  <label for="floatingImage">Images gallery</label>
+                  <label for="floatingImage">Images gallery url</label>
                   <span class="input-group-text gallery"></span>
                   <span class="input-group-text" id="addMoreImage">
                     <svg
@@ -460,10 +454,11 @@
                       /></svg
                   ></span>
                 </div>
+                <div class="cloneImg d-flex flex-row"></div>
                 <div class="form-floating mb-3">
                   <input
-                    type="avatar"
-                    name="avatar"
+                    type="Tags"
+                    name="Tags"
                     class="form-control rounded-3"
                     id="floatingTags"
                     placeholder="Tags"
@@ -473,10 +468,11 @@
                 <div class="form-floating mb-3">
                   <input
                     placeholder="Select date"
-                    type="date"
+                    type="datetime-local"
                     name="endsAt"
                     id="deadlineDate"
                     class="form-control rounded-3"
+                    required
                   />
                   <label for="deadlineDate">deadline date</label>
                 </div>
@@ -495,7 +491,7 @@
             <div class="modal-footer">
               <button
                 type="button"
-                class="btn btn-dark"
+                class="btn btn-dark close"
                 data-bs-dismiss="modal"
               >
                 Close

@@ -31,8 +31,22 @@ header {
 
 .errorMessage,
 .error,
-.errorMessage-settings {
+.errorMessage-settings,
+.error-create {
   color: $red;
+}
+
+.coin {
+  margin-bottom: 3px;
+  margin-right: 2px;
+}
+
+.navbarCredit {
+  font-size: 15px;
+}
+
+.dropdown-toggle::after {
+  font-size: 25px;
 }
 
 .search-form-btn {

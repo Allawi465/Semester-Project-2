@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NOxB | item</title>
+    <title>NOxB | Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="/dist/css/style.css" />
     <script
-      src="../../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+      src="../..//node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
       defer
     ></script>
-    <script src="../../../src/js/router.mjs" type="module" defer></script>
+    <script src="../../src/js/router.mjs" type="module" defer></script>
   </head>
 
   <body class="p-0 m-0 border-0">
@@ -51,12 +51,18 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav" style="margin: auto">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="/NOxB/home/"
-                  >Home</a
-                >
+                <a class="nav-link" href="/NOxB/home/">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="">Auction</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  href="/NOxB/profile/"
+                  aria-current="page"
+                  >Profile</a
+                >
               </li>
               <li class="nav-item">
                 <a
@@ -111,9 +117,6 @@
                       data-bs-target="#settings"
                       >Settings</a
                     >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="/NOxB/profile/">Profile</a>
                   </li>
                   <li>
                     <hr class="dropdown-divider" />
@@ -336,19 +339,22 @@
     </header>
 
     <main>
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb my-4 mx-4">
-          <li class="breadcrumb-item"><a href="/NOxB/home/">Home</a></li>
-          <li class="breadcrumb-item"><a href="#">Auction</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Item</li>
-        </ol>
-      </nav>
+      <div class="container profile-card mt-4"></div>
 
-      <div class="singleItem my-4 mx-4 mx-auto">
+      <div class="container auction-container mt-5">
+        <h2 class="display-6 text-center">Mine Listings</h2>
         <div
           class="message alert alert-dark"
           role="alert"
           style="display: none"
+        ></div>
+
+        <div
+          class="row renderAuction row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-xl-3 g-3 mt-2"
+        ></div>
+
+        <div
+          class="d-grid gap-2 d-sm-flex justify-content-sm-center mt-5"
         ></div>
       </div>
 
@@ -369,7 +375,7 @@
               </h1>
               <button
                 type="button"
-                class="btn-close"
+                class="btn-close close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
@@ -405,6 +411,7 @@
                     class="form-control rounded-3"
                     id="floatingImage"
                     placeholder="image url"
+                    required
                   />
                   <label for="floatingImage">Images gallery url</label>
                   <span class="input-group-text gallery"></span>
@@ -460,7 +467,7 @@
             <div class="modal-footer">
               <button
                 type="button"
-                class="btn btn-dark"
+                class="btn btn-dark close"
                 data-bs-dismiss="modal"
               >
                 Close
@@ -470,58 +477,7 @@
         </div>
       </div>
 
-      <div
-        class="modal fade"
-        id="bidModel"
-        data-bs-backdrop="static"
-        data-bs-keyboard="false"
-        tabindex="-1"
-        aria-labelledby="staticBackdropLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="staticBackdropLabel">
-                Bid on item
-              </h1>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body viewPost">
-              <form action="">
-                <div class="input-group mb-3">
-                  <span class="input-group-text">Bid</span>
-                  <input
-                    type="number"
-                    min="0"
-                    class="form-control"
-                    aria-label="Amount (to the nearest Bid)"
-                  />
-                </div>
-                <div class="text-center">
-                  <button
-                    type="submit"
-                    class="btn btn-success"
-                    style="width: 100%"
-                  >
-                    Send your bid
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
-            Close
-          </button>
-        </div>
-      </div>
+      <hr class="featurette-divider" />
     </main>
 
     <footer
@@ -530,7 +486,7 @@
     >
       <div class="mb-2 float-end" title="Add item">
         <button
-          class="addBtn btn btn-dark shadow"
+          class="addbtn btn btn-dark shadow"
           data-bs-toggle="modal"
           data-bs-target="#addItemModel"
         >
