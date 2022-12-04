@@ -24,10 +24,17 @@ export default function router() {
       listener.authValidation();
       listener.logOut();
       listener.loginUsers();
-      listener.registerNewUsers();
       listener.changeAvatar();
       listener.addItemToAuction();
       listener.viewId();
+      break;
+    case '/NOxB/profile/':
+      listener.authValidation();
+      listener.logOut();
+      listener.loginUsers();
+      listener.changeAvatar();
+      listener.addItemToAuction();
+      listener.viewProfile();
       break;
     default:
       location.href = '/NOxB/home/';
