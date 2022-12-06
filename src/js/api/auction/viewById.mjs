@@ -7,7 +7,6 @@ const parameters = new URLSearchParams(queryStringPostId);
 const id = parameters.get('id');
 
 const path = `/listings/${id}`;
-const method = 'Get';
 
 /**
  * view posts content with api get method
@@ -22,7 +21,6 @@ export async function viewById() {
       headers: {
         'Content-Type': 'application/json',
       },
-      method,
     });
 
     return await response.json();
