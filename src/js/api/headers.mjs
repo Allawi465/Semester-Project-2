@@ -9,7 +9,7 @@ import { load } from '../storage/index.mjs';
 export function headers() {
   const token = load('token');
   return {
-    'Content-Type': 'application/json',
+    'Content-Type': 'application/json; charset=utf-8 ',
     Authorization: `Bearer ${token}`,
   };
 }
