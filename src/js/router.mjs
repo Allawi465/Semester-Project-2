@@ -27,6 +27,7 @@ export default function router() {
       listener.changeAvatar();
       listener.addItemToAuction();
       listener.viewId();
+      listener.makeBid();
       break;
     case '/NOxB/profile/':
       listener.authValidation();
