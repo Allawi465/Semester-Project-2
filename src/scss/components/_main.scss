@@ -19,17 +19,13 @@
 
 .card-description {
   overflow-y: scroll;
-  height: 100px;
+  height: 150px;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
 .card-title {
-  height: 70px;
   width: 80%;
-  overflow-y: scroll;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 }
 
 footer {
@@ -50,10 +46,21 @@ footer {
 }
 
 .bidList {
-  height: 50px;
+  justify-content: center;
+  display: flex;
 }
 
 .cloneImg {
   display: flex;
   flex-wrap: wrap;
+}
+
+.bi-trash {
+  cursor: pointer;
+  margin-left: -8px;
+}
+
+.imgContainer {
+  max-width: 90px;
+  max-height: 70px;
 }
