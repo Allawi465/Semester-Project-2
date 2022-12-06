@@ -43,17 +43,19 @@ export function viewTemplate(listings) {
                 </div>
                 </div>
                     <strong>Description:</strong>
-                    <div class="card-description"> 
+                    <div> 
                         <p class="card-text">${listings.description}</p>
                     </div>
-                    <div class="bidList my-4">
-                  
+                    <div class="bidList id="bidder" my-4">
+                        
+                    </div>
                 </div>
-                <div class="card-footer mb-2">
+            <div class="card-footer mb-2">
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
                         <button type="button" id="bidOn" class="btn btn-outline-success"
-                            data-bs-toggle="modal" data-id="${listings.id}" data-bs-target="#loginModel">Bid</button>
+                            data-bs-toggle="modal" data-id="${listings.id}" data-bs-target="#loginModel">Bid
+                        </button>
                     </div>
                     <small class="text-muted endTime"></small>
                 </div>
