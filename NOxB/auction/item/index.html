@@ -56,9 +56,6 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="">Auction</a>
-              </li>
-              <li class="nav-item">
                 <a
                   class="nav-link"
                   type="button"
@@ -339,8 +336,7 @@
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb my-4 mx-4">
           <li class="breadcrumb-item"><a href="/NOxB/home/">Home</a></li>
-          <li class="breadcrumb-item"><a href="#">Auction</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Item</li>
+          <li class="breadcrumb-item active" aria-current="page">Listing</li>
         </ol>
       </nav>
 
@@ -483,22 +479,25 @@
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="staticBackdropLabel">
-                Bid on item
+                Make a bid
               </h1>
               <button
                 type="button"
-                class="btn-close"
+                class="btn-close close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body viewPost">
-              <form action="">
-                <div class="input-group mb-3">
+            <div class="modal-body">
+              <div class="error-bid"></div>
+              <form id="makeBid">
+                <div class="input-group mb-3" style="width: 90%">
                   <span class="input-group-text">Bid</span>
                   <input
+                    id="bidInput"
                     type="number"
-                    min="0"
+                    name="amount"
+                    min="1"
                     class="form-control"
                     aria-label="Amount (to the nearest Bid)"
                   />
@@ -514,12 +513,16 @@
                 </div>
               </form>
             </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-dark close"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
-            Close
-          </button>
         </div>
       </div>
     </main>
