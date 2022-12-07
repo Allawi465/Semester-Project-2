@@ -20,7 +20,9 @@ export function makeBid() {
         bidAmount[numb] = parseInt(bidAmount[numb]);
       });
       MakeABid(bidAmount);
+      console.log(bidAmount);
       form.reset();
+
       const newBalance = credits - bidAmount.amount;
       localStorage.save('credits', newBalance);
     });
