@@ -1,9 +1,9 @@
 import { viewById } from '../../api/auction/viewById.mjs';
 import * as templates from '../../templates/index.mjs';
-
 import { changeModel } from './view.mjs';
+const bidInput = document.getElementById('bidInput');
 
-const container = document.querySelector('.singleItem');
+export const container = document.querySelector('.singleItem');
 
 /**
  * deleting a post by id
@@ -13,8 +13,6 @@ const container = document.querySelector('.singleItem');
 
 export async function viewId() {
   const { media, tags, bids, ...item } = await viewById();
-
-  bids.reverse();
 
   templates.renderPostById(item, container);
 
@@ -31,6 +29,8 @@ export async function viewId() {
   lastBidder(bids);
 
   changeModel();
+
+  console.log(bids);
 }
 
 function showTag(arg) {
@@ -51,14 +51,6 @@ function showImages(arg) {
   const sliderBtnLeft = document.querySelector('.carousel-control-prev');
   const sliderBtnRight = document.querySelector('.carousel-control-next');
 
-  if (arg.length === 0 || arg.length === 1) {
-    sliderBtnLeft.style.display = 'none';
-    sliderBtnRight.style.display = 'none';
-  } else {
-    sliderBtnLeft.style.display = 'block';
-    sliderBtnRight.style.display = 'block';
-  }
-
   arg.forEach((images) => {
     const carousel = document.querySelector('.carousel-inner');
 
@@ -72,8 +64,6 @@ function showImages(arg) {
 
     image.src = `${images}`;
 
-    imageError(image);
-
     carouselItem.append(image);
 
     carousel.append(carouselItem);
@@ -82,6 +72,14 @@ function showImages(arg) {
 
     carouselImage.classList.add('active');
   });
+
+  if (arg.length === 0 || arg.length === 1) {
+    sliderBtnLeft.style.display = 'none';
+    sliderBtnRight.style.display = 'none';
+  } else {
+    sliderBtnLeft.style.display = 'block';
+    sliderBtnRight.style.display = 'block';
+  }
 }
 
 function localTime(arg, arg2) {
@@ -102,16 +100,13 @@ function localTime(arg, arg2) {
 
 function lastBidder(arg) {
   const lastBidder = document.querySelector('.bidList');
-
+  arg.reverse();
   if (arg.length > 0) {
-    lastBidder.innerHTML = `<p class="text-center fw-bolder">${arg[0].bidderName}<span class="fw-normal"> have bid:</span><span class="fw-normal fw-bolder"> ${arg[0].amount}</span></p>`;
+    lastBidder.innerHTML = `<p class="text-center fw-bolder mt-4">Highest bidder: ${arg[0].bidderName}<span class="fw-normal"> have bid:</span><span class="fw-normal fw-bolder"> ${arg[0].amount}</span></p>`;
+    bidInput.setAttribute('min', arg[0].amount + 1);
   } else {
-    lastBidder.innerHTML = '';
+    lastBidder.innerHTML =
+      '<p class="badge rounded-pill text-bg-success fs-6 fw-semibold mt-1">Be the first to make a bid</p>';
+    bidInput.setAttribute('min', 1);
   }
-}
-
-function imageError(image) {
-  image.onerror = '';
-  image.src = '/images/default-upload-min.jpg';
-  return true;
 }
