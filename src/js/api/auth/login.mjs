@@ -28,11 +28,12 @@ export async function login(profile) {
       throw error;
     }
 
-    const { accessToken, ...data } = await response.json();
+    const { accessToken, credits, ...data } = await response.json();
 
     if (data.status !== 201) {
       localStorage.save('token', accessToken);
       localStorage.save('profile', data);
+      localStorage.save('credits', credits);
       location.reload();
     }
   } catch (error) {
