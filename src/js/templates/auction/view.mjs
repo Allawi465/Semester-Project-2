@@ -20,7 +20,7 @@ export function viewTemplate(listings) {
             </div>
             <div class="d-flex justify-content-between mt-2 mb-2 mx-2">
                 <strong>Tags:</strong>
-                <p class="badge bg-dark tags">${listings.tags}</p>
+                <p class="badge bg-dark tags mb-0">${listings.tags}</p>
             </div>
             <div class="img-container"> 
                 <img src="${listings.media}" onerror="this.src='/images/default-upload-min.jpg' "alt="${listings.title}">
@@ -39,22 +39,17 @@ export function viewTemplate(listings) {
                 <div class="card-description"> 
                     <p class="card-text">${listings.description}</p>
                 </div>
-                <div class="bidList my-4" style="height: 50px;">
+                <div class="bidList mx-2" style="height: 50px;">
                     <p class="text-center fw-bolder">${listings.lastBidder.bidderName}<span class="fw-normal"> have bid:</span><span class="fw-normal fw-bolder"> ${listings.lastBidder.amount}</span></p>
                 </div>
             </div>
             <div class="card-footer mb-2">
                 <div class="d-flex justify-content-between align-items-center">
-                <div>
-                <a type="button" class="btn btn-outline-dark"
-                href="/NOxB/auction/item/?id=${listings.id}">View</a>
-
-                <button type="button" id="bidOn" class="btn btn-outline-success"
-                    data-bs-toggle="modal" data-id="${listings.id}" data-bs-target="#loginModel">Bid</button>
-                </div>
+                    <a type="button" class="btn btn-outline-dark"
+                    href="/NOxB/auction/item/?id=${listings.id}">View</a>   
                     <small class="text-muted">Ends ${listings.endsAt}</small>
                 </div>
-            </div>
+        </div>
         </div>
     </div>`;
 }
@@ -95,18 +90,14 @@ export function templateNoBids(listings) {
                 <div class="card-description"> 
                     <p class="card-text">${listings.description}</p>
                 </div>
-                <div class="bidList my-4">
+                <div class="bidList mx-2">
                   
                 </div>
             </div>
             <div class="card-footer mb-2">
                 <div class="d-flex justify-content-between align-items-center">
-                <div>
-                <a type="button" class="btn btn-outline-dark"
-                href="/NOxB/auction/item/?id=${listings.id}">View</a>
-                <button type="button" id="bidOn" class="btn btn-outline-success"
-                    data-bs-toggle="modal" data-id="${listings.id}" data-bs-target="#loginModel">Bid</button>
-                </div>
+                    <a type="button" class="btn btn-outline-dark"
+                    href="/NOxB/auction/item/?id=${listings.id}">View</a>   
                     <small class="text-muted">Ends ${listings.endsAt}</small>
                 </div>
             </div>
