@@ -44,5 +44,7 @@ export async function login(profile) {
 closeBtn.addEventListener('click', hideErrorMessage);
 
 function hideErrorMessage() {
-  message.innerHTML = '';
+  if (message.value) {
+    message.innerHTML = '';
+  }
 }

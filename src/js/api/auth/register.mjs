@@ -47,5 +47,7 @@ export async function register(user) {
 closeBtn.addEventListener('click', hideErrorMessage);
 
 function hideErrorMessage() {
-  message.innerHTML = '';
+  if (message.value) {
+    message.innerHTML = '';
+  }
 }

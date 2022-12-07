@@ -2,7 +2,7 @@ import { API_SOCIAL_URL } from '../constants.mjs';
 import { fetchWToken } from '../headers.mjs';
 
 const message = document.querySelector('.error-bid');
-// const closeBtn = document.querySelectorAll('.close');
+const closeBtn = document.querySelectorAll('.close');
 
 const queryStringPostId = document.location.search;
 const parameters = new URLSearchParams(queryStringPostId);
@@ -33,11 +33,12 @@ export async function MakeABid(amount) {
   }
 }
 
-/* closeBtn.forEach(close => [
-  close.addEventListener("click", hideErrorMessage)
-]); */
+closeBtn.forEach((close) => [
+  close.addEventListener('click', hideErrorMessage),
+]);
 
-/* 
 function hideErrorMessage() {
-  message.innerHTML = '';
-}  */
+  if (message.value) {
+    message.innerHTML = '';
+  }
+}
