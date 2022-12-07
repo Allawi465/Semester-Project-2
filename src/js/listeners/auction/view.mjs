@@ -47,7 +47,8 @@ export async function viewListings() {
   }));
 
   templates.templatesNoBids(filteredNoBids, containerViewLists);
-  templates.renderTemplate(itemAuction, containerViewLists);
+  console.log(itemAuction);
+  // templates.renderTemplate(itemAuction, containerViewLists);
 
   changeModel();
 }

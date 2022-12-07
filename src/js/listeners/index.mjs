@@ -4,7 +4,9 @@ export * from './auth/auth.mjs';
 export * from './auth/logOut.mjs';
 
 export * from './auction/view.mjs';
-export * from './settings/avatar.mjs';
+export * from './auction/bid.mjs';
 export * from './auction/addItem.mjs';
+
+export * from './settings/avatar.mjs';
 export * from './auction/viewById.mjs';
 export * from './profile/index.mjs';
