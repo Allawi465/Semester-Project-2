@@ -1,4 +1,8 @@
-import { getProfile, profileListings } from '../../api/profiles/index.mjs';
+import {
+  getProfile,
+  profileListings,
+  profileBids,
+} from '../../api/profiles/index.mjs';
 import * as templates from '../../templates/index.mjs';
 
 const container = document.querySelector('.profile-card');
@@ -8,7 +12,9 @@ export async function viewProfile() {
 
   const listings = await profileListings();
 
-  console.log(listings);
+  const bids = await profileBids();
+
+  console.log(bids, listings);
 
   templates.profileTemplate(meProfile, container);
 }
