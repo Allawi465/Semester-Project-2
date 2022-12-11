@@ -15,21 +15,33 @@ export async function viewListings() {
   const listings = await viewingAll();
 
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  const optionsWithTime = {
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+  };
 
   const sorterDate = listings.map((listing) => {
     return {
       ...listing,
       created: new Date(listing.created).toLocaleDateString('no-NO', options),
-      endsAt: new Date(listing.endsAt).toLocaleDateString('no-NO', options),
+      endsAt: new Date(listing.endsAt).toLocaleDateString(
+        'no-NO',
+        optionsWithTime
+      ),
     };
   });
 
   const filteredNoBids = sorterDate.filter(
-    (listing) => listing._count.bids === 0 && listing.seller.avatar
+    (listing) =>
+      listing._count.bids === 0 && listing.seller.avatar && listing.title
   );
 
   const filteredListings = sorterDate.filter(
-    (listing) => listing._count.bids > 0 && listing.seller.avatar
+    (listing) =>
+      listing._count.bids > 0 && listing.seller.avatar && listing.title
   );
 
   const itemAuction = filteredListings.map((seller) => ({
@@ -40,21 +52,18 @@ export async function viewListings() {
     media: seller.media,
     title: seller.title,
     _count: seller._count.bids,
-    description: seller.description,
     endsAt: seller.endsAt,
     id: seller.id,
-    lastBidder: seller.bids[seller.bids.length - 1],
+    lastBidder: seller.bids.reverse(),
   }));
 
-  templates.templatesNoBids(filteredNoBids, containerViewLists);
-  console.log(itemAuction);
-  // templates.renderTemplate(itemAuction, containerViewLists);
-
-  changeModel();
+  // templates.templatesNoBids(filteredNoBids, containerViewLists);
+  console.log(filteredNoBids);
+  templates.renderTemplate(itemAuction, containerViewLists);
 }
 
 export function changeModel() {
-  let bidOnBtn = document.querySelectorAll('#bidOn');
+  const bidOnBtn = document.querySelectorAll('#bidOn');
   const token = localStorage.load('token');
   bidOnBtn.forEach((btn) => {
     if (token) {
