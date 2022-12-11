@@ -38,7 +38,7 @@ closeBtn.forEach((close) => [
 ]);
 
 function hideErrorMessage() {
-  if (message.value) {
+  if (message) {
     message.innerHTML = '';
   }
 }
