@@ -19,6 +19,7 @@ export default function router() {
       listener.loginUsers();
       listener.changeAvatar();
       listener.addItemToAuction();
+      listener.joinUsBtn();
       break;
     case '/NOxB/auction/item/':
       listener.authValidation();
