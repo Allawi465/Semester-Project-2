@@ -17,3 +17,13 @@ export function authValidation() {
     signInBtn.style.display = 'block';
   }
 }
+
+export function joinUsBtn() {
+  const registerBtn = document.querySelector('.join-us-btn');
+  const token = localStorage.load('token');
+  if (token) {
+    registerBtn.style.display = 'none';
+  } else {
+    registerBtn.style.display = 'block';
+  }
+}
