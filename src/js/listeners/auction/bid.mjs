@@ -22,7 +22,6 @@ export function makeBid() {
       MakeABid(bidAmount);
       console.log(bidAmount);
       form.reset();
-
       const newBalance = credits - bidAmount.amount;
       localStorage.save('credits', newBalance);
     });
