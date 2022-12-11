@@ -5,24 +5,20 @@
 
 export function viewTemplate(listings) {
   return ` 
-    <div class="col">
-        <div class="card shadow-sm">
-            <div class="card-header d-flex justify-content-between">
+    <div class="col my-2">
+        <div class="card shadow-sm bg-dark text-white shadow-lg p-3 mb-5 rounded">
+            <div class="card-header d-flex justify-content-between"style="border: none" >
                 <div class="d-flex flex-row align-items-center">
                     <div
                         class="rounded-circle overflow-hidden d-flex justify-content-center align-item-center me-2">
-                        <img src="${listings.avatar}"  width="25" height="25" alt=""
+                        <img src="${listings.avatar}"  width="50" height="50" alt=""
                             class="rounded-circle profile-images-topBar">
                     </div>
-                    <span class="font-weight-bol">${listings.name}</span>
+                    <span class="font-weight-bol text-capitalize">${listings.name}</span>
                 </div>
-                <p class="card-text"><small class="text-muted">${listings.created}</small></p>
+                <p class="card-text"><small class="text-muted created">${listings.created}</small></p>
             </div>
-            <div class="d-flex justify-content-between mt-2 mb-2 mx-2">
-                <strong>Tags:</strong>
-                <p class="badge bg-dark tags mb-0">${listings.tags}</p>
-            </div>
-            <div class="img-container"> 
+            <div class="img-container my-2"> 
                 <img src="${listings.media}" onerror="this.src='/images/default-upload-min.jpg' "alt="${listings.title}">
             </div>
             <div class="card-body">
@@ -31,76 +27,18 @@ export function viewTemplate(listings) {
                 <h5 class="card-title">${listings.title}</h5>
                 </div>
                     <div>
-                        <p class="badge bg-warning text-black">Bids</p>
-                        <span class="fw-bolder">${listings._count}</span>
+                        <p class="badge text-uppercase bg-warning text-black">Bids</p>
+                        <span class=" fw-bolder">${listings._count}</span>
                     </div>
-                </div>
-                <strong>Description:</strong>
-                <div class="card-description"> 
-                    <p class="card-text">${listings.description}</p>
-                </div>
-                <div class="bidList mx-2" style="height: 50px;">
-                    <p class="text-center fw-bolder">${listings.lastBidder.bidderName}<span class="fw-normal"> have bid:</span><span class="fw-normal fw-bolder"> ${listings.lastBidder.amount}</span></p>
                 </div>
             </div>
             <div class="card-footer mb-2">
                 <div class="d-flex justify-content-between align-items-center">
-                    <a type="button" class="btn btn-outline-dark"
+                    <a type="button" class="btn btn-outline-light"
                     href="/NOxB/auction/item/?id=${listings.id}">View</a>   
                     <small class="text-muted">Ends ${listings.endsAt}</small>
                 </div>
         </div>
-        </div>
-    </div>`;
-}
-
-export function templateNoBids(listings) {
-  return ` 
-    <div class="col">
-        <div class="card shadow-sm">
-            <div class="card-header d-flex justify-content-between">
-                <div class="d-flex flex-row align-items-center">
-                    <div
-                        class="rounded-circle overflow-hidden d-flex justify-content-center align-item-center me-2">
-                        <img src="${listings.seller.avatar}"  width="25" height="25" alt=""
-                            class="rounded-circle profile-images-topBar">
-                    </div>
-                    <span class="font-weight-bol">${listings.seller.name}</span>
-                </div>
-                <p class="card-text"><small class="text-muted">${listings.created}</small></p>
-            </div>
-            <div class="d-flex justify-content-between mt-2 mb-2 mx-2">
-                <strong>Tags:</strong>
-                <p class="badge bg-dark tags mb-0">${listings.tags}</p>
-            </div>
-            <div class="img-container"> 
-                <img src="${listings.media}" onerror="this.src='/images/default-upload-min.jpg' "alt="${listings.title}">
-            </div>
-            <div class="card-body">
-                <div class="d-flex justify-content-between">
-                <div class="card-title"> 
-                <h5 class="card-title">${listings.title}</h5>
-                </div>
-                    <div>
-                        <p class="badge bg-warning text-black">Bids</p>
-                        <span class="fw-bolder">${listings._count.bids}</span>
-                    </div>
-                </div>
-                <strong>Description:</strong>
-                <div class="card-description"> 
-                    <p class="card-text">${listings.description}</p>
-                </div>
-                <div class="bidList mx-2">
-                  
-                </div>
-            </div>
-            <div class="card-footer mb-2">
-                <div class="d-flex justify-content-between align-items-center">
-                    <a type="button" class="btn btn-outline-dark"
-                    href="/NOxB/auction/item/?id=${listings.id}">View</a>   
-                    <small class="text-muted">Ends ${listings.endsAt}</small>
-                </div>
-            </div>
         </div>
     </div>`;
 }
@@ -114,11 +52,5 @@ export function templateNoBids(listings) {
 export function renderTemplate(listings, parent) {
   listings.forEach((listings) => {
     parent.innerHTML += viewTemplate(listings);
-  });
-}
-
-export function templatesNoBids(listings, parent) {
-  listings.forEach((listings) => {
-    parent.innerHTML += templateNoBids(listings);
   });
 }
