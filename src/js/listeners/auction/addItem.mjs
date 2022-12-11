@@ -44,14 +44,13 @@ function addMoreImage() {
 
     urls.push(mediaGallery.value);
 
-    console.log(urls);
-
     mediaGallery.value = '';
 
     cloneGallery.innerHTML = '';
 
     if (counter === 5) {
       addMoreImages.style.display = 'none';
+      galleryNumber.innerHTML = 'Max (6)';
     }
 
     galleryImages(urls);
@@ -77,9 +76,11 @@ function galleryImages(arg) {
         arg.splice(itemIndex, 1);
         counter--;
         galleryNumber.innerHTML = counter;
-        console.log(arg);
         imagesUrl.remove();
         if (counter === 5) {
+          galleryNumber.innerHTML = '';
+        }
+        if (counter === 0) {
           galleryNumber.innerHTML = '';
         } else if (counter < 5) {
           addMoreImages.style.display = 'block';
