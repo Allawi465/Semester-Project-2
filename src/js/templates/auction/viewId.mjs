@@ -1,3 +1,8 @@
+/**
+ * making html as return from the function
+ * @param {return} returning html post div
+ */
+
 export function viewTemplate(listings) {
   return `  
     <div class="col mx-4">
@@ -14,7 +19,7 @@ export function viewTemplate(listings) {
             </div>
             <div class="d-flex justify-content-between mt-2 mb-2 mx-3 tags">
                 <strong class="mb-2 text-capitalize">Tags</strong>
-                <div class="d-flex flex-row tags-container" style="flex-wrap: wrap";> 
+                <div class="d-flex flex-row tags-container" style="flex-wrap: wrap;"> 
 
                </div>
             </div>
@@ -32,16 +37,19 @@ export function viewTemplate(listings) {
                 </button>
             </div>
             <div class="card-body">
-                <div class="card-description"> 
-                    <h5>${listings.title}</h5>
+                <div class="d-flex justify-content-between" style="min-height: 50px;"> 
+                    <h5 class="me-2">${listings.title}</h5>
+                    <div>
+                    <span class="fw-bolder current-price"></span>
+                </div>  
                 </div>
-                <div class="card-description"> 
+                <div style="min-height: 50px;"> 
                     <p class="card-text">${listings.description}</p>
                 </div>
                 <div> 
                     <div class="text-center mt-5">
-                        <p class="badge bg-warning text-uppercase" style="color: rgb(0, 0, 0);">Bids</p>
-                        <span class="fw-bolder">${listings._count.bids}</span>
+                        <p class="badge bg-warning text-uppercase text-black">Bids</p>
+                        <span class="fw-bolder bids-list-number">${listings._count.bids}</span>
                     </div>   
                     <ol class="list-group list-group-numbered bidList mb-4 bg-light">
                         
@@ -52,16 +60,21 @@ export function viewTemplate(listings) {
             <div class="card-footer mb-2" style="border: none;">
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
-                        <button type="button" id="bidOn" class="btn btn-success text-uppercase"
+                        <button type="button" id="bidOn" class="btn text-uppercase me-2"
                             data-bs-toggle="modal" data-id="${listings.id}" data-bs-target="#loginModel">Bid now
                         </button>
                     </div>
-                    <small class="text-muted endTime"></small>
+                    <small class="fs-6 text fw-bold endTime"></small>
                 </div>
             </div>
         </div>
     </div>`;
 }
+
+/**
+ * Template to render html listings with a function
+ * @param {viewTemplate} getting the html return from a function
+ */
 
 export function renderPostById(listings, parent) {
   parent.innerHTML += viewTemplate(listings);
