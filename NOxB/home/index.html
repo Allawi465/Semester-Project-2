@@ -333,7 +333,7 @@
     </header>
 
     <main>
-      <div class="container aboutUs mt-4">
+      <div class="container aboutUs mt-4" style="margin-bottom: 150px">
         <div class="row featurette">
           <div class="col-md-7">
             <h2 class="featurette-heading fw-normal lh-1">
@@ -379,7 +379,16 @@
 
         <div
           class="row renderAuction row-cols-1 row-cols-s-1 row-cols-md-2 row-cols-xl-3 g-3 mt-2"
-        ></div>
+        >
+          <div
+            class="spinner-grow my-2"
+            role="status"
+            id="spinner"
+            style="margin: auto"
+          >
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
       </div>
 
       <div
@@ -438,8 +447,13 @@
                     required
                   />
                   <label for="floatingImage">Images gallery url</label>
-                  <span class="input-group-text gallery"></span>
-                  <span class="input-group-text" id="addMoreImage">
+                  <span
+                    class="input-group-text input-group-style gallery"
+                  ></span>
+                  <span
+                    class="input-group-text input-group-style"
+                    id="addMoreImage"
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="40"
@@ -512,6 +526,7 @@
           class="addbtn btn btn-dark shadow"
           data-bs-toggle="modal"
           data-bs-target="#addItemModel"
+          style="border-radius: 12px"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

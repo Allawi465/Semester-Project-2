@@ -9,43 +9,32 @@
   width: 100%;
 }
 
-.aboutUs {
-  margin-bottom: 150px;
-}
-
 .card-footer {
   background-color: unset;
   border-top: unset;
 }
 
-.card-description {
-  min-height: 50px;
+.bids-list-text {
+  position: relative;
+  top: 2px;
 }
 
 .card-title {
-  width: 70%;
-  min-height: 50px;
+  min-height: 100px;
 }
 
-.card {
-  border: unset;
+.bids-list-number {
+  position: relative;
+  top: 1px;
 }
 
 footer {
   height: 90px;
 }
 
-.addBtn {
-  border-radius: 12px;
-}
-
-.input-group-text {
+.input-group-style {
   background-color: unset;
   border: unset;
-}
-
-.singleItem {
-  max-width: 1000px;
 }
 
 .bidList {
@@ -87,6 +76,15 @@ footer {
 .carousel-control-next-icon {
   width: 2.5rem;
   height: 2.5rem;
+}
+
+#bidOn {
+  background-color: $green;
+}
+
+#bidOn:hover {
+  background-color: white;
+  color: black;
 }
 
 @include media-breakpoint-down(sm) {

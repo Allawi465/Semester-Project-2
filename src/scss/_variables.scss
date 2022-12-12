@@ -19,8 +19,8 @@ $purple: #5d3b9c;
 $pink: #ab4578;
 $red: #9e232f;
 $orange: #ffa053;
-$yellow: #ffdf7e;
-$green: #2dd587;
+$yellow: #ffc107;
+$green: #2ac77e;
 $teal: #9fffe2;
 $cyan: #8eecff;
 
@@ -33,18 +33,6 @@ $warning: $yellow;
 $danger: $red;
 $light: $gray-100;
 $dark: $gray-900;
-
-// scss-docs-start theme-colors-map
-$theme-colors: (
-  'primary': $primary,
-  'secondary': $secondary,
-  'success': $success,
-  'info': $info,
-  'warning': $warning,
-  'danger': $red,
-  'light': $light,
-  'dark': $dark,
-);
 
 /* container breakpoints */
 $container-max-widths: (
@@ -77,15 +65,8 @@ $aspect-ratios: (
 $display-font-sizes: (
   1: 5rem,
   2: 4.5rem,
-  3: 4rem,
-  4: 3.5rem,
-  5: 3rem,
-  6: 2.5rem,
+  3: 3rem,
+  4: 2.5rem,
+  5: 2rem,
+  6: 1.5rem,
 );
-
-/* dropdown-variables  */
-$dropdown-min-width: 5rem;
-
-/* List group */
-$list-group-border-width: 0;
-$bs-list-group-bg: #eee;
