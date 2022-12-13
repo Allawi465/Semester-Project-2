@@ -47,8 +47,8 @@ export function viewProfileListing(listings) {
   const { avatar, name } = load('profile');
   return ` 
       <div class="col my-2">
-          <div class="card shadow-sm bg-dark text-white shadow-lg p-3 mb-2 rounded" style="border: none;">
-              <div class="card-header d-flex justify-content-between" style="border: none;">
+          <div class="card shadow-sm bg-dark text-white shadow-lg p-3 mb-2 rounded profile-card-listings" style="border: none;">
+              <div class="card-header d-flex justify-content-between" style="flex-wrap: wrap;">
                   <div class="d-flex flex-row align-items-center">
                       <div
                           class="rounded-circle overflow-hidden d-flex justify-content-center align-item-center me-2">
@@ -57,7 +57,23 @@ export function viewProfileListing(listings) {
                       </div>
                       <span class="font-weight-bol text-capitalize">${name}</span>
                   </div>
-                  <p class="card-text"><small class="text-muted created">${listings.created}</small></p>
+                  <div class="d-flex" style="flex-wrap: wrap;"> 
+                    <p class="card-tex me-2"><small class="text-muted created">${listings.created}</small></p>
+                    <div class="dropdown dropstart posted-option">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                            fill="currentColor" class="bi bi-three-dots-vertical"
+                            viewBox="0 0 16 16" data-bs-toggle="dropdown" aria-expanded="false">
+                            <path
+                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                        </svg>
+                        <ul class="dropdown-menu">
+                            <li><button class="dropdown-item" type="button" id="editPost" data-id="${listings.id}" data-bs-toggle="modal" data-bs-target="#updateListing" data-bs-whatever="@getbootstrap">Update</button></li>
+                            <li>
+                                <button class="dropdown-item" type="button" id="deletePost" data-bs-toggle="modal" data-bs-target="#deleteListing" data-id="${listings.id}">Delete</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
               </div>
               <div class="card-body">
                   <div class="d-flex justify-content-between">
@@ -71,8 +87,8 @@ export function viewProfileListing(listings) {
                   </div>
               </div>
               <div class="card-footer mb-2">
-                  <div class="d-flex justify-content-between align-items-center">
-                      <a type="button" class="btn btn-outline-light me-2"
+                  <div class="d-flex justify-content-between align-items-center" style="flex-wrap: wrap;">
+                      <a type="button" class="btn btn-outline-light mb-2"
                       href="/NOxB/auction/item/?id=${listings.id}">View</a>   
                       <small class="fs-6 text fw-bold endDate">Ends ${listings.endsAt}</small>
                   </div>
