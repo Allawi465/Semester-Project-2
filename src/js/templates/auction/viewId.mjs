@@ -6,8 +6,8 @@
 export function viewTemplate(listings) {
   return `  
     <div class="col mx-4">
-        <div class="card shadow-sm bg-dark text-white">
-            <div class="card-header bg-dark text-white d-flex justify-content-between" style="border: none;">
+        <div class="card shadow-sm bg-dark text-white" style="border: none;">
+            <div class="card-header bg-dark text-white d-flex justify-content-between" style="flex-wrap: wrap;">
                 <div class="d-flex flex-row align-items-center">
                     <div class="rounded-circle overflow-hidden d-flex justify-content-center align-item-center me-2">
                         <img src="${listings.seller.avatar}"  width="50" height="50" alt=""
@@ -44,7 +44,7 @@ export function viewTemplate(listings) {
                 </div>  
                 </div>
                 <div style="min-height: 50px;"> 
-                    <p class="card-text">${listings.description}</p>
+                    <p class="card-description">${listings.description}</p>
                 </div>
                 <div> 
                     <div class="text-center mt-5">
@@ -58,7 +58,7 @@ export function viewTemplate(listings) {
                     
             </div>
             <div class="card-footer mb-2" style="border: none;">
-                <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-between align-items-center" style="flex-wrap: wrap;">
                     <div>
                         <button type="button" id="bidOn" class="btn text-uppercase me-2"
                             data-bs-toggle="modal" data-id="${listings.id}" data-bs-target="#loginModel">Bid now
