@@ -29,6 +29,7 @@ export default function router() {
       listener.addItemToAuction();
       listener.viewId();
       listener.makeBid();
+      listener.joinUsBtn();
       break;
     case '/NOxB/profile/':
       listener.authValidation();
@@ -37,6 +38,8 @@ export default function router() {
       listener.changeAvatar();
       listener.addItemToAuction();
       listener.viewProfile();
+      listener.deleteAListing();
+      listener.editAListings();
       break;
     default:
       location.href = '/NOxB/home/';
