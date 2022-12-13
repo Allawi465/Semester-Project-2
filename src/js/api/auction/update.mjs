@@ -1,7 +1,7 @@
 import { API_SOCIAL_URL } from '../constants.mjs';
 import { fetchWToken } from '../headers.mjs';
 
-const path = '/listings';
+const path = '/listings/';
 const method = 'PUT';
 
 /**
@@ -10,11 +10,12 @@ const method = 'PUT';
  *  @param {fetchWToken} token from a function
  */
 
-export async function update(id) {
+export async function update(postData) {
   try {
-    const deletingPostUrl = `${API_SOCIAL_URL}${path}${id}`;
-    const response = await fetchWToken(deletingPostUrl, {
+    const updateUrl = `${API_SOCIAL_URL}${path}${postData.id}`;
+    const response = await fetchWToken(updateUrl, {
       method,
+      body: JSON.stringify(postData),
     });
     location.reload();
     return await response.json();
