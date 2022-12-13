@@ -20,7 +20,11 @@
 }
 
 .card-title {
-  min-height: 100px;
+  min-height: 50px;
+}
+
+.card-description {
+  width: 90%;
 }
 
 .bids-list-number {
@@ -61,6 +65,10 @@ footer {
   max-height: 70px;
 }
 
+.card-header {
+  border: none;
+}
+
 .created {
   position: relative;
   top: 10px;
@@ -87,6 +95,11 @@ footer {
   color: black;
 }
 
+.posted-option {
+  cursor: pointer;
+  margin-top: 9px;
+}
+
 @include media-breakpoint-down(sm) {
   .bid-ol {
     flex-wrap: wrap;
@@ -99,5 +112,9 @@ footer {
   .carousel-control-prev,
   .carousel-control-next {
     width: 15%;
+  }
+
+  .card-description {
+    width: unset;
   }
 }
