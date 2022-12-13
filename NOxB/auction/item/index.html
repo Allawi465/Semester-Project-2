@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NOxB | item</title>
+    <title>NOxB | Listing</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="/dist/css/style.css" />
@@ -51,8 +51,19 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav" style="margin: auto">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="/NOxB/home/"
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/NOxB/home/"
                   >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link profile-link"
+                  href="/NOxB/profile/"
+                  style="display: none"
+                  >Profile</a
                 >
               </li>
               <li class="nav-item">
@@ -85,10 +96,7 @@
                     class="navbarImages rounded-circle me-1"
                   />
                   <strong class="navbarName text-capitalize me-1"></strong>
-                  <span
-                    class="navbarCredit badge bg-white"
-                    style="color: black"
-                  ></span>
+                  <span class="navbarCredit badge bg-white text-black"></span>
                 </a>
                 <ul class="dropdown-menu text-small shadow">
                   <li>
@@ -108,9 +116,6 @@
                       data-bs-target="#settings"
                       >Settings</a
                     >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="/NOxB/profile/">Profile</a>
                   </li>
                   <li>
                     <hr class="dropdown-divider" />
@@ -438,13 +443,13 @@
                 <div class="cloneImg d-flex flex-row"></div>
                 <div class="form-floating mb-3">
                   <input
-                    type="Tags"
-                    name="Tags"
-                    class="form-control rounded-3"
+                    type="tags"
+                    name="tags"
+                    class="form-control rounded-3 tags"
                     id="floatingTags"
                     placeholder="Tags"
                   />
-                  <label for="floatingTags">Tags</label>
+                  <label for="floatingTags">Tags separate by comma</label>
                 </div>
                 <div class="form-floating mb-3">
                   <input

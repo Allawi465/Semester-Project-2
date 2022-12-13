@@ -60,6 +60,14 @@
               </li>
               <li class="nav-item">
                 <a
+                  class="nav-link profile-link"
+                  href="/NOxB/profile/"
+                  style="display: none"
+                  >Profile</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
                   class="nav-link"
                   type="button"
                   style="font-weight: bold"
@@ -108,9 +116,6 @@
                       data-bs-target="#settings"
                       >Settings</a
                     >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="/NOxB/profile/">Profile</a>
                   </li>
                   <li>
                     <hr class="dropdown-divider" />
@@ -352,7 +357,6 @@
                 type="button"
                 data-bs-toggle="modal"
                 data-bs-target="#registerModel"
-                style="display: none"
               >
                 Join Us
               </button>
@@ -470,13 +474,13 @@
                 <div class="cloneImg d-flex flex-row"></div>
                 <div class="form-floating mb-3">
                   <input
-                    type="Tags"
-                    name="Tags"
-                    class="form-control rounded-3"
+                    type="tags"
+                    name="tags"
+                    class="form-control rounded-3 tags"
                     id="floatingTags"
                     placeholder="Tags"
                   />
-                  <label for="floatingTags">Tags</label>
+                  <label for="floatingTags">Tags separate by comma</label>
                 </div>
                 <div class="form-floating mb-3">
                   <input
