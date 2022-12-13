@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NOxB | Home</title>
+    <title>NOxB | Profile</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="/dist/css/style.css" />
@@ -403,7 +403,7 @@
                 aria-expanded="false"
                 aria-controls="panelsStayOpen-collapseTwo"
               >
-                Bets
+                Bids
               </button>
             </h2>
             <div
@@ -538,13 +538,13 @@
                 <div class="cloneImg d-flex flex-row"></div>
                 <div class="form-floating mb-3">
                   <input
-                    type="Tags"
-                    name="Tags"
-                    class="form-control rounded-3"
+                    type="tags"
+                    name="tags"
+                    class="form-control rounded-3 tags"
                     id="floatingTags"
                     placeholder="Tags"
                   />
-                  <label for="floatingTags">Tags</label>
+                  <label for="floatingTags">Tags separate by comma</label>
                 </div>
                 <div class="form-floating mb-3">
                   <input
@@ -568,6 +568,135 @@
                   deadline date take off.</small
                 >
               </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-dark close"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="modal fade"
+        id="updateListing"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                Update the listing
+              </h1>
+              <button
+                type="button"
+                class="btn-close close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="error-create"></div>
+              <form id="UpdateListing">
+                <div class="form-floating mb-3">
+                  <input
+                    type="title"
+                    name="title"
+                    class="form-control rounded-3"
+                    id="floatingInput"
+                    placeholder="item"
+                    required
+                  />
+                  <label for="floatingInput">Title</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <textarea
+                    class="form-control rounded-3"
+                    id="floatingTextarea"
+                    name="description"
+                    rows="3"
+                    required
+                  ></textarea>
+                  <label for="floatingTextare">Description</label>
+                </div>
+                <div class="cloneImg d-flex flex-row"></div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="Tags"
+                    name="tags"
+                    class="form-control rounded-3"
+                    id="floatingTags"
+                    placeholder="Tags"
+                  />
+                  <label for="floatingTags">Tags separate by comma</label>
+                </div>
+                <button
+                  class="w-100 mb-2 btn btn-lg rounded-3 btn-outline-success"
+                  type="submit"
+                >
+                  Update
+                </button>
+                <small class="text-muted"
+                  >Your item will be sold to the highest bidder when the
+                  deadline date take off.</small
+                >
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-dark close"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="modal fade"
+        id="deleteListing"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                Delete the listing
+              </h1>
+              <button
+                type="button"
+                class="btn-close close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="error-create"></div>
+              <small class="text-muted"
+                >Are you sure you want to delete this Listings?</small
+              >
+              <button
+                class="w-100 mb-2 btn btn-lg rounded-3 btn-outline-danger my-2 deleteButton"
+                type="submit"
+              >
+                Delete
+              </button>
             </div>
             <div class="modal-footer">
               <button
