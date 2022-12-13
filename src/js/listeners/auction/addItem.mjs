@@ -27,6 +27,8 @@ export function addItemToAuction() {
       const item = Object.fromEntries(formData.entries());
       urls.push(item.media);
       item.media = urls;
+      let newTags = item.tags.replace(/\s+/g, '').split(',');
+      item.tags = newTags;
       galleryNumber.innerHTML = '';
       cloneGallery.innerHTML = '';
       creatingListing(item);
