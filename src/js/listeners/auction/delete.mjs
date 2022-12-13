@@ -8,7 +8,7 @@ import { deleting } from '../../api/auction/delete.mjs';
  */
 
 export function deleteAListing() {
-  containerViewLists.addEventListener('click', () => {
+  containerViewLists.addEventListener('click', (e) => {
     const deleteBtn = e.target.id === 'deletePost';
     let id = e.target.dataset.id;
     const deleteSureBtn = document.querySelector('.deleteButton');
