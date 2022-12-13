@@ -6,8 +6,8 @@ export const errorMessage = document.querySelector('.message');
 const path = '/listings';
 
 /**
- * view posts content with api get method
- * @param {get} get posts content
+ * view listing content with api get method
+ * @param {get} get listing content
  * @param {fetchWToken} token from a function
  */
 
