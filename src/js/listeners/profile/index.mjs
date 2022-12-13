@@ -2,12 +2,15 @@ import {
   getProfile,
   profileListings,
   profileBids,
-} from '../../api/profiles/index.mjs';
+} from '../../api/profile/index.mjs';
 import * as templates from '../../templates/index.mjs';
 
-import { containerViewLists } from '../auction/view.mjs';
-
-import { spinner } from '../auction/view.mjs';
+import {
+  optionsWithTime,
+  options,
+  containerViewLists,
+  spinner,
+} from '../index.mjs';
 
 const container = document.querySelector('.profile-card');
 const containerBets = document.querySelector('.renderBets');
@@ -18,16 +21,6 @@ export async function viewProfile() {
   const listings = await profileListings();
 
   const bets = await profileBids();
-
-  const options = { year: 'numeric', month: 'long', day: 'numeric' };
-
-  const optionsWithTime = {
-    year: 'numeric',
-    month: 'numeric',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
-  };
 
   const sorterDate = listings.map((listing) => {
     return {
