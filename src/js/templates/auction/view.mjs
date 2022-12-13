@@ -6,9 +6,9 @@
 export function viewTemplate(listings) {
   return ` 
     <div class="col my-2">
-        <div class="card shadow-sm bg-dark text-white shadow-lg p-3 mb-5 rounded" style="border: none;">
-            <div class="card-header d-flex justify-content-between" style="border: none;">
-                <div class="d-flex flex-row align-items-center">
+        <div class="card shadow-sm bg-dark text-white shadow-lg p-3 mb-5 rounded me-3" style="border: none;">
+            <div class="card-header d-flex justify-content-between" style="flex-wrap: wrap;">
+                <div class="d-flex flex-row align-items-center" >
                     <div
                         class="rounded-circle overflow-hidden d-flex justify-content-center align-item-center me-2">
                         <img src="${listings.seller.avatar}"  width="50" height="50" alt=""
@@ -33,8 +33,8 @@ export function viewTemplate(listings) {
                 </div>
             </div>
             <div class="card-footer mb-2">
-                <div class="d-flex justify-content-between align-items-center">
-                    <a type="button" class="btn btn-outline-light me-2"
+                <div class="d-flex justify-content-between align-items-center" style="flex-wrap: wrap;">
+                    <a type="button" class="btn btn-outline-light mb-2"
                     href="/NOxB/auction/item/?id=${listings.id}">View</a>   
                     <small class="fs-6 text fw-bold">Ends ${listings.endsAt}</small>
                 </div>
