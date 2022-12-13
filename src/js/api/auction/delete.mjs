@@ -1,7 +1,7 @@
 import { API_SOCIAL_URL } from '../constants.mjs';
 import { fetchWToken } from '../headers.mjs';
 
-const path = '/listings';
+const path = '/listings/';
 const method = 'DELETE';
 
 /**
@@ -12,8 +12,8 @@ const method = 'DELETE';
 
 export async function deleting(id) {
   try {
-    const deletingPostUrl = `${API_SOCIAL_URL}${path}${id}`;
-    const response = await fetchWToken(deletingPostUrl, {
+    const deletingUrl = `${API_SOCIAL_URL}${path}${id}`;
+    const response = await fetchWToken(deletingUrl, {
       method,
     });
     location.reload();
