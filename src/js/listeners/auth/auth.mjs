@@ -3,7 +3,6 @@ import * as dropdown from '../../templates/navbar.mjs';
 const profileDropdown = document.getElementById('profileDropdown');
 
 export const signInBtn = document.getElementById('signInBtn');
-
 const footer = document.querySelector('footer');
 
 export function authValidation() {
@@ -19,11 +18,9 @@ export function authValidation() {
 }
 
 export function joinUsBtn() {
-  const registerBtn = document.querySelector('.join-us-btn');
+  const profileLink = document.querySelector('.profile-link');
   const token = localStorage.load('token');
   if (token) {
-    registerBtn.style.display = 'none';
-  } else {
-    registerBtn.style.display = 'block';
+    profileLink.style.display = 'block';
   }
 }
