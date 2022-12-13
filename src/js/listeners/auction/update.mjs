@@ -11,7 +11,6 @@ export function editAListings() {
     if (editBtn) {
       if (form) {
         const { tags, ...listing } = await listingsById(id);
-        console.log(tags);
         form.title.value = listing.title;
         form.tags.value = tags;
         form.description.value = listing.description;
