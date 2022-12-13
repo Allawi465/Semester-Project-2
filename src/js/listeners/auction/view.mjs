@@ -1,6 +1,7 @@
 import { viewingAll } from '../../api/auction/view.mjs';
 import * as localStorage from '../../storage/index.mjs';
 import * as templates from '../../templates/index.mjs';
+import { options, optionsWithTime } from './viewById.mjs';
 export const spinner = document.getElementById('spinner');
 
 export const containerViewLists = document.querySelector('.renderAuction');
@@ -14,15 +15,6 @@ export const containerViewLists = document.querySelector('.renderAuction');
 
 export async function viewListings() {
   const listings = await viewingAll();
-
-  const options = { month: 'long', day: 'numeric' };
-  const optionsWithTime = {
-    year: 'numeric',
-    month: 'numeric',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
-  };
 
   const sorterDate = listings.map((listing) => {
     return {
