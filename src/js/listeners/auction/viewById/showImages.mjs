@@ -1,3 +1,8 @@
+/**
+ * show images with carousel if more one
+ * @param {images} forEach from listing
+ */
+
 export function showImages(arg) {
   const sliderBtnLeft = document.querySelector('.carousel-control-prev');
   const sliderBtnRight = document.querySelector('.carousel-control-next');

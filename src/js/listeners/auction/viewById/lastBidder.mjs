@@ -1,8 +1,13 @@
 import { optionsWithTime } from '../viewById.mjs';
 
+/**
+ * view last bidder and bidders
+ * @param {lastBidder} create bid list
+ * @param {currentPrice} view highest bid
+ */
+
 export function lastBidder(arg) {
   const lastBidder = document.querySelector('.bidList');
-  console.log(lastBidder);
   const currentPrice = document.querySelector('.current-price');
   if (arg.length > 0) {
     bidInput.setAttribute('min', arg[0].amount + 1);
@@ -14,8 +19,8 @@ export function lastBidder(arg) {
       );
       lastBidder.innerHTML += `<li class="list-group-item bid-ol d-flex justify-content-between align-items-start my-1 text-white bg-dark" style="margin: 5px;">
                                   <div class="ms-2 me-auto">
-                                    <div><span class="fw-bold text-capitalize">${bids.bidderName}</span><span> bids</span></div>
-                                  <span class="text-muted">${created}</span>
+                                    <div><span class="fw-bold text-capitalize">${bids.bidderName}</span><span> bid </span></div>
+                                  <span style="color: #bac8d5;">${created}</span>
                                   </div>
                                   <span>${bids.amount} ${dollar}</span>
                                 </li>`;
@@ -33,6 +38,8 @@ export function lastBidder(arg) {
     currentPrice.innerHTML = `0 ${dollar}`;
   }
 }
+
+// dollar sign svg
 
 export const dollar = `
 <svg xmlns="http://www.w3.org/2000/svg"
