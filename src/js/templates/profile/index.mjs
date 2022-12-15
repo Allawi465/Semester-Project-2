@@ -1,5 +1,10 @@
 import { load } from '../../storage/index.mjs';
 
+/**
+ * view profile info html as return from the function
+ * @param {return} returning html post div
+ */
+
 export function TemplateProfile(profile) {
   return `
     <div class="card text-white bg-dark">
@@ -9,8 +14,8 @@ export function TemplateProfile(profile) {
                     height="100" alt="profil images">
             </div>
             <div class="text-center mt-2">
-                <h2 class="text-capitalize">@${profile.name}</h2>
-                <span class="badge bg-white text-black mb-0">
+                <h2 class="text-capitalize">${profile.name}</h2>
+                <span class="badge bg-white fs-5 text-black mb-0">
                     <svg xmlns="http://www.w3.org/2000/svg"
                         width="16" height="16" class="mb-1 me-1" fill="currentColor" class="bi bi-coin" viewBox="0 0 16 16">
                         <path
@@ -21,15 +26,15 @@ export function TemplateProfile(profile) {
                     </svg>${profile.credits}
                 </span>
                 <div class="d-flex flex-row profil-info mt-3">
-                    <div class="col">
+                    <div class="col fs-6">
                         <p class="mb-1">${profile._count.listings}</p>
                         <strong>Listings</strong>
                     </div>
-                    <div class="col">
+                    <div class="col col fs-6">
                         <p class="mb-1">${profile.wins.length}</p>
                         <strong>Bets</strong>
                     </div>
-                    <div class="col">
+                    <div class="col col fs-6">
                         <p class="mb-1">${profile.wins.length}</p>
                         <strong>wins</strong>
                     </div>
@@ -39,9 +44,19 @@ export function TemplateProfile(profile) {
     </div>`;
 }
 
+/**
+ * Template to render html listings with a function
+ * @param {TemplateProfile} getting the html return from a function
+ */
+
 export function profileTemplate(profile, parent) {
   parent.innerHTML += TemplateProfile(profile);
 }
+
+/**
+ * view profile listings html as return from the function
+ * @param {return} returning html post div
+ */
 
 export function viewProfileListing(listings) {
   const { avatar, name } = load('profile');
@@ -58,7 +73,7 @@ export function viewProfileListing(listings) {
                       <span class="font-weight-bol text-capitalize">${name}</span>
                   </div>
                   <div class="d-flex" style="flex-wrap: wrap;"> 
-                    <p class="card-tex me-2"><small class="text-muted created">${listings.created}</small></p>
+                    <p class="card-tex me-2"><small class="created" style="color: #bac8d5;">${listings.created}</small></p>
                     <div class="dropdown dropstart posted-option">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
                             fill="currentColor" class="bi bi-three-dots-vertical"
@@ -81,7 +96,7 @@ export function viewProfileListing(listings) {
                           <h5 class="me-2">${listings.title}</h5>
                       </div>
                       <div class="d-flex">
-                          <p class="badge text-uppercase bg-warning text-black me-2 bids-list-badge" style="max-height: 25px;"><span class="bids-list-text">BIDS</span></p>
+                          <p class="badge text-uppercase bg-warning mb-2 me-1 bids-list-badge"><span class="bids-list-text" style="color: #212529;">BIDS</span></p>
                           <span class=" fw-bolder">${listings._count.bids}</span>
                       </div>
                   </div>
@@ -90,12 +105,29 @@ export function viewProfileListing(listings) {
                   <div class="d-flex justify-content-between align-items-center" style="flex-wrap: wrap;">
                       <a type="button" class="btn btn-outline-light mb-2"
                       href="/NOxB/auction/item/?id=${listings.id}">View</a>   
-                      <small class="fs-6 text fw-bold text-muted endDate">Ends ${listings.endsAt}</small>
+                      <small class="fs-6 text fw-bold endDate" style="color: #bac8d5;">Ends ${listings.endsAt}</small>
                   </div>
               </div>
           </div>
         </div>`;
 }
+
+/**
+ * Template to render html listings with forEach
+ * @param {viewProfileListing} getting the html return from a function
+ * @param {forEach} render html posts with forEach
+ */
+
+export function renderListings(listings, parent) {
+  listings.forEach((listings) => {
+    parent.innerHTML += viewProfileListing(listings);
+  });
+}
+
+/**
+ * view profile bids html as return from the function
+ * @param {return} returning html post div
+ */
 
 export function viewProfileBets(listings) {
   const { avatar, name } = load('profile');
@@ -111,7 +143,7 @@ export function viewProfileBets(listings) {
                       </div>
                       <span class="font-weight-bol text-capitalize">${name}</span>
                   </div>
-                  <p class="card-text"><small class="text-muted created">${listings.created}</small></p>
+                  <p class="card-text"><small class="created" style="color: #bac8d5;">${listings.created}</small></p>
               </div>
               <div class="card-body">
                   <div class="d-flex justify-content-between">
@@ -135,18 +167,6 @@ export function viewProfileBets(listings) {
               </div>
           </div>
         </div>`;
-}
-
-/**
- * Template to render html listings with forEach
- * @param {viewProfileListing} getting the html return from a function
- * @param {forEach} render html posts with forEach
- */
-
-export function renderListings(listings, parent) {
-  listings.forEach((listings) => {
-    parent.innerHTML += viewProfileListing(listings);
-  });
 }
 
 /**
