@@ -1,7 +1,7 @@
 import { API_SOCIAL_URL } from '../constants.mjs';
 import { fetchWToken } from '../headers.mjs';
-
-const message = document.querySelector('.error-bid');
+import { hideErrorBid } from '../../listeners/helpers/clearMessage.mjs';
+export const messageForBid = document.querySelector('.error-bid');
 const closeBtn = document.querySelectorAll('.close');
 
 const queryStringPostId = document.location.search;
@@ -10,6 +10,13 @@ const id = parameters.get('id');
 
 const path = `/listings/${id}/bids`;
 const method = 'POST';
+
+/**
+ * send bid to listing with api post method
+ * @param {view} view listings
+ * @param {amount} form data to bid to listings
+ *  @param {fetchWToken} token from a function
+ */
 
 export async function MakeABid(amount) {
   try {
@@ -29,16 +36,14 @@ export async function MakeABid(amount) {
       location.reload();
     }
   } catch (error) {
-    message.innerHTML = `<p class="text-center fw-semibold error"> "You do not have enough balance to bid this amount"</p>`;
+    messageForBid.innerHTML = `<p class="text-center fw-semibold error"> "You do not have enough balance to bid this amount"</p>`;
   }
 }
 
-closeBtn.forEach((close) => [
-  close.addEventListener('click', hideErrorMessage),
-]);
+/**
+ * close model clear message
+ *  @param {button} close model
+ *  @param {hideErrorBid} clears message
+ */
 
-function hideErrorMessage() {
-  if (message) {
-    message.innerHTML = '';
-  }
-}
+closeBtn.forEach((close) => [close.addEventListener('click', hideErrorBid)]);
