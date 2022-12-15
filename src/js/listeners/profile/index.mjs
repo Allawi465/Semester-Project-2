@@ -22,6 +22,8 @@ export async function viewProfile() {
 
   const bets = await profileBids();
 
+  console.log(meProfile);
+
   const sorterDate = listings.map((listing) => {
     return {
       ...listing,
