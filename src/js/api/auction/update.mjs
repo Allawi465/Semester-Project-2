@@ -1,13 +1,17 @@
 import { API_SOCIAL_URL } from '../constants.mjs';
 import { fetchWToken } from '../headers.mjs';
+import { hideErrorUpdate } from '../../listeners/helpers/clearMessage.mjs';
+export const errorUpdateMessage = document.querySelector('.error-update');
+const closeBtn = document.querySelectorAll('.close');
 
 const path = '/listings/';
 const method = 'PUT';
 
 /**
- * deleting content with api DELETE method
- * @param {deleting} DELETE content api by id
- *  @param {fetchWToken} token from a function
+ * Update content by id with api PUT method
+ * @param {update} update content by id
+ * @param {fetchWToken} token from a function
+ * @param {postData} form data to update the content
  */
 
 export async function update(postData) {
@@ -20,6 +24,14 @@ export async function update(postData) {
     location.reload();
     return await response.json();
   } catch (error) {
-    /*   message.innerHTML = `<p>we are aware of the issues with accessing NewDay. our team is actively working on it</p>`; */
+    errorUpdateMessage.innerHTML = `<p>we are aware of the issues, our team is actively working on it.</p>`;
   }
 }
+
+/**
+ * close model clear message
+ *  @param {button} close model
+ *  @param {hideErrorUpdate} clears message
+ */
+
+closeBtn.forEach((close) => [close.addEventListener('click', hideErrorUpdate)]);
