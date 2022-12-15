@@ -34,6 +34,7 @@ export async function MakeABid(amount) {
 
     if (data.status !== 200) {
       location.reload();
+      return true;
     }
   } catch (error) {
     messageForBid.innerHTML = `<p class="text-center fw-semibold error"> "You do not have enough balance to bid this amount"</p>`;
