@@ -1,5 +1,4 @@
 import { viewingAll } from '../../api/auction/view.mjs';
-import * as localStorage from '../../storage/index.mjs';
 import * as templates from '../../templates/index.mjs';
 import { options, optionsWithTime } from './viewById.mjs';
 export const spinner = document.getElementById('spinner');
@@ -40,14 +39,4 @@ export async function viewListings() {
   console.log(filteredNoBids);
   spinner.style.display = 'none';
   templates.renderTemplate(filteredListings, containerViewLists);
-}
-
-export function changeModel() {
-  const bidOnBtn = document.querySelectorAll('#bidOn');
-  const token = localStorage.load('token');
-  bidOnBtn.forEach((btn) => {
-    if (token) {
-      btn.dataset.bsTarget = '#bidModel';
-    }
-  });
 }
