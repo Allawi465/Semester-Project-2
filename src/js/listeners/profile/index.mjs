@@ -15,6 +15,14 @@ import {
 const container = document.querySelector('.profile-card');
 const containerBets = document.querySelector('.renderBets');
 
+/**
+ * view profile from api call name
+ * @param {profile} getting profile by name
+ * @param {listings} getting profile listings by name
+ * @param {bets} getting profile bids by name
+ * @param {templates} render profile with templates
+ */
+
 export async function viewProfile() {
   const profile = await getProfile();
 
