@@ -1,11 +1,5 @@
 import { creatingListing } from '../../api/auction/addItem.mjs';
-
-/**
- * form to register
- * @param {user} form to register new users
- * @param {register} sending the form to api call
- */
-
+import { confirmUrl } from '../helpers/regEx.mjs';
 const closeModel = document.querySelectorAll('.close');
 const addMoreImages = document.getElementById('addMoreImage');
 const galleryNumber = document.querySelector('.gallery');
@@ -59,7 +53,7 @@ function addMoreImage() {
   }
 }
 
-function galleryImages(arg) {
+export function galleryImages(arg) {
   for (let i = 0; i < arg.length; i++) {
     cloneGallery.innerHTML += `<div class="imgContainer"><img class="imgGallery mx-2 mb-2" type="button" data-item-index="${[
       i,
@@ -100,11 +94,4 @@ function resetGallery() {
   galleryNumber.innerHTML = '';
   cloneGallery.innerHTML = '';
   addMoreImages.style.display = 'block';
-}
-
-function confirmUrl(mediaGallery) {
-  const regExEValue =
-    /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$/;
-  const confirmingMatches = regExEValue.test(mediaGallery);
-  return confirmingMatches;
 }
