@@ -1,12 +1,15 @@
 import { API_SOCIAL_URL } from '../constants.mjs';
 import { fetchWToken } from '../headers.mjs';
+export const deleteErrorMessage = document.querySelector('.error-message');
+import { hideErrorDelete } from '../../listeners/helpers/clearMessage.mjs';
+const closeBtn = document.querySelectorAll('.close');
 
 const path = '/listings/';
 const method = 'DELETE';
 
 /**
- * deleting content with api DELETE method
- * @param {deleting} DELETE content api by id
+ * deleting listing with api DELETE method
+ * @param {id} DELETE content api by id
  *  @param {fetchWToken} token from a function
  */
 
@@ -19,6 +22,14 @@ export async function deleting(id) {
     location.reload();
     return await response.json();
   } catch (error) {
-    /*   message.innerHTML = `<p>we are aware of the issues with accessing NewDay. our team is actively working on it</p>`; */
+    deleteErrorMessage.innerHTML = `<p>we are aware of the issues, our team is actively working on it.</p>`;
   }
 }
+
+/**
+ * close model clear message
+ *  @param {button} close model
+ *  @param {hideErrorDelete} clears message
+ */
+
+closeBtn.forEach((close) => [close.addEventListener('click', hideErrorDelete)]);
