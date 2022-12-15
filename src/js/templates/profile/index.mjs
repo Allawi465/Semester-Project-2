@@ -90,7 +90,7 @@ export function viewProfileListing(listings) {
                   <div class="d-flex justify-content-between align-items-center" style="flex-wrap: wrap;">
                       <a type="button" class="btn btn-outline-light mb-2"
                       href="/NOxB/auction/item/?id=${listings.id}">View</a>   
-                      <small class="fs-6 text fw-bold endDate">Ends ${listings.endsAt}</small>
+                      <small class="fs-6 text fw-bold text-muted endDate">Ends ${listings.endsAt}</small>
                   </div>
               </div>
           </div>

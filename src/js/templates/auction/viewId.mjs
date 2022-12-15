@@ -64,7 +64,7 @@ export function viewTemplate(listings) {
                             data-bs-toggle="modal" data-id="${listings.id}" data-bs-target="#loginModel">Bid now
                         </button>
                     </div>
-                    <small class="fs-6 text fw-bold endTime"></small>
+                    <small class="fs-6 text fw-bold text-muted endTime"></small>
                 </div>
             </div>
         </div>

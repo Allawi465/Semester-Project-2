@@ -18,12 +18,12 @@ export function viewTemplate(listings) {
                 </div>
                 <p class="card-text"><small class="text-muted created">${listings.created}</small></p>
             </div>
-            <div class="img-container my-2"> 
-                <img src="${listings.media}" onerror="this.src='/images/default-upload-min.jpg' "alt="${listings.title}">
+            <div class="img-container my-2 mx-2"> 
+                <img src="${listings.media}" onerror="this.src='/images/default-upload-min.jpg' "alt="">
             </div>
             <div class="card-body">
                 <div class="d-flex justify-content-between">
-                    <div class="card-title"> 
+                    <div class="card-title" style="max-width: 200px;    "> 
                         <h5 class="card-title me-2">${listings.title}</h5>
                     </div>
                     <div class="d-flex">
@@ -36,7 +36,7 @@ export function viewTemplate(listings) {
                 <div class="d-flex justify-content-between align-items-center" style="flex-wrap: wrap;">
                     <a type="button" class="btn btn-outline-light mb-2"
                     href="/NOxB/auction/item/?id=${listings.id}">View</a>   
-                    <small class="fs-6 text fw-bold">Ends ${listings.endsAt}</small>
+                    <small class="fs-6 text fw-bold text-muted">Ends ${listings.endsAt}</small>
                 </div>
             </div>
         </div>
