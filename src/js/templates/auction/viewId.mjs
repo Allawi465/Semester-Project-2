@@ -1,5 +1,5 @@
 /**
- * making html as return from the function
+ * view by id listings html as return from the function
  * @param {return} returning html post div
  */
 
@@ -15,7 +15,7 @@ export function viewTemplate(listings) {
                     </div>
                     <span class="font-weight-bol text-capitalize">${listings.seller.name}</span>
                 </div>
-               <p class="card-text"><small class="text-muted created"></small></p>
+               <p class="card-text"><small class="created fs-6" style="color: #bac8d5;"></small></p>
             </div>
             <div class="d-flex justify-content-between mt-2 mb-2 mx-3 tags">
                 <strong class="mb-2 text-capitalize">Tags</strong>
@@ -40,16 +40,16 @@ export function viewTemplate(listings) {
                 <div class="d-flex justify-content-between" style="min-height: 50px;"> 
                     <h5 class="me-2">${listings.title}</h5>
                     <div>
-                    <span class="fw-bolder current-price"></span>
+                    <span class="fw-bolder fs-5 text current-price" style="color: #2ac77e;"></span>
                 </div>  
                 </div>
                 <div style="min-height: 50px;"> 
-                    <p class="card-description">${listings.description}</p>
+                    <p class="card-text card-description">${listings.description}</p>
                 </div>
                 <div> 
                     <div class="text-center mt-5">
-                        <p class="badge bg-warning text-uppercase text-black">Bids</p>
-                        <span class="fw-bolder bids-list-number">${listings._count.bids}</span>
+                        <p class="badge bg-warning text-uppercase fs-6 text" style="color: #212529;">Bids</p>
+                        <span class="fs-5 text bids-list-number">${listings._count.bids}</span>
                     </div>   
                     <ol class="list-group list-group-numbered bidList mb-4 bg-light">
                         
@@ -64,7 +64,7 @@ export function viewTemplate(listings) {
                             data-bs-toggle="modal" data-id="${listings.id}" data-bs-target="#loginModel">Bid now
                         </button>
                     </div>
-                    <small class="fs-6 text fw-bold text-muted endTime"></small>
+                    <small class="fs-6 fw-bold endTime" style="color: #bac8d5;"></small>
                 </div>
             </div>
         </div>
