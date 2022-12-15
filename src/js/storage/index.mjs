@@ -9,7 +9,7 @@ export function save(key, value) {
 }
 
 /**
- * load the value from saveToStorage
+ * load the value from save
  * @param {value} load the value
  * @param {return} returning null if the value do not exists
  */
@@ -25,7 +25,7 @@ export function load(key) {
 
 /**
  * deleting the key from local Storage
- * @param {key} removeItem the key
+ * @param {key} remove the key
  */
 
 export function remove(key) {
