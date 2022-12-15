@@ -1,3 +1,8 @@
+/**
+ * show tags from listing
+ * @param {tag} forEach from listing
+ */
+
 export function showTag(arg) {
   arg.forEach((tag) => {
     if (tag.length >= 1) {

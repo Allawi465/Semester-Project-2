@@ -1,6 +1,13 @@
 import * as localStorage from '../../../storage/index.mjs';
 import { optionsWithTime } from '../viewById.mjs';
 
+/**
+ * validate date if is in the past
+ * @param {thePast} todays date
+ * @param {listings} endsAt date
+ * @param {name} if listing author === name it hide bid button
+ */
+
 export function validateDate(arg, author) {
   const bidOnBtn = document.querySelector('#bidOn');
   const endTime = document.querySelector('.endTime');
@@ -20,6 +27,11 @@ export function validateDate(arg, author) {
     NoBidsTexts.innerHTML = 'No bids yet';
   }
 }
+
+/**
+ * check if a listings date id id the past
+ * @param {today} todays date
+ */
 
 function thePast(date) {
   const today = new Date();

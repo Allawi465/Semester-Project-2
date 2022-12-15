@@ -5,12 +5,21 @@ const addMoreImages = document.getElementById('addMoreImage');
 const galleryNumber = document.querySelector('.gallery');
 const mediaGallery = document.getElementById('floatingImage');
 const cloneGallery = document.querySelector('.cloneImg');
+// empty url array
 let urls = [];
+// counter to count urls gallery
 let counter = 0;
+
+/**
+ * Creating a listing with a form
+ * @param {formData} using new FormData to get all inputs value
+ * @param {creatingListing} sending the form to the api cal
+ */
 
 export function addItemToAuction() {
   const form = document.getElementById('itemToAuction');
 
+  // add images to gallery button
   addMoreImages.addEventListener('click', addMoreImage);
 
   if (form) {
@@ -32,6 +41,14 @@ export function addItemToAuction() {
   }
 }
 
+/**
+ * add images to gallery
+ * @param {confirmUrl} if input value is a url
+ * @param {counter} count images url when click
+ * @param {urls} push mediaGallery value to urls array
+ * @param {galleryImages} display clone images when added
+ */
+
 function addMoreImage() {
   if (confirmUrl(mediaGallery.value)) {
     counter++;
@@ -46,12 +63,19 @@ function addMoreImage() {
 
     if (counter === 5) {
       addMoreImages.style.display = 'none';
-      galleryNumber.innerHTML = 'Max (6)';
+      galleryNumber.innerHTML = 'max (6)';
     }
 
     galleryImages(urls);
   }
 }
+
+/**
+ * display gallery and remove images onclick
+ * @param {cloneImg} display foreach images when added
+ * @param {counter} count down images url when removing it
+ * @param {cloneImg} clone images onclick remove
+ */
 
 export function galleryImages(arg) {
   for (let i = 0; i < arg.length; i++) {
@@ -86,7 +110,21 @@ export function galleryImages(arg) {
   }
 }
 
+/**
+ * close model addEventListener
+ * @param {resetGallery} reset gallery array
+ */
+
 closeModel.forEach((close) => [close.addEventListener('click', resetGallery)]);
+
+/**
+ * reset gallery array and counter
+ * @param {urls} reset urls array
+ * @param {counter} reset counter to 0
+ * @param {galleryNumber} reset value to empty string
+ * @param {cloneGallery} reset value to empty string
+ * @param {addMoreImages} show the add more images button
+ */
 
 function resetGallery() {
   urls = [];

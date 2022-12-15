@@ -18,9 +18,15 @@ export const optionsWithTime = {
 };
 
 /**
- * deleting a post by id
- * @param {containerForPosts} using the card posts to get the id from
- * @param {deleting} sending to api call
+ * Get a listings by id from api call
+ * @param {viewById} getting a single post by id
+ * @param {renderPostById} temples for showing the listing
+ * @param {localTime} showing listing date with new Date
+ * @param {showImages} showing listing images with carousel
+ * @param {showTag} showing listing tags
+ * @param {changeModel} change button model id
+ * @param {lastBidder} showing listing bidders
+ * @param {validateDate} validate listing endsAt date if is in the past
  */
 
 export async function viewId() {
