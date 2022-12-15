@@ -7,8 +7,8 @@ const path = '/profiles/';
 const method = 'GET';
 
 /**
- * Get profile by name with api get method
- * @param {get} get posts content
+ * get profile by name with api get method
+ * @param {get} get profile
  * @param {fetchWToken} token from a function
  */
 
@@ -27,6 +27,12 @@ export async function getProfile() {
   }
 }
 
+/**
+ * get profile listings by name with api get method
+ * @param {listings} get profile
+ * @param {fetchWToken} token from a function
+ */
+
 export async function profileListings() {
   try {
     const { name } = localStorage.load('profile');
@@ -41,6 +47,12 @@ export async function profileListings() {
     errorMessage.innerHTML = `<p class="text-center fw-semibold">we are aware of the issues with accessing NOxB, our team is actively working on it.</p>`;
   }
 }
+
+/**
+ * get profile bids by name with api get method
+ * @param {bids} get profile
+ * @param {fetchWToken} token from a function
+ */
 
 export async function profileBids() {
   try {
