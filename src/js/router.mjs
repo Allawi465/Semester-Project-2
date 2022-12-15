@@ -19,7 +19,8 @@ export default function router() {
       listener.loginUsers();
       listener.changeAvatar();
       listener.addItemToAuction();
-      listener.joinUsBtn();
+      listener.profileNavLink();
+      listener.homeAboutUs();
       break;
     case '/NOxB/auction/item/':
       listener.authValidation();
@@ -29,7 +30,7 @@ export default function router() {
       listener.addItemToAuction();
       listener.viewId();
       listener.makeBid();
-      listener.joinUsBtn();
+      listener.profileNavLink();
       break;
     case '/NOxB/profile/':
       listener.authValidation();
