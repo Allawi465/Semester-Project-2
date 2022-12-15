@@ -29,6 +29,12 @@ export async function viewById() {
   }
 }
 
+/**
+ * view posts content with api get method
+ * @param {get} get listings content by id
+ * @param {fetchWToken} token from a function
+ */
+
 export async function listingsById(id) {
   const path = `/listings/`;
   try {
