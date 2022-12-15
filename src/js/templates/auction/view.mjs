@@ -1,5 +1,5 @@
 /**
- * making html as return from the function
+ * view listings html as return from the function
  * @param {return} returning html post div
  */
 
@@ -16,7 +16,7 @@ export function viewTemplate(listings) {
                     </div>
                     <span class="font-weight-bol text-capitalize">${listings.seller.name}</span>
                 </div>
-                <p class="card-text"><small class="text-muted created">${listings.created}</small></p>
+                <p class="card-text"><small class="created" style="color: #bac8d5;">${listings.created}</small></p>
             </div>
             <div class="img-container my-2 mx-2"> 
                 <img src="${listings.media}" onerror="this.src='/images/default-upload-min.jpg' "alt="">
@@ -27,7 +27,7 @@ export function viewTemplate(listings) {
                         <h5 class="card-title me-2">${listings.title}</h5>
                     </div>
                     <div class="d-flex">
-                        <p class="badge text-uppercase bg-warning text-black me-2 bids-list-badge" style="max-height: 25px;"><span class="bids-list-text">BIDS</span></p>
+                        <p class="badge text-uppercase bg-warning me-2 bids-list-badge" style="max-height: 25px;"><span class="bids-list-text" style="color: #212529;">BIDS</span></p>
                         <span class=" fw-bolder">${listings._count.bids}</span>
                     </div>
                 </div>
@@ -36,7 +36,7 @@ export function viewTemplate(listings) {
                 <div class="d-flex justify-content-between align-items-center" style="flex-wrap: wrap;">
                     <a type="button" class="btn btn-outline-light mb-2"
                     href="/NOxB/auction/item/?id=${listings.id}">View</a>   
-                    <small class="fs-6 text fw-bold text-muted">Ends ${listings.endsAt}</small>
+                    <small class="fs- text fw-bold" style="color: #bac8d5;">Ends ${listings.endsAt}</small>
                 </div>
             </div>
         </div>
@@ -46,7 +46,7 @@ export function viewTemplate(listings) {
 /**
  * Template to render html listings with forEach
  * @param {viewTemplate} getting the html return from a function
- * @param {forEach} render html posts with forEach
+ * @param {forEach} render viewTemplate listings with forEach
  */
 
 export function renderTemplate(listings, parent) {
