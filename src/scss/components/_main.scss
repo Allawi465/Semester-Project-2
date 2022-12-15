@@ -100,9 +100,14 @@ footer {
   margin-top: 9px;
 }
 
-/* .text-muted {
-  color: #bac8d5 !important;
-} */
+.aboutUs {
+  margin-top: 50px;
+  margin-bottom: 150px;
+}
+
+.addbtn {
+  margin-right: 50px;
+}
 
 @include media-breakpoint-down(sm) {
   .bid-ol {
@@ -113,6 +118,10 @@ footer {
     max-width: unset;
   }
 
+  .addbtn {
+    margin-right: unset;
+  }
+
   .carousel-control-prev,
   .carousel-control-next {
     width: 15%;
@@ -120,5 +129,9 @@ footer {
 
   .card-description {
     width: unset;
+  }
+
+  .aboutUs {
+    margin-top: 25px;
   }
 }
