@@ -4,7 +4,7 @@ import {
   profileBids,
 } from '../../api/profile/index.mjs';
 import * as templates from '../../templates/index.mjs';
-
+import * as localStorage from '../../storage/index.mjs';
 import {
   optionsWithTime,
   options,
@@ -16,13 +16,15 @@ const container = document.querySelector('.profile-card');
 const containerBets = document.querySelector('.renderBets');
 
 export async function viewProfile() {
-  const meProfile = await getProfile();
+  const profile = await getProfile();
+
+  const credits = profile.credits;
+
+  localStorage.save('credits', credits);
 
   const listings = await profileListings();
 
   const bets = await profileBids();
-
-  console.log(meProfile);
 
   const sorterDate = listings.map((listing) => {
     return {
@@ -53,7 +55,7 @@ export async function viewProfile() {
     containerBets.innerHTML = 'No bets yet';
   }
 
-  templates.profileTemplate(meProfile, container);
+  templates.profileTemplate(profile, container);
   templates.renderListings(sorterDate, containerViewLists);
   templates.renderBets(sorterBets, containerBets);
 }
