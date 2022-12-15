@@ -1,10 +1,12 @@
 import { API_SOCIAL_URL } from '../constants.mjs';
-const message = document.querySelector('.error');
+export const messageRegister = document.querySelector('.error');
 const closeBtn = document.querySelector('.registeR-close');
+import { hideErrorRegister } from '../../listeners/helpers/clearMessage.mjs';
 
 const signInModal = bootstrap.Modal.getOrCreateInstance(
   document.getElementById('loginModel')
 );
+
 const registerModal = bootstrap.Modal.getOrCreateInstance(
   document.getElementById('registerModel')
 );
@@ -40,14 +42,9 @@ export async function register(user) {
       registerModal.hide();
     }
   } catch (error) {
-    message.innerHTML = 'Profile already exists';
+    messageRegister.innerHTML = 'Profile already exists';
   }
 }
 
-closeBtn.addEventListener('click', hideErrorMessage);
-
-function hideErrorMessage() {
-  if (message) {
-    message.innerHTML = '';
-  }
-}
+// model close button hide error message
+closeBtn.addEventListener('click', hideErrorRegister);

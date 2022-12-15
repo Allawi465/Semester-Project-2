@@ -5,9 +5,10 @@ import * as localStorage from '../../storage/index.mjs';
 const errorMessage = document.querySelector('.errorMessage-settings');
 
 /**
- * view posts content with api get method
- * @param {get} get posts content
+ * change avatar with put method by name
+ * @param {avatar} update avatar by name
  * @param {fetchWToken} token from a function
+ * @param {settings} form data to update the avatar
  */
 
 export async function settingAvatar(settings) {

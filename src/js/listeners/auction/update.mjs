@@ -2,6 +2,13 @@ import { containerViewLists } from './view.mjs';
 import { listingsById } from '../../api/auction/viewById.mjs';
 import { update } from '../../api/auction/update.mjs';
 
+/**
+ * updating a listing by id
+ * @param {containerViewLists} using the card listing to get the id from
+ * @param {listingsById} getting the content value title, tags and description
+ * @param {formData} making new form to update the post by id
+ */
+
 export function editAListings() {
   containerViewLists.addEventListener('click', async (e) => {
     const editBtn = e.target.id === 'editPost';
