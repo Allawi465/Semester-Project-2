@@ -4,6 +4,7 @@ import { messageForBid } from '../../api/auction/bid.mjs';
 import { errorMessage } from '../../api/auction/addItem.mjs';
 import { deleteErrorMessage } from '../../api/auction/delete.mjs';
 import { errorUpdateMessage } from '../../api/auction/update.mjs';
+import { errorMessageSettings } from '../../api/settings/index.mjs';
 
 /**
  * clear error message after close model
@@ -68,5 +69,16 @@ export function hideErrorDelete() {
 export function hideErrorUpdate() {
   if (errorUpdateMessage) {
     errorUpdateMessage.innerHTML = '';
+  }
+}
+
+/**
+ * clear error message after close model
+ * @param {errorMessageSettings} clear error message
+ */
+
+export function hideErrorSettings() {
+  if (errorMessageSettings) {
+    errorMessageSettings.innerHTML = '';
   }
 }
