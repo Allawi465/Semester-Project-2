@@ -1,7 +1,7 @@
 import { API_SOCIAL_URL } from '../constants.mjs';
 import { fetchWToken } from '../headers.mjs';
-export const deleteErrorMessage = document.querySelector('.error-message');
-import { hideErrorDelete } from '../../listeners/helpers/clearMessage.mjs';
+const deleteErrorMessage = document.querySelector('.error-message');
+import { hideErrorMessage } from '../../listeners/helpers/clearMessage.mjs';
 const closeBtn = document.querySelectorAll('.close');
 
 const path = '/listings/';
@@ -29,7 +29,11 @@ export async function deleting(id) {
 /**
  * close model clear message
  *  @param {button} close model
- *  @param {hideErrorDelete} clears message
+ *  @param {messageForBid} clears message
  */
 
-closeBtn.forEach((close) => [close.addEventListener('click', hideErrorDelete)]);
+closeBtn.forEach((close) => [
+  close.addEventListener('click', () => {
+    hideErrorMessage(deleteErrorMessage);
+  }),
+]);

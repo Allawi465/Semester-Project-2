@@ -1,7 +1,7 @@
 import { API_SOCIAL_URL } from '../constants.mjs';
 import { fetchWToken } from '../headers.mjs';
-import { hideErrorUpdate } from '../../listeners/helpers/clearMessage.mjs';
-export const errorUpdateMessage = document.querySelector('.error-update');
+import { hideErrorMessage } from '../../listeners/helpers/clearMessage.mjs';
+const errorUpdateMessage = document.querySelector('.error-update');
 const closeBtn = document.querySelectorAll('.close');
 
 const path = '/listings/';
@@ -24,14 +24,18 @@ export async function update(postData) {
     location.reload();
     return await response.json();
   } catch (error) {
-    errorUpdateMessage.innerHTML = `<p>we are aware of the issues, our team is actively working on it.</p>`;
+    errorUpdateMessage.innerHTML = `<p>We are aware of the issues, our team is actively working on it.</p>`;
   }
 }
 
 /**
  * close model clear message
  *  @param {button} close model
- *  @param {hideErrorUpdate} clears message
+ *  @param {errorUpdateMessage} clears message
  */
 
-closeBtn.forEach((close) => [close.addEventListener('click', hideErrorUpdate)]);
+closeBtn.forEach((close) => [
+  close.addEventListener('click', () => {
+    hideErrorMessage(errorUpdateMessage);
+  }),
+]);

@@ -1,7 +1,7 @@
 import { API_SOCIAL_URL } from '../constants.mjs';
-export const messageRegister = document.querySelector('.error');
+const messageRegister = document.querySelector('.error');
 const closeBtn = document.querySelector('.registeR-close');
-import { hideErrorRegister } from '../../listeners/helpers/clearMessage.mjs';
+import { hideErrorMessage } from '../../listeners/helpers/clearMessage.mjs';
 
 const signInModal = bootstrap.Modal.getOrCreateInstance(
   document.getElementById('loginModel')
@@ -46,5 +46,12 @@ export async function register(user) {
   }
 }
 
-// model close button hide error message
-closeBtn.addEventListener('click', hideErrorRegister);
+/**
+ * close model clear message
+ *  @param {button} close model
+ *  @param {messageRegister} clears message
+ */
+
+closeBtn.addEventListener('click', () => {
+  hideErrorMessage(messageRegister);
+});

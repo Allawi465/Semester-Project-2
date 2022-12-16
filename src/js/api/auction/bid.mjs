@@ -1,7 +1,7 @@
 import { API_SOCIAL_URL } from '../constants.mjs';
 import { fetchWToken } from '../headers.mjs';
-import { hideErrorBid } from '../../listeners/helpers/clearMessage.mjs';
-export const messageForBid = document.querySelector('.error-bid');
+import { hideErrorMessage } from '../../listeners/helpers/clearMessage.mjs';
+const messageForBid = document.querySelector('.error-bid');
 const closeBtn = document.querySelectorAll('.close');
 
 const queryStringPostId = document.location.search;
@@ -44,7 +44,11 @@ export async function MakeABid(amount) {
 /**
  * close model clear message
  *  @param {button} close model
- *  @param {hideErrorBid} clears message
+ *  @param {messageForBid} clears message
  */
 
-closeBtn.forEach((close) => [close.addEventListener('click', hideErrorBid)]);
+closeBtn.forEach((close) => [
+  close.addEventListener('click', () => {
+    hideErrorMessage(messageForBid);
+  }),
+]);

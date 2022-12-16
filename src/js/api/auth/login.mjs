@@ -1,7 +1,7 @@
 import { API_SOCIAL_URL } from '../constants.mjs';
 import * as localStorage from '../../storage/index.mjs';
-export const message = document.querySelector('.errorMessage');
-import { hideErrorLogin } from '../../listeners/helpers/clearMessage.mjs';
+const message = document.querySelector('.errorMessage');
+import { hideErrorMessage } from '../../listeners/helpers/clearMessage.mjs';
 
 const closeBtn = document.querySelector('.btn-close');
 
@@ -42,5 +42,12 @@ export async function login(profile) {
   }
 }
 
-// model close button hide error message
-closeBtn.addEventListener('click', hideErrorLogin);
+/**
+ * close model clear message
+ *  @param {button} close model
+ *  @param {message} clears message
+ */
+
+closeBtn.addEventListener('click', () => {
+  hideErrorMessage(message);
+});
