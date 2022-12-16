@@ -7,6 +7,7 @@ import { localTime } from './viewById/localTime.mjs';
 import { showImages } from './viewById/showImages.mjs';
 import { showTag } from './viewById/showTags.mjs';
 import { changeModel } from './viewById/changeModel.mjs';
+import { visitProfilesRemoveModel } from '../profiles/buttonModel.mjs';
 export const container = document.querySelector('.singleItem');
 export const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
 export const optionsWithTime = {
@@ -55,4 +56,6 @@ export async function viewId() {
   lastBidder(reverseBids);
 
   validateDate(endsAt, authorName);
+
+  visitProfilesRemoveModel();
 }
