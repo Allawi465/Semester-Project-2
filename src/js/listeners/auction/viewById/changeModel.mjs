@@ -15,3 +15,5 @@ export function changeModel() {
     }
   });
 }
+
+/* removeAttribute */
