@@ -8,7 +8,7 @@
       name="description"
       content="This is the profile page for NOxB, Auction website"
     />
-    <title>NOxB | Profile</title>
+    <title>NOxB | Profiles</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="/dist/css/style.css" />
@@ -59,9 +59,9 @@
               </li>
               <li class="nav-item">
                 <a
-                  class="nav-link active"
+                  class="nav-link profile-link"
                   href="/NOxB/profile/"
-                  aria-current="page"
+                  style="display: none"
                   >Profile</a
                 >
               </li>
@@ -340,6 +340,15 @@
     </header>
 
     <main>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb my-4 mx-4">
+          <li class="breadcrumb-item"><a href="/NOxB/home/">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">
+            profiles / name
+          </li>
+        </ol>
+      </nav>
+
       <div
         class="message alert alert-dark my-4"
         role="alert"

@@ -19,10 +19,6 @@
   top: 2px;
 }
 
-.card-title {
-  min-height: 50px;
-}
-
 .card-description {
   width: 90%;
 }
@@ -107,6 +103,12 @@ footer {
 
 .addbtn {
   margin-right: 50px;
+}
+.card-text-listings {
+  overflow-y: scroll;
+  max-height: 50px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 @include media-breakpoint-down(sm) {
