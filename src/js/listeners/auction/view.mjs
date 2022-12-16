@@ -27,8 +27,6 @@ export async function viewListings() {
     };
   });
 
-  console.log(filteredListings);
-
   const filteredNoBids = sorterDate.filter(
     (listing) =>
       listing._count.bids === 0 && listing.seller.avatar && listing.title
@@ -39,6 +37,7 @@ export async function viewListings() {
       listing._count.bids > 0 && listing.seller.avatar && listing.title
   );
 
+  console.log(filteredListings);
   spinner.style.display = 'none';
   templates.renderTemplate(filteredNoBids, containerViewLists);
 
