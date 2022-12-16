@@ -8,14 +8,17 @@ export function viewTemplate(listings) {
     <div class="col mx-4">
         <div class="card shadow-sm bg-dark text-white" style="border: none;">
             <div class="card-header bg-dark text-white d-flex justify-content-between" style="flex-wrap: wrap;">
-                <div class="d-flex flex-row align-items-center">
-                    <div class="rounded-circle overflow-hidden d-flex justify-content-center align-item-center me-2">
-                        <img src="${listings.seller.avatar}"  width="50" height="50" alt=""
-                        class="rounded-circle profile-images-topBar">
+                <a type="button" class="link-profile text-white" data-bs-toggle="modal" data-bs-target="#loginModel" href="/NOxB/profiles/?name=${listings.seller.name}" style="text-decoration: none";> 
+                    <div class="d-flex flex-row align-items-center" >
+                        <div
+                            class="rounded-circle overflow-hidden d-flex justify-content-center align-item-center me-2">
+                            <img src="${listings.seller.avatar}"  width="50" height="50" alt=""
+                                class="rounded-circle profile-images-topBar">
+                        </div>
+                        <span class="font-weight-bol text-capitalize">${listings.seller.name}</span>
                     </div>
-                    <span class="font-weight-bol text-capitalize">${listings.seller.name}</span>
-                </div>
-               <p class="card-text"><small class="created fs-6" style="color: #bac8d5;"></small></p>
+                </a>
+            <p class="card-text"><small class="created fs-6" style="color: #bac8d5;"></small></p>
             </div>
             <div class="d-flex justify-content-between mt-2 mb-2 mx-3 tags">
                 <strong class="mb-2 text-capitalize">Tags</strong>
@@ -38,10 +41,10 @@ export function viewTemplate(listings) {
             </div>
             <div class="card-body">
                 <div class="d-flex justify-content-between" style="min-height: 50px;"> 
-                    <h5 class="me-2">${listings.title}</h5>
+                    <h5 class="card-title text-break me-2" style="max-width: 750px;">${listings.title}</h5>
                     <div>
-                    <span class="fw-bolder fs-5 text current-price" style="color: #2ac77e;"></span>
-                </div>  
+                        <span class="fw-bolder fs-5 text current-price" style="color: #2ac77e;"></span>
+                    </div>  
                 </div>
                 <div style="min-height: 50px;"> 
                     <p class="card-text card-description">${listings.description}</p>
