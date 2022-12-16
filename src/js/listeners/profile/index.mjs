@@ -4,16 +4,17 @@ import {
   profileBids,
 } from '../../api/profile/index.mjs';
 import * as templates from '../../templates/index.mjs';
-import * as localStorage from '../../storage/index.mjs';
 import {
   optionsWithTime,
   options,
   containerViewLists,
   spinner,
 } from '../index.mjs';
+import { listingsById } from '../../api/auction/viewById.mjs';
 
-const container = document.querySelector('.profile-card');
-const containerBets = document.querySelector('.renderBets');
+export const container = document.querySelector('.profile-card');
+export const containerBets = document.querySelector('.renderBets');
+export const containerWins = document.querySelector('.renderWins');
 
 /**
  * view profile from api call name
@@ -26,13 +27,42 @@ const containerBets = document.querySelector('.renderBets');
 export async function viewProfile() {
   const profile = await getProfile();
 
-  const credits = profile.credits;
+  console.log(profile);
 
-  localStorage.save('credits', credits);
+  if (profile.wins.length === 0) {
+    containerWins.innerHTML = 'No wins yet';
+  }
 
+  spinner.classList.remove('spinner-grow');
+  templates.profileTemplate(profile, container);
+  const bidLength = document.querySelector('.bids-length');
+  bidLength.innerHTML = profile.listings.length;
+  winsGetListings(profile.wins);
+}
+
+/**
+ * view profile wins with foreach
+ * @param {listingsById} get listings by id
+ */
+
+function winsGetListings(arg) {
+  arg.forEach(async (wins) => {
+    const getWinsListings = await listingsById(wins);
+    templates.profileTemplateWins(getWinsListings, containerWins);
+  });
+}
+
+/**
+ * view profile listings from api call name
+ * @param {listings} getting profile listings by name
+ * @param {bets} getting profile bids by name
+ * @param {templates} render profile with templates
+ */
+
+export async function ProfileListing() {
   const listings = await profileListings();
 
-  const bets = await profileBids();
+  console.log;
 
   const sorterDate = listings.map((listing) => {
     return {
@@ -44,6 +74,23 @@ export async function viewProfile() {
       ),
     };
   });
+
+  if (listings.length === 0) {
+    containerViewLists.innerHTML = 'No listings yet';
+  }
+
+  templates.renderListings(sorterDate, containerViewLists);
+}
+
+/**
+ * view profile bids from api call name
+ * @param {listings} getting profile listings by name
+ * @param {bets} getting profile bids by name
+ * @param {templates} render profile with templates
+ */
+
+export async function renderProfileBids() {
+  const bets = await profileBids();
 
   const sorterBets = bets.map((bet) => {
     return {
