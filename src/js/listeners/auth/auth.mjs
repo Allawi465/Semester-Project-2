@@ -52,3 +52,21 @@ export function homeAboutUs() {
     aboutUs.style.display = 'block';
   }
 }
+
+/**
+ * hide bid button if user log in to his own listings
+ * @param {token} check if token is true
+ * @param {name} check if profile is true
+ * @param {bidOnBtn} display "none" when user log in
+ */
+
+export function authHideBidBtn(author) {
+  const token = localStorage.load('token');
+  const bidOnBtn = document.querySelector('#bidOn');
+  if (token) {
+    const { name } = localStorage.load('profile');
+    if (author === name) {
+      bidOnBtn.style.display = 'none';
+    }
+  }
+}
