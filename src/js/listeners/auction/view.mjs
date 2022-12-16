@@ -2,6 +2,7 @@ import { viewingAll } from '../../api/auction/view.mjs';
 import * as templates from '../../templates/index.mjs';
 import { options, optionsWithTime } from './viewById.mjs';
 export const spinner = document.getElementById('spinner');
+import { visitProfilesRemoveModel } from '../profiles/buttonModel.mjs';
 
 export const containerViewLists = document.querySelector('.renderAuction');
 
@@ -26,6 +27,8 @@ export async function viewListings() {
     };
   });
 
+  console.log(filteredListings);
+
   const filteredNoBids = sorterDate.filter(
     (listing) =>
       listing._count.bids === 0 && listing.seller.avatar && listing.title
@@ -36,7 +39,8 @@ export async function viewListings() {
       listing._count.bids > 0 && listing.seller.avatar && listing.title
   );
 
-  console.log(filteredNoBids);
   spinner.style.display = 'none';
-  templates.renderTemplate(filteredListings, containerViewLists);
+  templates.renderTemplate(filteredNoBids, containerViewLists);
+
+  visitProfilesRemoveModel();
 }
