@@ -9,6 +9,7 @@ import { showTag } from './viewById/showTags.mjs';
 import { changeModel } from './viewById/changeModel.mjs';
 import { visitProfilesRemoveModel } from '../profiles/buttonModel.mjs';
 export const container = document.querySelector('.singleItem');
+import { authHideBidBtn } from '../auth/auth.mjs';
 export const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
 export const optionsWithTime = {
   year: 'numeric',
@@ -58,4 +59,6 @@ export async function viewId() {
   validateDate(endsAt, authorName);
 
   visitProfilesRemoveModel();
+
+  authHideBidBtn(authorName);
 }
