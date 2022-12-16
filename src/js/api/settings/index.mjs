@@ -1,8 +1,12 @@
 import { API_SOCIAL_URL } from '../constants.mjs';
 import { fetchWToken } from '../headers.mjs';
 import * as localStorage from '../../storage/index.mjs';
+import { hideErrorSettings } from '../../listeners/helpers/clearMessage.mjs';
 
-const errorMessage = document.querySelector('.errorMessage-settings');
+export const errorMessageSettings = document.querySelector(
+  '.errorMessage-settings'
+);
+const closeModel = document.querySelector('.close-settings');
 
 /**
  * change avatar with put method by name
@@ -29,6 +33,9 @@ export async function settingAvatar(settings) {
     localStorage.save('profile', data);
     location.reload();
   } catch (error) {
-    errorMessage.innerHTML = `<p>we are aware of the issues, our team is actively working on it.</p>`;
+    errorMessageSettings.innerHTML = `we are aware of the issues, our team is actively working on it.`;
   }
 }
+
+// model close button hide error message
+closeModel.addEventListener('click', hideErrorSettings);
