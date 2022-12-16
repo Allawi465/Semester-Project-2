@@ -27,8 +27,6 @@ export const containerWins = document.querySelector('.renderWins');
 export async function viewProfile() {
   const profile = await getProfile();
 
-  console.log(profile);
-
   if (profile.wins.length === 0) {
     containerWins.innerHTML = 'No wins yet';
   }
@@ -38,18 +36,6 @@ export async function viewProfile() {
   const bidLength = document.querySelector('.bids-length');
   bidLength.innerHTML = profile.listings.length;
   winsGetListings(profile.wins);
-}
-
-/**
- * view profile wins with foreach
- * @param {listingsById} get listings by id
- */
-
-function winsGetListings(arg) {
-  arg.forEach(async (wins) => {
-    const getWinsListings = await listingsById(wins);
-    templates.profileTemplateWins(getWinsListings, containerWins);
-  });
 }
 
 /**
@@ -104,13 +90,21 @@ export async function renderProfileBids() {
 
   spinner.classList.remove('spinner-grow');
 
-  if (listings.length === 0) {
-    containerViewLists.innerHTML = 'No listings yet';
-  } else if (bets.length === 0) {
+  if (bets.length === 0) {
     containerBets.innerHTML = 'No bets yet';
   }
 
-  templates.profileTemplate(profile, container);
-  templates.renderListings(sorterDate, containerViewLists);
   templates.renderBets(sorterBets, containerBets);
+}
+
+/**
+ * view profile wins with foreach
+ * @param {listingsById} get listings by id
+ */
+
+function winsGetListings(arg) {
+  arg.forEach(async (wins) => {
+    const getWinsListings = await listingsById(wins);
+    templates.profileTemplateWins(getWinsListings, containerWins);
+  });
 }
