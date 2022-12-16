@@ -12,3 +12,4 @@ export * from './auction/update.mjs';
 export * from './settings/avatar.mjs';
 export * from './auction/viewById.mjs';
 export * from './profile/index.mjs';
+export * from './profiles/index.mjs';
