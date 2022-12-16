@@ -17,7 +17,9 @@ export function validateDate(arg) {
     );
     endTime.innerHTML = `Ended ${endedDate}`;
     bidOnBtn.style.display = 'none';
-    NoBidsTexts.innerHTML = 'No bids were made';
+    if (NoBidsTexts) {
+      NoBidsTexts.innerHTML = 'No bids were made';
+    }
   }
 }
 
