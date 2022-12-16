@@ -15,7 +15,7 @@ const method = 'GET';
  * @param {fetchWToken} token from a function
  */
 
-export async function getProfile() {
+export async function getProfiles() {
   try {
     const urls = `${API_SOCIAL_URL}${path}?_listings=true`;
     const response = await fetchWToken(urls, {
@@ -26,6 +26,7 @@ export async function getProfile() {
   } catch (error) {
     errorMessage.style.display = 'block';
     errorMessage.innerHTML = `<p class="text-center fw-semibold">we are aware of the issues with accessing NOxB, our team is actively working on it.</p>`;
+    console.log(error);
   }
 }
 
@@ -35,7 +36,7 @@ export async function getProfile() {
  * @param {fetchWToken} token from a function
  */
 
-export async function profileListings() {
+export async function profilesListings() {
   try {
     const urls = `${API_SOCIAL_URL}${path}/listings?_bids=true`;
     const response = await fetchWToken(urls, {
@@ -55,7 +56,7 @@ export async function profileListings() {
  * @param {fetchWToken} token from a function
  */
 
-export async function profileBids() {
+export async function profilesBids() {
   try {
     const urls = `${API_SOCIAL_URL}${path}/bids?_listings=true`;
     const response = await fetchWToken(urls, {
