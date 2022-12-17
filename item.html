@@ -164,12 +164,12 @@
                     type="password"
                     name="password"
                     class="form-control rounded-3"
-                    id="floatingPassword"
+                    id="floatingPasswords"
                     placeholder="Password"
                     required
                     minlength="8"
                   />
-                  <label for="floatingPassword">Password</label>
+                  <label for="floatingPasswords">Password</label>
                 </div>
                 <button
                   class="w-100 mb-2 btn btn-lg rounded-3 btn-primary"
@@ -205,7 +205,7 @@
               <h1 class="fw-bold mb-0 fs-2">Sign Up</h1>
               <button
                 type="button"
-                class="btn-close registeR-close"
+                class="btn-close close-register"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
@@ -215,39 +215,39 @@
               <form id="registerForm">
                 <div class="form-floating mb-3">
                   <input
-                    type="name"
+                    type="text"
                     name="name"
                     class="form-control rounded-3"
-                    id="floatingInput"
+                    id="floatingInputName"
                     required
                     pattern="^[\w]+$"
                     placeholder="name"
                     title="The name value must not contain punctuation symbols apart from underscore (_). Example: my_user12"
                   />
-                  <label for="floatingInput">Name</label>
+                  <label for="floatingInputName">Name</label>
                 </div>
                 <div class="form-floating mb-3">
                   <input
                     type="email"
                     name="email"
                     class="form-control rounded-3"
-                    id="floatingInput"
+                    id="floatingInputEmail"
                     placeholder="name@stud.noroff.no"
                     required
                     pattern="[\w\-.]+@(stud.)?noroff.no$"
                     title="The email value must be a valid noroff.no email. Example: name@stud.noroff.no"
                   />
-                  <label for="floatingInput">Email address</label>
+                  <label for="floatingInputEmail">Email address</label>
                 </div>
                 <div class="form-floating mb-3">
                   <input
                     type="url"
                     name="avatar"
                     class="form-control rounded-3"
-                    id="floatingPassword"
+                    id="floatingAvatar"
                     placeholder="avatar"
                   />
-                  <label for="floatingPassword">Avatar</label>
+                  <label for="floatingAvatar">Avatar</label>
                 </div>
                 <div class="form-floating mb-3">
                   <input
