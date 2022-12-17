@@ -31,7 +31,7 @@
     <header>
       <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <div class="nav-container container-xl justify-content-between">
-          <a class="navbar-brand fs-1 active" href="../../index.html">NOxB</a>
+          <a class="navbar-brand fs-1 active" href="/index.html">NOxB</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -115,7 +115,12 @@
                     <hr class="dropdown-divider" />
                   </li>
                   <li>
-                    <a class="dropdown-item signOut" type="button">Sign out</a>
+                    <a
+                      href="/index.html"
+                      class="dropdown-item signOut"
+                      type="button"
+                      >Sign out</a
+                    >
                   </li>
                 </ul>
               </div>
@@ -145,16 +150,16 @@
             <div class="modal-body p-5 pt-0">
               <p class="errorMessage-settings"></p>
               <p><strong class="px-1">Change you Avatar:</strong></p>
-              <form id="settings">
+              <form id="setting">
                 <div class="form-floating mb-3">
                   <input
                     type="url"
                     name="avatar"
                     class="form-control rounded-3"
-                    id="floatingPassword"
+                    id="floatingAvatar"
                     placeholder="avatar"
                   />
-                  <label for="floatingPassword">Avatar</label>
+                  <label for="floatingAvatar">Avatar</label>
                 </div>
                 <button
                   class="w-100 mb-2 btn btn-lg rounded-3 btn-primary"
@@ -370,7 +375,7 @@
               <form id="itemToAuction">
                 <div class="form-floating mb-3">
                   <input
-                    type="title"
+                    type="text"
                     name="title"
                     class="form-control rounded-3"
                     id="floatingInput"
@@ -422,17 +427,15 @@
                 <div class="cloneImg d-flex flex-row"></div>
                 <div class="form-floating mb-3">
                   <input
-                    type="tags"
+                    type="text"
                     name="tags"
                     class="form-control rounded-3 tags"
                     id="floatingTags"
-                    placeholder="Tags"
                   />
                   <label for="floatingTags">Tags separate by comma</label>
                 </div>
                 <div class="form-floating mb-3">
                   <input
-                    placeholder="Select date"
                     type="datetime-local"
                     name="endsAt"
                     id="deadlineDate"

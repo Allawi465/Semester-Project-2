@@ -117,7 +117,12 @@
                     <hr class="dropdown-divider" />
                   </li>
                   <li>
-                    <a class="dropdown-item signOut" type="button">Sign out</a>
+                    <a
+                      href="/index.html"
+                      class="dropdown-item signOut"
+                      type="button"
+                      >Sign out</a
+                    >
                   </li>
                 </ul>
               </div>
@@ -165,12 +170,12 @@
                     type="password"
                     name="password"
                     class="form-control rounded-3"
-                    id="floatingPassword"
+                    id="floatingPasswords"
                     placeholder="Password"
                     required
                     minlength="8"
                   />
-                  <label for="floatingPassword">Password</label>
+                  <label for="floatingPasswords">Password</label>
                 </div>
                 <button
                   class="w-100 mb-2 btn btn-lg rounded-3 btn-primary"
@@ -220,36 +225,36 @@
                     type="name"
                     name="name"
                     class="form-control rounded-3"
-                    id="floatingInput"
+                    id="floatingInputName"
                     required
                     pattern="^[\w]+$"
                     placeholder="name"
                     title="The name value must not contain punctuation symbols apart from underscore (_). Example: my_user12"
                   />
-                  <label for="floatingInput">Name</label>
+                  <label for="floatingInputName">Name</label>
                 </div>
                 <div class="form-floating mb-3">
                   <input
                     type="email"
                     name="email"
                     class="form-control rounded-3"
-                    id="floatingInput"
+                    id="floatingInputEmail"
                     placeholder="name@stud.noroff.no"
                     required
                     pattern="[\w\-.]+@(stud.)?noroff.no$"
                     title="The email value must be a valid noroff.no email. Example: name@stud.noroff.no"
                   />
-                  <label for="floatingInput">Email address</label>
+                  <label for="floatingInputEmail">Email address</label>
                 </div>
                 <div class="form-floating mb-3">
                   <input
                     type="url"
                     name="avatar"
                     class="form-control rounded-3"
-                    id="floatingPassword"
+                    id="floatingAvatar"
                     placeholder="avatar"
                   />
-                  <label for="floatingPassword">Avatar</label>
+                  <label for="floatingAvatar">Avatar</label>
                 </div>
                 <div class="form-floating mb-3">
                   <input
@@ -309,16 +314,16 @@
             <div class="modal-body p-5 pt-0">
               <p><strong class="errorMessage-settings"></strong></p>
               <p><strong class="px-1">Change you Avatar:</strong></p>
-              <form id="settings">
+              <form id="setting">
                 <div class="form-floating mb-3">
                   <input
                     type="url"
                     name="avatar"
                     class="form-control rounded-3"
-                    id="floatingPassword"
+                    id="floatingAvatar"
                     placeholder="avatar"
                   />
-                  <label for="floatingPassword">Avatar</label>
+                  <label for="floatingAvatar">Avatar</label>
                 </div>
                 <button
                   class="w-100 mb-2 btn btn-lg rounded-3 btn-primary"
@@ -462,19 +467,18 @@
               <form id="itemToAuction">
                 <div class="form-floating mb-3">
                   <input
-                    type="title"
+                    type="text"
                     name="title"
                     class="form-control rounded-3"
-                    id="floatingInput"
-                    placeholder="item"
+                    id="floatingInputTitle"
                     required
                   />
-                  <label for="floatingInput">Title</label>
+                  <label for="floatingInputTitle">Title</label>
                 </div>
                 <div class="form-floating mb-3">
                   <textarea
                     class="form-control rounded-3"
-                    id="floatingTextarea"
+                    id="floatingTextare"
                     name="description"
                     rows="3"
                     required
@@ -518,13 +522,11 @@
                     name="tags"
                     class="form-control rounded-3 tags"
                     id="floatingTags"
-                    placeholder="Tags"
                   />
                   <label for="floatingTags">Tags separate by comma</label>
                 </div>
                 <div class="form-floating mb-3">
                   <input
-                    placeholder="Select date"
                     type="datetime-local"
                     name="endsAt"
                     id="deadlineDate"

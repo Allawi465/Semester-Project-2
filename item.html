@@ -50,7 +50,7 @@
                 <a
                   class="nav-link active"
                   aria-current="page"
-                  href="../../index.html"
+                  href="/index.html"
                   >Home</a
                 >
               </li>
@@ -117,7 +117,12 @@
                     <hr class="dropdown-divider" />
                   </li>
                   <li>
-                    <a class="dropdown-item signOut" type="button">Sign out</a>
+                    <a
+                      href="/index.html"
+                      class="dropdown-item signOut"
+                      type="button"
+                      >Sign out</a
+                    >
                   </li>
                 </ul>
               </div>
@@ -309,7 +314,7 @@
             <div class="modal-body p-5 pt-0">
               <p class="errorMessage-settings"></p>
               <p><strong class="px-1">Change you Avatar:</strong></p>
-              <form id="settings">
+              <form id="setting">
                 <div class="form-floating mb-3">
                   <input
                     type="url"
@@ -394,19 +399,18 @@
               <form id="itemToAuction">
                 <div class="form-floating mb-3">
                   <input
-                    type="title"
+                    type="text"
                     name="title"
                     class="form-control rounded-3"
-                    id="floatingInput"
-                    placeholder="item"
+                    id="floatingInputTitle"
                     required
                   />
-                  <label for="floatingInput">Title</label>
+                  <label for="floatingInputTitle">Title</label>
                 </div>
                 <div class="form-floating mb-3">
                   <textarea
                     class="form-control rounded-3"
-                    id="floatingTextarea"
+                    id="floatingTextare"
                     name="description"
                     rows="3"
                     required
@@ -450,13 +454,11 @@
                     name="tags"
                     class="form-control rounded-3 tags"
                     id="floatingTags"
-                    placeholder="Tags"
                   />
                   <label for="floatingTags">Tags separate by comma</label>
                 </div>
                 <div class="form-floating mb-3">
                   <input
-                    placeholder="Select date"
                     type="datetime-local"
                     name="endsAt"
                     id="deadlineDate"
