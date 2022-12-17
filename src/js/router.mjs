@@ -25,7 +25,7 @@ export default function router() {
       listener.homeAboutUs();
       listener.logOut();
       break;
-    case '/dist/item/':
+    case '/item.html':
       listener.registerNewUsers();
       listener.authValidation();
       listener.loginUsers();
@@ -36,7 +36,7 @@ export default function router() {
       listener.profileNavLink();
       listener.logOut();
       break;
-    case '/dist/profile/':
+    case '/profile.html':
       listener.authValidation();
       listener.changeAvatar();
       listener.addItemToAuction();
@@ -46,7 +46,7 @@ export default function router() {
       listener.editAListings();
       listener.logOut();
       break;
-    case '/dist/profiles/':
+    case '/profiles.html':
       listener.authValidation();
       listener.changeAvatar();
       listener.addItemToAuction();
