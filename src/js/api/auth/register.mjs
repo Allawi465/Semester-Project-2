@@ -1,16 +1,7 @@
 import { API_SOCIAL_URL } from '../constants.mjs';
-const messageRegister = document.querySelector('.error');
-const closeBtn = document.querySelector('.registeR-close');
+export const messageRegister = document.querySelector('.error');
+export const closeBtnModel = document.querySelector('.close-register');
 import { hideErrorMessage } from '../../listeners/helpers/clearMessage.mjs';
-
-const signInModal = bootstrap.Modal.getOrCreateInstance(
-  document.getElementById('loginModel')
-);
-
-const registerModal = bootstrap.Modal.getOrCreateInstance(
-  document.getElementById('registerModel')
-);
-
 const path = '/auth/register';
 const method = 'POST';
 
@@ -20,6 +11,12 @@ const method = 'POST';
  */
 
 export async function register(user) {
+  const signInModal = bootstrap.Modal.getOrCreateInstance(
+    document.getElementById('loginModel')
+  );
+  const registerModal = bootstrap.Modal.getOrCreateInstance(
+    document.getElementById('registerModel')
+  );
   const registerApiUrl = API_SOCIAL_URL + path;
   const body = JSON.stringify(user);
   try {
@@ -52,6 +49,8 @@ export async function register(user) {
  *  @param {messageRegister} clears message
  */
 
-closeBtn.addEventListener('click', () => {
-  hideErrorMessage(messageRegister);
-});
+if (closeBtnModel) {
+  closeBtnModel.addEventListener('click', () => {
+    hideErrorMessage(messageRegister);
+  });
+}

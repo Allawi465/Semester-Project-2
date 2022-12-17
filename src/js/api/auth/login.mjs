@@ -2,8 +2,9 @@ import { API_SOCIAL_URL } from '../constants.mjs';
 import * as localStorage from '../../storage/index.mjs';
 const message = document.querySelector('.errorMessage');
 import { hideErrorMessage } from '../../listeners/helpers/clearMessage.mjs';
+const signIn = document.querySelector('.sigIn');
 
-const closeBtn = document.querySelector('.btn-close');
+const closeBtn = document.querySelector('.close-login');
 
 const path = '/auth/login';
 const method = 'POST';
@@ -32,6 +33,7 @@ export async function login(profile) {
     const { accessToken, credits, ...data } = await response.json();
 
     if (data.status !== 201) {
+      signIn.innerHTML = 'logging in';
       localStorage.save('token', accessToken);
       localStorage.save('profile', data);
       localStorage.save('credits', credits);
@@ -48,6 +50,8 @@ export async function login(profile) {
  *  @param {message} clears message
  */
 
-closeBtn.addEventListener('click', () => {
-  hideErrorMessage(message);
-});
+if (closeBtn) {
+  closeBtn.addEventListener('click', () => {
+    hideErrorMessage(message);
+  });
+}
