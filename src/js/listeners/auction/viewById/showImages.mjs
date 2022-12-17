@@ -20,6 +20,8 @@ export function showImages(arg) {
 
     image.src = `${images}`;
 
+    image.alt = `items image`;
+
     carouselItem.append(image);
 
     carousel.append(carouselItem);
