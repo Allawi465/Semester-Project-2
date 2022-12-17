@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="This is the listings page for NOxB, Auction website"
+    />
+    <title>NOxB | Listing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caramel&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Qwitcher+Grypen&family=Roboto:wght@100;300;400&family=Tai+Heritage+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/dist/css/style.css" />
+    <script
+      src="../../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <script src="../../../src/js/main.mjs" type="module" defer></script>
+  </head>
+
+  <body class="p-0 m-0 border-0">
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="nav-container container-xl justify-content-between">
+          <a class="navbar-brand fs-1 active" href="../../index.html">NOxB</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            title="Menu"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav" style="margin: auto">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="../../index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link profile-link"
+                  href="/dist/profile/"
+                  style="display: none"
+                  >Profile</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  type="button"
+                  style="font-weight: bold"
+                  data-bs-toggle="modal"
+                  data-bs-target="#loginModel"
+                  id="signInBtn"
+                  >Sign in</a
+                >
+              </li>
+              <div
+                class="dropdown profile-setting mx-2"
+                id="profileDropdown"
+                title="Profile menu"
+              >
+                <a
+                  href="/dist/profile/"
+                  class="d-flex align-items-center link-light text-decoration-none dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img
+                    src=""
+                    alt="profile avatar"
+                    width="32"
+                    height="32"
+                    class="navbarImages rounded-circle me-1"
+                  />
+                  <strong class="navbarName text-capitalize me-1"></strong>
+                  <span class="navbarCredit badge bg-white text-black"></span>
+                </a>
+                <ul class="dropdown-menu text-small shadow">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      type="button"
+                      data-bs-toggle="modal"
+                      data-bs-target="#addItemModel"
+                      >Add item</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      type="button"
+                      data-bs-toggle="modal"
+                      data-bs-target="#settings"
+                      >Settings</a
+                    >
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li>
+                    <a class="dropdown-item signOut" type="button">Sign out</a>
+                  </li>
+                </ul>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div
+        class="modal fade"
+        id="loginModel"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header p-5 pb-4 border-bottom-0">
+              <h1 class="fw-bold mb-0 fs-2 sigIn">Sign in</h1>
+              <button
+                type="button"
+                class="btn-close close-login"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body p-5 pt-0">
+              <p><strong class="errorMessage px-1"></strong></p>
+              <form id="loginForm">
+                <div class="form-floating mb-3">
+                  <input
+                    type="email"
+                    name="email"
+                    class="form-control rounded-3"
+                    id="floatingInput"
+                    placeholder="name@stud.noroff.no"
+                    required
+                    pattern="[\w\-.]+@(stud.)?noroff.no$"
+                    title="The email value must be a valid noroff.no email. Example: name@stud.noroff.no"
+                  />
+                  <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="password"
+                    name="password"
+                    class="form-control rounded-3"
+                    id="floatingPassword"
+                    placeholder="Password"
+                    required
+                    minlength="8"
+                  />
+                  <label for="floatingPassword">Password</label>
+                </div>
+                <button
+                  class="w-100 mb-2 btn btn-lg rounded-3 btn-primary"
+                  type="submit"
+                >
+                  Sign in
+                </button>
+              </form>
+              <hr class="my-4" />
+              <h2 class="fs-5 fw-bold mb-3">Sign up</h2>
+              <button
+                class="w-100 py-2 mb-2 btn btn-outline-dark rounded-3"
+                type="submit"
+                data-bs-toggle="modal"
+                data-bs-target="#registerModel"
+              >
+                Sign up
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="modal fade"
+        id="registerModel"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header p-5 pb-4 border-bottom-0">
+              <h1 class="fw-bold mb-0 fs-2">Sign Up</h1>
+              <button
+                type="button"
+                class="btn-close registeR-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body p-5 pt-0">
+              <p><strong class="error px-1"></strong></p>
+              <form id="registerForm">
+                <div class="form-floating mb-3">
+                  <input
+                    type="name"
+                    name="name"
+                    class="form-control rounded-3"
+                    id="floatingInput"
+                    required
+                    pattern="^[\w]+$"
+                    placeholder="name"
+                    title="The name value must not contain punctuation symbols apart from underscore (_). Example: my_user12"
+                  />
+                  <label for="floatingInput">Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="email"
+                    name="email"
+                    class="form-control rounded-3"
+                    id="floatingInput"
+                    placeholder="name@stud.noroff.no"
+                    required
+                    pattern="[\w\-.]+@(stud.)?noroff.no$"
+                    title="The email value must be a valid noroff.no email. Example: name@stud.noroff.no"
+                  />
+                  <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="url"
+                    name="avatar"
+                    class="form-control rounded-3"
+                    id="floatingPassword"
+                    placeholder="avatar"
+                  />
+                  <label for="floatingPassword">Avatar</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="password"
+                    name="password"
+                    class="form-control rounded-3"
+                    id="floatingPassword"
+                    placeholder="Password"
+                    required
+                    minlength="8"
+                  />
+                  <label for="floatingPassword">Password</label>
+                </div>
+                <button
+                  class="w-100 mb-2 btn btn-lg rounded-3 btn-primary"
+                  type="submit"
+                >
+                  Sign Up
+                </button>
+                <small class="text-muted"
+                  >By clicking Sign up, you agree to the terms of use.</small
+                >
+              </form>
+              <hr class="my-4" />
+              <h2 class="fs-5 fw-bold mb-3">Sign in</h2>
+              <button
+                class="w-100 py-2 mb-2 btn btn-outline-dark rounded-3"
+                type="submit"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModel"
+              >
+                Sign in
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="modal fade"
+        id="settings"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header p-5 pb-4 border-bottom-0">
+              <h1 class="fw-bold mb-0 fs-2 settingsTitle">Settings</h1>
+              <button
+                type="button"
+                class="btn-close close-settings"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body p-5 pt-0">
+              <p class="errorMessage-settings"></p>
+              <p><strong class="px-1">Change you Avatar:</strong></p>
+              <form id="settings">
+                <div class="form-floating mb-3">
+                  <input
+                    type="url"
+                    name="avatar"
+                    class="form-control rounded-3"
+                    id="floatingPassword"
+                    placeholder="avatar"
+                  />
+                  <label for="floatingPassword">Avatar</label>
+                </div>
+                <button
+                  class="w-100 mb-2 btn btn-lg rounded-3 btn-primary"
+                  type="submit"
+                >
+                  Confirm
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container-xl">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb my-4 mx-4">
+            <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+              auction / Listing
+            </li>
+          </ol>
+        </nav>
+      </div>
+
+      <div
+        class="message alert alert-dark"
+        role="alert"
+        style="display: none"
+      ></div>
+
+      <div class="singleItem my-4 mx-4 mx-auto" style="max-width: 750px">
+        <div class="d-flex justify-content-center">
+          <div
+            class="spinner-grow"
+            role="status"
+            id="spinner"
+            style="margin: auto"
+          >
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="modal fade"
+        id="addItemModel"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1
+                class="modal-title fs-5 addItemTitle"
+                id="staticBackdropLabel"
+              >
+                Add item to auction
+              </h1>
+              <button
+                type="button"
+                class="btn-close close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="error-create"></div>
+              <form id="itemToAuction">
+                <div class="form-floating mb-3">
+                  <input
+                    type="title"
+                    name="title"
+                    class="form-control rounded-3"
+                    id="floatingInput"
+                    placeholder="item"
+                    required
+                  />
+                  <label for="floatingInput">Title</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <textarea
+                    class="form-control rounded-3"
+                    id="floatingTextarea"
+                    name="description"
+                    rows="3"
+                    required
+                  ></textarea>
+                  <label for="floatingTextare">Description</label>
+                </div>
+                <div class="form-floating input-group mb-3">
+                  <input
+                    type="url"
+                    name="media"
+                    class="form-control rounded-3"
+                    id="floatingImage"
+                    placeholder="image url"
+                    required
+                  />
+                  <label for="floatingImage">Images gallery url</label>
+                  <span
+                    class="input-group-text input-group-style gallery"
+                  ></span>
+                  <span
+                    class="input-group-text input-group-style"
+                    id="addMoreImage"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      fill="currentColor"
+                      class="bi bi-plus-circle-fill"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"
+                      /></svg
+                  ></span>
+                </div>
+                <div class="cloneImg d-flex flex-row"></div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="tags"
+                    name="tags"
+                    class="form-control rounded-3 tags"
+                    id="floatingTags"
+                    placeholder="Tags"
+                  />
+                  <label for="floatingTags">Tags separate by comma</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    placeholder="Select date"
+                    type="datetime-local"
+                    name="endsAt"
+                    id="deadlineDate"
+                    class="form-control rounded-3"
+                    required
+                  />
+                  <label for="deadlineDate">deadline date</label>
+                </div>
+                <button
+                  class="w-100 mb-2 btn btn-lg rounded-3 btn-outline-success"
+                  type="submit"
+                >
+                  Add to the Auction
+                </button>
+                <small style="color: #595959"
+                  >Your item will be sold to the highest bidder when the
+                  deadline date take off.</small
+                >
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-dark close"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="modal fade"
+        id="bidModel"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5 bid-title" id="staticBackdropLabel">
+                Make a bid
+              </h1>
+              <button
+                type="button"
+                class="btn-close close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="error-bid"></div>
+              <form id="makeBid">
+                <div class="input-group mb-3" style="width: 99%">
+                  <span class="input-group-text"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      fill="currentColor"
+                      class="bi bi-coin coin"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932 0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853 0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9H5.5zm2.177-2.166c-.59-.137-.91-.416-.91-.836 0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91 0 .542-.412.914-1.135.982V8.518l.087.02z"
+                      />
+                      <path
+                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                      />
+                      <path
+                        d="M8 13.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11zm0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"
+                      /></svg
+                  ></span>
+                  <input
+                    id="bidInput"
+                    type="number"
+                    name="amount"
+                    min="1"
+                    class="form-control"
+                    aria-label="Amount (to the nearest Bid)"
+                  />
+                </div>
+                <div class="text-center">
+                  <button
+                    type="submit"
+                    class="btn btn-success"
+                    style="width: 100%"
+                  >
+                    Send your bid
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-dark close"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer
+      class="container-fluid position-sticky bottom-0 py-3"
+      style="display: none"
+    >
+      <div class="mb-2 float-end" title="Add item">
+        <button
+          class="addBtn btn btn-dark shadow"
+          data-bs-toggle="modal"
+          data-bs-target="#addItemModel"
+          style="border-radius: 12px"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="40"
+            height="40"
+            fill="currentColor"
+            class="bi bi-plus-circle-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"
+            />
+          </svg>
+        </button>
+      </div>
+    </footer>
+  </body>
+</html>
