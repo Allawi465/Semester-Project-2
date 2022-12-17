@@ -3,6 +3,7 @@ import { fetchWToken } from '../headers.mjs';
 import { hideErrorMessage } from '../../listeners/helpers/clearMessage.mjs';
 const messageForBid = document.querySelector('.error-bid');
 const closeBtn = document.querySelectorAll('.close');
+const bidMessage = document.querySelector('.bid-title');
 
 const queryStringPostId = document.location.search;
 const parameters = new URLSearchParams(queryStringPostId);
@@ -33,6 +34,7 @@ export async function MakeABid(amount) {
     const data = await response.json();
 
     if (data.status !== 200) {
+      bidMessage.innerHTML = 'Sending your bid...';
       location.reload();
       return true;
     }

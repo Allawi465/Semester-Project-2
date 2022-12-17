@@ -3,6 +3,7 @@ import { fetchWToken } from '../headers.mjs';
 const deleteErrorMessage = document.querySelector('.error-message');
 import { hideErrorMessage } from '../../listeners/helpers/clearMessage.mjs';
 const closeBtn = document.querySelectorAll('.close');
+const deleteMessage = document.querySelector('.deleteTitle');
 
 const path = '/listings/';
 const method = 'DELETE';
@@ -19,6 +20,9 @@ export async function deleting(id) {
     const response = await fetchWToken(deletingUrl, {
       method,
     });
+
+    deleteMessage.innerHTML = 'Deleting listing...';
+
     location.reload();
     return await response.json();
   } catch (error) {

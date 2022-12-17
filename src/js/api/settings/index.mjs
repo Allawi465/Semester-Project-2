@@ -5,6 +5,7 @@ import { hideErrorMessage } from '../../listeners/helpers/clearMessage.mjs';
 
 const errorMessageSettings = document.querySelector('.errorMessage-settings');
 const closeModel = document.querySelector('.close-settings');
+const settingsMessage = document.querySelector('.settingsTitle');
 
 /**
  * change avatar with put method by name
@@ -26,6 +27,8 @@ export async function settingAvatar(settings) {
       method,
       body: JSON.stringify(settings),
     });
+
+    settingsMessage.innerHTML = 'Updating avatar...';
 
     const data = await response.json();
     localStorage.save('profile', data);

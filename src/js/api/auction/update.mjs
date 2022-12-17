@@ -3,6 +3,7 @@ import { fetchWToken } from '../headers.mjs';
 import { hideErrorMessage } from '../../listeners/helpers/clearMessage.mjs';
 const errorUpdateMessage = document.querySelector('.error-update');
 const closeBtn = document.querySelectorAll('.close');
+const updateMessage = document.querySelector('.UpdateTitle');
 
 const path = '/listings/';
 const method = 'PUT';
@@ -21,6 +22,7 @@ export async function update(postData) {
       method,
       body: JSON.stringify(postData),
     });
+    updateMessage.innerHTML = 'Updating your listing...';
     location.reload();
     return await response.json();
   } catch (error) {

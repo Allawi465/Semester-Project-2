@@ -1,6 +1,7 @@
 import { API_SOCIAL_URL } from '../constants.mjs';
 import { fetchWToken } from '../headers.mjs';
 import { hideErrorMessage } from '../../listeners/helpers/clearMessage.mjs';
+const createMessage = document.querySelector('.addItemTitle');
 
 const errorMessage = document.querySelector('.error-create');
 
@@ -23,6 +24,7 @@ export async function creatingListing(ListingData) {
       method,
       body: JSON.stringify(ListingData),
     });
+    createMessage.innerHTML = 'Creating listing...';
     location.reload();
     return await response.json();
   } catch (error) {
