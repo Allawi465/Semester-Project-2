@@ -1,6 +1,5 @@
 /node_modules
 .eslintcache
-/dist
 6
 .vscode/settings.json
 /out
