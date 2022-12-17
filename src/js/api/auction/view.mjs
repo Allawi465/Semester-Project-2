@@ -13,7 +13,7 @@ const path = '/listings';
 
 export async function viewingAll() {
   try {
-    const getUrl = `${API_SOCIAL_URL}${path}?sort=created&_seller=true&_bids=true&_active=true&limit=50`;
+    const getUrl = `${API_SOCIAL_URL}${path}?sort=created&_seller=true&_bids=true&_active=true`;
     const response = await fetchWToken(getUrl, {
       headers: {
         'Content-Type': 'application/json',
