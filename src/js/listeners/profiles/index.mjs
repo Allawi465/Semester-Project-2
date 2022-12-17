@@ -1,41 +1,32 @@
-import {
-  getProfiles,
-  profilesBids,
-  profilesListings,
-} from '../../api/profiles/index.mjs';
-import { listingsById } from '../../api/auction/viewById.mjs';
+import { getProfiles, profilesBids } from '../../api/profiles/index.mjs';
 import * as templates from '../../templates/index.mjs';
 import {
   optionsWithTime,
   options,
   containerViewLists,
   spinner,
+  renderProfileCard,
+  winsGetListings,
 } from '../index.mjs';
 
-import { container, containerBets, containerWins } from '../profile/index.mjs';
+import { containerBets, containerWins } from '../profile/index.mjs';
 
 /**
  * view profile from api call name
  * @param {profile} getting profile by name
  * @param {listings} getting profile listings by name
- * @param {bets} getting profile bids by name
  * @param {templates} render profile with templates
  */
 
 export async function viewProfiles() {
-  const profile = await getProfiles();
-  const bids = await profilesBids();
-  const listings = await profilesListings();
+  const { listings, name, avatar, credits, ...profile } = await getProfiles();
 
-  spinner.classList.remove('spinner-grow');
-  templates.profilesTemplate(profile, container);
+  const winsLength = profile.wins.length;
+  const listingsLength = listings.length;
 
-  const bidLength = document.querySelector('.bids-length');
-  bidLength.innerHTML = bids.length;
+  spinner.classList.remove('spinner-grow', 'my-4');
 
-  if (listings.length === 0) {
-    containerViewLists.innerHTML = 'No listings yet';
-  }
+  renderProfileCard(name, avatar, credits, listingsLength, winsLength);
 
   const sorterDate = listings.map((listing) => {
     return {
@@ -48,13 +39,38 @@ export async function viewProfiles() {
     };
   });
 
-  templates.renderProfilesListings(sorterDate, containerViewLists);
-
-  if (bids.length === 0) {
-    containerBets.innerHTML = 'No bets yet';
+  if (listings.length === 0) {
+    containerViewLists.innerHTML = 'No listings yet';
+  }
+  if (profile.wins.length === 0) {
+    containerWins.innerHTML = 'No wins yet';
   }
 
-  const sorterBets = bids.map((bet) => {
+  templates.renderProfilesListings(sorterDate, containerViewLists);
+  winsGetListings(profile.wins);
+
+  const nameHtml = document.querySelectorAll('.profiles-name');
+  const avatarHtml = document.querySelectorAll('.profiles-images');
+
+  nameHtml.forEach((nameProfile) => {
+    nameProfile.innerHTML = name;
+  });
+
+  avatarHtml.forEach((avatarProfile) => {
+    avatarProfile.src = avatar;
+  });
+}
+
+/**
+ * view profile bids from api call name
+ * @param {bets} getting profile bids by name
+ * @param {templates} render profile with templates
+ */
+
+export async function ProfilesBid() {
+  const bets = await profilesBids();
+
+  const sorterBets = bets.map((bet) => {
     return {
       ...bet,
       created: new Date(bet.created).toLocaleDateString(
@@ -63,33 +79,16 @@ export async function viewProfiles() {
       ),
     };
   });
-  templates.renderProfilesBets(sorterBets, containerBets);
 
-  if (profile.wins.length === 0) {
-    containerWins.innerHTML = 'No wins yet';
+  spinner.classList.remove('spinner-grow');
+
+  if (bets.length === 0) {
+    containerBets.innerHTML = 'No bets yet';
   }
-  winsGetListings(profile.wins);
 
-  const name = document.querySelectorAll('.profiles-name');
-  const avatar = document.querySelectorAll('.profiles-images');
-
-  name.forEach((nameProfile) => {
-    nameProfile.innerHTML = profile.name;
-  });
-
-  avatar.forEach((avatarProfile) => {
-    avatarProfile.src = profile.avatar;
-  });
-}
-
-/**
- * view profile wins with foreach
- * @param {listingsById} get listings by id
- */
-
-function winsGetListings(arg) {
-  arg.forEach(async (wins) => {
-    const getWinsListings = await listingsById(wins);
-    templates.profilesTemplateWins(getWinsListings, containerWins);
-  });
+  templates.renderProfilesBets(sorterBets, containerBets);
+  const bidLength = document.querySelector('.bids-length');
+  if (bidLength) {
+    bidLength.innerHTML = bets.length;
+  }
 }
