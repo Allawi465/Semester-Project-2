@@ -1,0 +1,83 @@
+.navbar-collapse {
+  flex-grow: unset;
+}
+
+.profile-setting {
+  position: relative;
+  top: 5px;
+  display: none;
+}
+
+.navbar-brand {
+  font-family: Caramel;
+}
+
+.navbar-nav .dropdown-menu {
+  margin-right: 5px;
+}
+
+.dropdown-menu[data-bs-popper] {
+  left: unset;
+}
+
+.nav-container {
+  width: 90%;
+  flex-wrap: nowrap;
+}
+
+header {
+  height: 80px;
+}
+
+#signInBtn {
+  display: none;
+}
+
+.errorMessage,
+.error,
+.errorMessage-settings,
+.error-create {
+  color: $red;
+}
+
+.coin {
+  margin-bottom: 3px;
+  margin-right: 2px;
+}
+
+.navbarCredit {
+  font-size: 15px;
+}
+
+.dropdown-toggle::after {
+  font-size: 25px;
+}
+
+.search-form-btn {
+  display: block;
+}
+
+@include media-breakpoint-down(sm) {
+  .search-form-btn {
+    display: none;
+  }
+  .search-form {
+    width: 200px;
+  }
+
+  #profileDropdown {
+    right: 100px;
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .search-form {
+    width: 105px;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  #profileDropdown {
+    right: 9px;
+  }
+}

@@ -1,21 +1,59 @@
 {
   "name": "sp2",
-  "version": "0.0.1",
-  "description": "An Action website, semester project 2  ",
+  "version": "0.0.2",
+  "description": "An Action website, semester project 2",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "sass src/scss:dist/css",
+    "watch": "sass --watch src/scss:dist/css & live-server",
+    "format": "prettier -w src/**/*.mjs",
+    "lint": "eslint src/**/*.mjs",
+    "lint-fix": "eslint src/**/*.mjs --cache --fix",
+    "prepare": "husky install",
+    "docs": "jsdoc -c ./conf.json -r"
   },
   "repository": {
     "type": "git",
     "url": "(https://github.com/Allawi465/Semester-Project-2.git)"
   },
+  "bugs": {
+    "url": "https://github.com/Allawi465/Semester-Project-2/issues"
+  },
   "keywords": [
     "js",
     "api",
     "bootstrap",
-    "css"
+    "css",
+    "scss",
+    "eslint",
+    "lint-staged",
+    "prettier"
   ],
   "author": "Mohammed Allawi <allawi465@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.2.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.28.0",
+    "husky": "^8.0.2",
+    "jsdoc": "^4.0.0",
+    "lint-staged": "^13.0.4",
+    "live-server": "^1.1.0",
+    "prettier": "^2.8.0",
+    "sass": "^1.56.1"
+  },
+  "lint-staged": {
+    "*.mjs": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.html": [
+      "prettier --write"
+    ],
+    "*.scss": [
+      "prettier --write"
+    ]
+  }
 }

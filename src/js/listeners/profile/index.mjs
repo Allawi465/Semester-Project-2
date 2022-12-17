@@ -1,0 +1,116 @@
+import { getProfile, profileBids } from '../../api/profile/index.mjs';
+import * as templates from '../../templates/index.mjs';
+import {
+  optionsWithTime,
+  options,
+  containerViewLists,
+  spinner,
+} from '../index.mjs';
+import { listingsById } from '../../api/auction/viewById.mjs';
+import {
+  profileAvatar,
+  profileName,
+  credits,
+  listingsLength,
+  WinsLength,
+} from '../../templates/profiles/profileCard.mjs';
+
+export const container = document.querySelector('.profile-card');
+export const containerBets = document.querySelector('.renderBets');
+export const containerWins = document.querySelector('.renderWins');
+
+/**
+ * view profile from api call name
+ * @param {profile} getting profile by name
+ * @param {listings} getting profile listings by name
+ * @param {templates} render profile with templates
+ */
+
+export async function viewProfile() {
+  const { listings, name, avatar, credits, ...profile } = await getProfile();
+
+  const winsLength = profile.wins.length;
+  const listingsLength = listings.length;
+
+  if (profile.wins.length === 0) {
+    containerWins.innerHTML = 'No wins yet';
+  }
+  if (listings.length === 0) {
+    containerViewLists.innerHTML = 'No listings yet';
+  }
+
+  renderProfileCard(name, avatar, credits, listingsLength, winsLength);
+
+  const sorterDate = listings.map((listing) => {
+    return {
+      ...listing,
+      created: new Date(listing.created).toLocaleDateString('no-NO', options),
+      endsAt: new Date(listing.endsAt).toLocaleDateString(
+        'no-NO',
+        optionsWithTime
+      ),
+    };
+  });
+
+  spinner.classList.remove('spinner-grow', 'my-4');
+  templates.renderListings(sorterDate, containerViewLists);
+  winsGetListings(profile.wins);
+}
+
+/**
+ * view profile bids from api call name
+ * @param {bets} getting profile bids by name
+ * @param {templates} render profile with templates
+ */
+
+export async function profileBid() {
+  const bets = await profileBids();
+
+  const sorterBets = bets.map((bet) => {
+    return {
+      ...bet,
+      created: new Date(bet.created).toLocaleDateString(
+        'no-NO',
+        optionsWithTime
+      ),
+    };
+  });
+
+  spinner.classList.remove('spinner-grow');
+
+  if (bets.length === 0) {
+    containerBets.innerHTML = 'No bets yet';
+  }
+
+  templates.renderBets(sorterBets, containerBets);
+
+  const bidLength = document.querySelector('.bids-length');
+  bidLength.innerHTML = bets.length;
+}
+
+/**
+ * view profile wins with foreach
+ * @param {listingsById} get listings by id
+ * @param {break} if wins hit 6
+ */
+
+export async function winsGetListings(arg) {
+  for (let i = 0; i < arg.length; i++) {
+    const wins = await listingsById(arg[i]);
+    templates.profileTemplateWins(wins, containerWins);
+    if (arg[i] === arg[5]) break;
+  }
+}
+
+/**
+ * render profile card value
+ * @param {viewProfile} get values from viewProfiles
+ */
+
+export function renderProfileCard(name, avatar, credit, listings, win) {
+  profileName.innerHTML = name;
+  profileAvatar.src = avatar;
+  credits.innerHTML = credit;
+  listingsLength.innerHTML = listings;
+  WinsLength.innerHTML = win;
+}

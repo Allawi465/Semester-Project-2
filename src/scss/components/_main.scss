@@ -1,0 +1,173 @@
+body {
+  font-family: 'Nunito Sans', sans-serif, Roboto, Tai Heritage Pro, verdana;
+}
+
+main {
+  font-family: Nunito Sans;
+}
+
+.img-container > img {
+  height: 150px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.carousel-item > img {
+  height: 400px;
+  width: 100%;
+}
+
+.bids-list-badge {
+  background-color: $yellow;
+}
+
+.card-footer {
+  background-color: unset;
+  border-top: unset;
+}
+
+.bids-list-text {
+  position: relative;
+  top: 2px;
+}
+
+.card-description {
+  width: 90%;
+}
+
+.bids-list-number {
+  position: relative;
+  top: 1px;
+}
+
+footer {
+  height: 90px;
+}
+
+.input-group-style {
+  background-color: unset;
+  border: unset;
+}
+
+.bidList {
+  max-width: 50%;
+  margin: auto;
+  overflow-y: scroll;
+  max-height: 220px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.cloneImg {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.bi-trash {
+  cursor: pointer;
+  margin-left: -8px;
+}
+
+.imgContainer {
+  max-width: 90px;
+  max-height: 70px;
+}
+
+.card-header {
+  border: none;
+}
+
+.created {
+  position: relative;
+  top: 10px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: rgba(0, 0, 0, 0.222);
+  width: 10%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+#bidOn {
+  background-color: $green;
+}
+
+#bidOn:hover {
+  background-color: white;
+  color: black;
+}
+
+.posted-option {
+  cursor: pointer;
+  margin-top: 9px;
+}
+
+.aboutUs {
+  margin-top: 50px;
+  margin-bottom: 150px;
+}
+
+.latest-auction,
+.AboutUsHeading {
+  font-style: italic;
+}
+
+.addbtn {
+  margin-right: 50px;
+}
+.card-text-listings {
+  overflow-y: scroll;
+  min-height: 50px;
+  max-height: 50px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#sortDiv {
+  margin: auto;
+}
+
+img:-moz-loading {
+  visibility: hidden;
+}
+
+@include media-breakpoint-down(sm) {
+  .bid-ol {
+    flex-wrap: wrap;
+  }
+
+  .bidList {
+    max-width: unset;
+  }
+
+  .addbtn {
+    margin-right: unset;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 15%;
+  }
+
+  .card-description {
+    width: unset;
+  }
+
+  .aboutUs {
+    margin-top: 25px;
+  }
+
+  .latest-auction {
+    margin: auto;
+  }
+
+  .form-search {
+    width: 100%;
+  }
+}
