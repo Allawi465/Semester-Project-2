@@ -28,27 +28,6 @@ export async function getProfile() {
 }
 
 /**
- * get profile listings by name with api get method
- * @param {listings} get profile
- * @param {fetchWToken} token from a function
- */
-
-export async function profileListings() {
-  try {
-    const { name } = localStorage.load('profile');
-    const urls = `${API_SOCIAL_URL}${path}${name}/listings?_bids=true`;
-    const response = await fetchWToken(urls, {
-      method,
-    });
-
-    return await response.json();
-  } catch (error) {
-    errorMessage.style.display = 'block';
-    errorMessage.innerHTML = `<p class="text-center fw-semibold">we are aware of the issues with accessing NOxB, our team is actively working on it.</p>`;
-  }
-}
-
-/**
  * get profile bids by name with api get method
  * @param {bids} get profile
  * @param {fetchWToken} token from a function
