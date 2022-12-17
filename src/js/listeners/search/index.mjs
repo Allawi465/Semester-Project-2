@@ -3,6 +3,7 @@ import { options, optionsWithTime } from '../auction/viewById.mjs';
 import * as templates from '../../templates/index.mjs';
 import { containerViewLists, withBidsBtn, withNoBidsBtn } from '../index.mjs';
 import { viewListings } from '../index.mjs';
+import { visitProfilesRemoveModel } from '../profiles/buttonModel.mjs';
 const search = document.getElementById('searchInput');
 
 /**
@@ -71,5 +72,7 @@ export function searchPosts() {
       errorMessage.style.display = 'block';
       containerViewLists.clear();
     }
+
+    visitProfilesRemoveModel();
   });
 }

@@ -2,6 +2,7 @@ import { viewingAll } from '../../api/auction/view.mjs';
 import * as templates from '../../templates/index.mjs';
 import { options, optionsWithTime } from './viewById.mjs';
 import { containerViewLists } from './view.mjs';
+import { visitProfilesRemoveModel } from '../profiles/buttonModel.mjs';
 
 const sorterDiv = document.getElementById('sortDiv');
 export const withNoBidsBtn = document.getElementById('withNoBids');
@@ -66,5 +67,7 @@ export async function sorterViewListings() {
       withBidsBtn.className = 'btn btn-outline-dark btn-sm mx-1 my-1';
       withNoBidsBtn.className = 'btn btn-primary mx-1 my-1';
     }
+
+    visitProfilesRemoveModel();
   });
 }
