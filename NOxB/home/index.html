@@ -11,6 +11,12 @@
     <title>NOxB | Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caramel&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Qwitcher+Grypen&family=Roboto:wght@100;300;400&family=Tai+Heritage+Pro&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/dist/css/style.css" />
     <script
       src="../..//node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
@@ -22,24 +28,8 @@
   <body class="p-0 m-0 border-0">
     <header>
       <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <div class="nav-container container-fluid justify-content-around">
+        <div class="nav-container container-xl justify-content-between">
           <a class="navbar-brand fs-1 active" href="/NOxB/home/">NOxB</a>
-          <div style="margin: auto">
-            <form class="d-flex search-form" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button
-                class="search-form-btn btn btn-outline-light"
-                type="submit"
-              >
-                Search
-              </button>
-            </form>
-          </div>
           <button
             class="navbar-toggler"
             type="button"
@@ -94,7 +84,7 @@
                 >
                   <img
                     src=""
-                    alt=""
+                    alt="profile avatar"
                     width="32"
                     height="32"
                     class="navbarImages rounded-circle me-1"
@@ -144,10 +134,10 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header p-5 pb-4 border-bottom-0">
-              <h1 class="fw-bold mb-0 fs-2">Sign in</h1>
+              <h1 class="fw-bold mb-0 fs-2 sigIn">Sign in</h1>
               <button
                 type="button"
-                class="btn-close"
+                class="btn-close close-login"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
@@ -215,7 +205,7 @@
               <h1 class="fw-bold mb-0 fs-2">Sign Up</h1>
               <button
                 type="button"
-                class="btn-close registeR-close"
+                class="btn-close close-register"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
@@ -306,7 +296,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header p-5 pb-4 border-bottom-0">
-              <h1 class="fw-bold mb-0 fs-2">Settings</h1>
+              <h1 class="fw-bold mb-0 fs-2 settingsTitle">Settings</h1>
               <button
                 type="button"
                 class="btn-close close-settings"
@@ -346,7 +336,8 @@
         <div class="row featurette justify-content-center">
           <div class="col-md-7">
             <h2 class="featurette-heading fw-normal lh-1">
-              NOxB <span class="text-muted">is an auction website</span>
+              <span class="AboutUsHeading">NOxB</span>
+              <span style="color: #424242">is an auction website</span>
             </h2>
             <p class="lead mb-4">
               This auction website gives users a chance to sell items and buy
@@ -378,7 +369,39 @@
       </div>
 
       <div class="container auction-container mt-4">
-        <h2 class="display-5 text-center my-3">Latest Auction</h2>
+        <div
+          class="d-flex justify-content-between mx-2"
+          style="flex-wrap: wrap"
+        >
+          <h2 class="mt-2 latest-auction">Latest Auction</h2>
+          <div class="form-search mt-1">
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+            </form>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-center mt-1" style="flex-wrap: wrap">
+          <button
+            class="btn btn-primary btn-sm mx-1 my-1"
+            type="button"
+            disabled
+          >
+            No bids yet
+          </button>
+          <button class="btn btn-outline-dark btn-sm mx-1 my-1" type="button">
+            With bids
+          </button>
+          <button class="btn btn-outline-dark btn-sm mx-1 my-1" type="button">
+            End soon
+          </button>
+        </div>
+
         <div
           class="message alert alert-dark"
           role="alert"
@@ -412,7 +435,10 @@
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="staticBackdropLabel">
+              <h1
+                class="modal-title fs-5 addItemTitle"
+                id="staticBackdropLabel"
+              >
                 Add item to auction
               </h1>
               <button

@@ -1,3 +1,11 @@
+body {
+  font-family: 'Nunito Sans', sans-serif, Roboto, Tai Heritage Pro, verdana;
+}
+
+main {
+  font-family: Nunito Sans;
+}
+
 .img-container > img {
   height: 150px;
   width: 100%;
@@ -7,6 +15,10 @@
 .carousel-item > img {
   height: 400px;
   width: 100%;
+}
+
+.bids-list-badge {
+  background-color: $yellow;
 }
 
 .card-footer {
@@ -101,14 +113,24 @@ footer {
   margin-bottom: 150px;
 }
 
+.latest-auction,
+.AboutUsHeading {
+  font-style: italic;
+}
+
 .addbtn {
   margin-right: 50px;
 }
 .card-text-listings {
   overflow-y: scroll;
+  min-height: 50px;
   max-height: 50px;
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+img:-moz-loading {
+  visibility: hidden;
 }
 
 @include media-breakpoint-down(sm) {
@@ -135,5 +157,13 @@ footer {
 
   .aboutUs {
     margin-top: 25px;
+  }
+
+  .latest-auction {
+    margin: auto;
+  }
+
+  .form-search {
+    width: 100%;
   }
 }
