@@ -12,7 +12,7 @@ export function viewTemplate(listings) {
                     <div class="d-flex flex-row align-items-center" >
                         <div
                             class="rounded-circle overflow-hidden d-flex justify-content-center align-item-center me-2">
-                            <img src="${listings.seller.avatar}"  width="50" height="50" alt=""
+                            <img src="${listings.seller.avatar}"  width="50" height="50" alt="profile avatar"
                                 class="rounded-circle profile-images-topBar">
                         </div>
                         <span class="font-weight-bol text-capitalize">${listings.seller.name}</span>
@@ -51,7 +51,7 @@ export function viewTemplate(listings) {
                 </div>
                 <div> 
                     <div class="text-center mt-5">
-                        <p class="badge bg-warning text-uppercase fs-6 text" style="color: #212529;">Bids</p>
+                        <p class="badge text-uppercase fs-6 bids-list-badge" style="color: #212529;">Bids</p>
                         <span class="fs-5 text bids-list-number">${listings._count.bids}</span>
                     </div>   
                     <ol class="list-group list-group-numbered bidList mb-4 bg-light">

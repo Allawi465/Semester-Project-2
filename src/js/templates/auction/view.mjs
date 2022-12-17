@@ -12,7 +12,7 @@ export function viewTemplate(listings) {
                     <div class="d-flex flex-row align-items-center" >
                         <div
                             class="rounded-circle overflow-hidden d-flex justify-content-center align-item-center me-2">
-                            <img src="${listings.seller.avatar}"  width="50" height="50" alt=""
+                            <img src="${listings.seller.avatar}"  width="50" height="50" alt="profile avatar"
                                 class="rounded-circle profile-images-topBar">
                         </div>
                         <span class="font-weight-bol text-capitalize">${listings.seller.name}</span>
@@ -21,7 +21,7 @@ export function viewTemplate(listings) {
                 <p class="card-text"><small class="created" style="color: #bac8d5;">${listings.created}</small></p>
             </div>
             <div class="img-container my-2 mx-2"> 
-                <img src="${listings.media}" onerror="this.src='/images/default-upload-min.jpg' "alt="">
+                <img src="${listings.media}" onerror="this.src='/images/default-upload-min.jpg' "alt="item image">
             </div>
             <div class="card-body">
                 <div class="d-flex justify-content-between">
@@ -29,7 +29,7 @@ export function viewTemplate(listings) {
                         <h5 class="card-title me-2 card-text-listings">${listings.title}</h5>
                     </div>
                     <div class="d-flex">
-                        <p class="badge text-uppercase bg-warning me-2 bids-list-badge" style="max-height: 25px;"><span class="bids-list-text" style="color: #212529;">BIDS</span></p>
+                        <p class="badge text-uppercase me-2 bids-list-badge" style="max-height: 25px;"><span class="bids-list-text" style="color: #212529;">BIDS</span></p>
                         <span class=" fw-bolder">${listings._count.bids}</span>
                     </div>
                 </div>
