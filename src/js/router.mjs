@@ -1,4 +1,5 @@
 import * as listener from './listeners/index.mjs';
+import './listeners/helpers/clear.mjs';
 
 /**
  * router function with a switch statement
@@ -16,6 +17,7 @@ export default function router() {
       listener.sorterViewListings();
       listener.registerNewUsers();
       listener.loginUsers();
+      listener.searchPosts();
       listener.authValidation();
       listener.changeAvatar();
       listener.addItemToAuction();
