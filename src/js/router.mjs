@@ -13,43 +13,44 @@ export default function router() {
   switch (path) {
     case '/NOxB/home/':
       listener.viewListings();
-      listener.authValidation();
-      listener.logOut();
       listener.registerNewUsers();
       listener.loginUsers();
+      listener.authValidation();
       listener.changeAvatar();
       listener.addItemToAuction();
       listener.profileNavLink();
       listener.homeAboutUs();
+      listener.logOut();
       break;
     case '/NOxB/auction/item/':
+      listener.registerNewUsers();
       listener.authValidation();
-      listener.logOut();
       listener.loginUsers();
       listener.changeAvatar();
       listener.addItemToAuction();
       listener.viewId();
       listener.makeBid();
       listener.profileNavLink();
+      listener.logOut();
       break;
     case '/NOxB/profile/':
       listener.authValidation();
-      listener.logOut();
       listener.changeAvatar();
       listener.addItemToAuction();
       listener.viewProfile();
-      listener.ProfileListing();
-      listener.renderProfileBids();
+      listener.profileBid();
       listener.deleteAListing();
       listener.editAListings();
+      listener.logOut();
       break;
     case '/NOxB/profiles/':
       listener.authValidation();
-      listener.logOut();
       listener.changeAvatar();
       listener.addItemToAuction();
       listener.profileNavLink();
       listener.viewProfiles();
+      listener.ProfilesBid();
+      listener.logOut();
       break;
     default:
       location.href = '/NOxB/home/';
