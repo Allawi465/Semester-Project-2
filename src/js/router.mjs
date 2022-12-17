@@ -12,7 +12,7 @@ export default function router() {
   const path = location.pathname;
 
   switch (path) {
-    case '/NOxB/home/':
+    case '/index.html':
       listener.viewListings();
       listener.sorterViewListings();
       listener.registerNewUsers();
@@ -25,7 +25,7 @@ export default function router() {
       listener.homeAboutUs();
       listener.logOut();
       break;
-    case '/NOxB/auction/item/':
+    case '/dist/item/':
       listener.registerNewUsers();
       listener.authValidation();
       listener.loginUsers();
@@ -36,7 +36,7 @@ export default function router() {
       listener.profileNavLink();
       listener.logOut();
       break;
-    case '/NOxB/profile/':
+    case '/dist/profile/':
       listener.authValidation();
       listener.changeAvatar();
       listener.addItemToAuction();
@@ -46,7 +46,7 @@ export default function router() {
       listener.editAListings();
       listener.logOut();
       break;
-    case '/NOxB/profiles/':
+    case '/dist/profiles/':
       listener.authValidation();
       listener.changeAvatar();
       listener.addItemToAuction();
@@ -56,8 +56,6 @@ export default function router() {
       listener.logOut();
       break;
     default:
-      location.href = '/NOxB/home/';
+      location.href = '/index.html';
   }
 }
-
-router();
