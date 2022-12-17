@@ -1,12 +1,11 @@
 import { viewingAll } from '../../api/auction/view.mjs';
 import * as templates from '../../templates/index.mjs';
 import { options, optionsWithTime } from './viewById.mjs';
-import { visitProfilesRemoveModel } from '../profiles/buttonModel.mjs';
 import { containerViewLists } from './view.mjs';
 
 const sorterDiv = document.getElementById('sortDiv');
-const withNoBidsBtn = document.getElementById('withNoBids');
-const withBidsBtn = document.getElementById('withBids');
+export const withNoBidsBtn = document.getElementById('withNoBids');
+export const withBidsBtn = document.getElementById('withBids');
 
 /**
  * sorting listings from api call
@@ -52,7 +51,7 @@ export async function sorterViewListings() {
     );
 
     if (withBids) {
-      containerViewLists.innerHTML = '';
+      containerViewLists.clear();
       templates.renderTemplate(filteredWithBids, containerViewLists);
       withBidsBtn.disabled = true;
       withNoBidsBtn.disabled = false;
@@ -60,14 +59,12 @@ export async function sorterViewListings() {
       withNoBidsBtn.className = 'btn btn-outline-dark btn-sm mx-1 my-1';
     }
     if (withNoBids) {
-      containerViewLists.innerHTML = '';
+      containerViewLists.clear();
       templates.renderTemplate(filteredNoBids, containerViewLists);
       withBidsBtn.disabled = false;
       withNoBidsBtn.disabled = true;
       withBidsBtn.className = 'btn btn-outline-dark btn-sm mx-1 my-1';
       withNoBidsBtn.className = 'btn btn-primary mx-1 my-1';
     }
-
-    visitProfilesRemoveModel();
   });
 }
