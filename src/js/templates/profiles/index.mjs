@@ -30,7 +30,7 @@ export function viewProfilesListing(listings) {
               <div class="card-footer mb-2">
                   <div class="d-flex justify-content-between align-items-center" style="flex-wrap: wrap;">
                       <a type="button" class="btn btn-outline-light mb-2"
-                      href="/dist/item/?id=${listings.id}">View</a>   
+                      href="/item.html?id=${listings.id}">View</a>   
                       <small class="fs-6 text fw-bold endDate" style="color: #bac8d5;">Ends ${listings.endsAt}</small>
                   </div>
               </div>
@@ -81,7 +81,7 @@ export function viewProfilesBets(listings) {
               <div class="card-footer mb-2">
                   <div class="d-flex justify-content-between align-items-center">
                       <a type="button" class="btn btn-outline-light me-2"
-                      href="/dist/item/?id=${listings.listing.id}">View</a>   
+                      href="/item.html?id=${listings.listing.id}">View</a>   
                   </div>
               </div>
           </div>
@@ -111,7 +111,7 @@ export function viewProfilesWins(listings) {
         <div class="col my-2">
             <div class="card shadow-sm bg-dark text-white shadow-lg p-3 mb-2 rounded profile-card-listings" style="border: none;">
                 <div class="card-header d-flex justify-content-between" style="flex-wrap: wrap;">
-                    <a type="button" class="link-profile text-white" href="/dist/profiles/?name=${listings.seller.name}" style="text-decoration: none";> 
+                    <a type="button" class="link-profile text-white" href="/profiles.html?name=${listings.seller.name}" style="text-decoration: none";> 
                         <div class="d-flex flex-row align-items-center" >
                             <div
                                 class="rounded-circle overflow-hidden d-flex justify-content-center align-item-center me-2">
@@ -137,7 +137,7 @@ export function viewProfilesWins(listings) {
                 <div class="card-footer mb-2">
                     <div class="d-flex justify-content-between align-items-center" style="flex-wrap: wrap;">
                         <a type="button" class="btn btn-outline-light mb-2"
-                        href="/dist/item/?id=${listings.id}">View</a>   
+                        href="/item.html?id=${listings.id}">View</a>   
                         <small class="fs-6 fw-bold endTimes" style="color: #bac8d5;"></small>
                     </div>
                 </div>
