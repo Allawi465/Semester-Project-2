@@ -9,7 +9,6 @@ import { optionsWithTime } from '../viewById.mjs';
 export function validateDate(arg) {
   const bidOnBtn = document.querySelector('#bidOn');
   const endTime = document.querySelector('.endTime');
-  const NoBidsTexts = document.querySelector('.NobidsTexts');
   if (thePast(new Date(arg)) === true) {
     const endedDate = new Date(arg).toLocaleDateString(
       'no-NO',
@@ -17,9 +16,6 @@ export function validateDate(arg) {
     );
     endTime.innerHTML = `Ended ${endedDate}`;
     bidOnBtn.style.display = 'none';
-    if (NoBidsTexts) {
-      NoBidsTexts.innerHTML = 'No bids were made';
-    }
   }
 }
 

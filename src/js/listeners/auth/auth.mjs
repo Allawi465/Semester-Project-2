@@ -3,7 +3,6 @@ import * as dropdown from '../../templates/navbar.mjs';
 const profileDropdown = document.getElementById('profileDropdown');
 export const signInBtn = document.getElementById('signInBtn');
 const footer = document.querySelector('footer');
-
 /**
  * display navBar dropdown when log in
  * @param {token} check if token is true
@@ -63,10 +62,14 @@ export function homeAboutUs() {
 export function authHideBidBtn(author) {
   const token = localStorage.load('token');
   const bidOnBtn = document.querySelector('#bidOn');
+  const NoBidsTexts = document.querySelector('.NobidsTexts');
   if (token) {
     const { name } = localStorage.load('profile');
     if (author === name) {
       bidOnBtn.style.display = 'none';
+      if (NoBidsTexts) {
+        NoBidsTexts.innerHTML = 'bids length is empty';
+      }
     }
   }
 }
