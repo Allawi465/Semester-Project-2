@@ -136,6 +136,7 @@ export function viewProfileWins(listings) {
         <div class="col my-2">
             <div class="card shadow-sm bg-dark text-white shadow-lg p-3 mb-2 rounded profile-card-listings" style="border: none;">
                 <div class="card-header d-flex justify-content-between" style="flex-wrap: wrap;">
+                    <a type="button" class="link-profile text-white" href="/profiles.html?name=${listings.seller.name}" style="text-decoration: none";> 
                         <div class="d-flex flex-row align-items-center" >
                             <div
                                 class="rounded-circle overflow-hidden d-flex justify-content-center align-item-center me-2">
@@ -143,7 +144,8 @@ export function viewProfileWins(listings) {
                                     class="rounded-circle profile-images-topBar">
                             </div>
                             <span class="font-weight-bol text-capitalize">${listings.seller.name}</span>
-                        </div
+                        </div>
+                    </a>
                     <p class="card-text"><small class="createdDate fs-6" style="color: #bac8d5;"></small></p>
                 </div>
                 <div class="card-body">
