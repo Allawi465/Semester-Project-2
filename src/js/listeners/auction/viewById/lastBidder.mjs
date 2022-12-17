@@ -19,7 +19,7 @@ export function lastBidder(arg) {
       );
       lastBidder.innerHTML += `<li class="list-group-item bid-ol d-flex justify-content-between align-items-start my-1 text-white bg-dark" style="margin: 5px;">
                                   <div class="ms-2 me-auto">
-                                    <a type="button" class="link-profile text-white" data-bs-toggle="modal" data-bs-target="#loginModel" href="/dist/profiles/?name=${bids.bidderName}" style="text-decoration: none";> <div><span class="fw-bold text-capitalize">${bids.bidderName}</span><span> bid </span></div></a>
+                                    <a type="button" class="link-profile text-white" data-bs-toggle="modal" data-bs-target="#loginModel" href="/profiles.html?name=${bids.bidderName}" style="text-decoration: none";> <div><span class="fw-bold text-capitalize">${bids.bidderName}</span><span> bid </span></div></a>
                                   <span style="color: #bac8d5;">${created}</span>
                                   </div>
                                   <span>${bids.amount} ${dollar}</span>

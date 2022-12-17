@@ -8,7 +8,7 @@ export function viewTemplate(listings) {
     <div class="col mx-4">
         <div class="card shadow-sm bg-dark text-white" style="border: none;">
             <div class="card-header bg-dark text-white d-flex justify-content-between" style="flex-wrap: wrap;">
-                <a type="button" class="link-profile text-white" data-bs-toggle="modal" data-bs-target="#loginModel" href="/dist/profiles/?name=${listings.seller.name}" style="text-decoration: none";> 
+                <a type="button" class="link-profile text-white" data-bs-toggle="modal" data-bs-target="#loginModel" href="/profiles.html?name=${listings.seller.name}" style="text-decoration: none";> 
                     <div class="d-flex flex-row align-items-center" >
                         <div
                             class="rounded-circle overflow-hidden d-flex justify-content-center align-item-center me-2">
