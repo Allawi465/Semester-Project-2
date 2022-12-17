@@ -9,7 +9,7 @@ import { settingAvatar } from '../../api/settings/index.mjs';
  */
 
 export function changeAvatar() {
-  const form = document.getElementById('settings');
+  const form = document.getElementById('setting');
   if (form) {
     form.addEventListener('submit', (event) => {
       event.preventDefault();
