@@ -13,6 +13,7 @@ export default function router() {
   switch (path) {
     case '/NOxB/home/':
       listener.viewListings();
+      listener.sorterViewListings();
       listener.registerNewUsers();
       listener.loginUsers();
       listener.authValidation();

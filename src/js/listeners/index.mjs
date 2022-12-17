@@ -8,6 +8,7 @@ export * from './auction/bid.mjs';
 export * from './auction/addItem.mjs';
 export * from './auction/delete.mjs';
 export * from './auction/update.mjs';
+export * from './auction/sorterView.mjs';
 
 export * from './settings/avatar.mjs';
 export * from './auction/viewById.mjs';

@@ -386,19 +386,25 @@
           </div>
         </div>
 
-        <div class="d-flex justify-content-center mt-1" style="flex-wrap: wrap">
+        <div
+          class="d-flex justify-content-center mt-1"
+          id="sortDiv"
+          style="width: fit-content"
+        >
           <button
-            class="btn btn-primary btn-sm mx-1 my-1"
+            class="btn btn-primary mx-1 my-1 noBids"
             type="button"
+            id="withNoBids"
             disabled
           >
             No bids yet
           </button>
-          <button class="btn btn-outline-dark btn-sm mx-1 my-1" type="button">
+          <button
+            class="btn btn-outline-dark mx-1 my-1 withBids"
+            type="button"
+            id="withBids"
+          >
             With bids
-          </button>
-          <button class="btn btn-outline-dark btn-sm mx-1 my-1" type="button">
-            End soon
           </button>
         </div>
 

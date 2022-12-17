@@ -7,9 +7,9 @@ import { visitProfilesRemoveModel } from '../profiles/buttonModel.mjs';
 export const containerViewLists = document.querySelector('.renderAuction');
 
 /**
- * Getting posts from api call
- * @param {posts} getting posts
- * @param {filteredPosts} filtering the post
+ * Getting listings from api call
+ * @param {listings} getting listings
+ * @param {filteredNoBids} filtering listings with no bids
  * @param {renderPostsTemplate} temples for showing the posts
  */
 
@@ -29,15 +29,13 @@ export async function viewListings() {
 
   const filteredNoBids = sorterDate.filter(
     (listing) =>
-      listing._count.bids === 0 && listing.seller.avatar && listing.title
+      listing._count.bids === 0 &&
+      listing.seller.avatar &&
+      listing.title &&
+      listing.description &&
+      listing.media
   );
 
-  const filteredListings = sorterDate.filter(
-    (listing) =>
-      listing._count.bids > 0 && listing.seller.avatar && listing.title
-  );
-
-  console.log(filteredListings);
   spinner.style.display = 'none';
   templates.renderTemplate(filteredNoBids, containerViewLists);
 
