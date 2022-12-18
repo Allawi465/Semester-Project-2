@@ -10996,6 +10996,11 @@ img:-moz-loading {
   visibility: hidden;
 }
 
+.link-profile {
+  background-color: unset !important;
+  border: unset !important;
+}
+
 @media (max-width: 575.98px) {
   .bid-ol {
     flex-wrap: wrap;

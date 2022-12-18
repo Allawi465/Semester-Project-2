@@ -137,6 +137,11 @@ img:-moz-loading {
   visibility: hidden;
 }
 
+.link-profile {
+  background-color: unset !important;
+  border: unset !important;
+}
+
 @include media-breakpoint-down(sm) {
   .bid-ol {
     flex-wrap: wrap;
