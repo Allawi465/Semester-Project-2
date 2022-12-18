@@ -77,7 +77,7 @@ export async function ProfilesBid() {
   spinner.classList.remove('spinner-grow');
 
   if (bets.length === 0) {
-    containerBets.innerHTML = 'No bets yet';
+    containerBets.innerHTML = 'No bits yet';
   }
 
   templates.renderProfilesBets(sorterBets, containerBets);

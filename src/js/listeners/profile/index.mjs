@@ -1,5 +1,6 @@
 import { getProfile, profileBids } from '../../api/profile/index.mjs';
 import * as templates from '../../templates/index.mjs';
+import { dollar } from '../auction/viewById/lastBidder.mjs';
 import {
   optionsWithTime,
   options,
@@ -73,7 +74,7 @@ export async function profileBid() {
   spinner.classList.remove('spinner-grow');
 
   if (bets.length === 0) {
-    containerBets.innerHTML = 'No bets yet';
+    containerBets.innerHTML = 'No bids yet';
   }
 
   templates.renderBets(sorterBets, containerBets);
@@ -90,7 +91,7 @@ export async function profileBid() {
 export function renderProfileCard(name, avatar, credit, listings, win) {
   profileName.innerHTML = name;
   profileAvatar.src = avatar;
-  credits.innerHTML = credit;
+  credits.innerHTML = `${dollar}${credit}`;
   listingsLength.innerHTML = listings;
   WinsLength.innerHTML = win;
 }
