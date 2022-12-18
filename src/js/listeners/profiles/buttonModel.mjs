@@ -13,6 +13,8 @@ export function visitProfilesRemoveModel() {
     if (token) {
       btn.removeAttribute('data-bs-toggle');
       btn.removeAttribute('data-bs-target');
+    } else {
+      btn.removeAttribute('href');
     }
   });
 }
