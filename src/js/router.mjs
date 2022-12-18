@@ -42,7 +42,7 @@ export default function router() {
       listener.ProfilesBid();
       listener.logOut();
       break;
-    case '/noxb/home/':
+    case '/index.html':
       listener.viewListings();
       listener.sorterViewListings();
       listener.registerNewUsers();
@@ -56,6 +56,6 @@ export default function router() {
       listener.logOut();
       break;
     default:
-      location.href = '/noxb/home/';
+      location.href = '/index.html';
   }
 }
