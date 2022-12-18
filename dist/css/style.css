@@ -10912,8 +10912,8 @@ footer {
   margin: auto;
   overflow-y: scroll;
   max-height: 220px;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
 }
 
 .cloneImg {
@@ -10981,11 +10981,7 @@ footer {
 }
 
 .card-text-listings {
-  overflow-y: scroll;
   min-height: 50px;
-  max-height: 50px;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 }
 
 #sortDiv {
@@ -10994,11 +10990,6 @@ footer {
 
 img:-moz-loading {
   visibility: hidden;
-}
-
-.link-profile {
-  background-color: unset !important;
-  border: unset !important;
 }
 
 @media (max-width: 575.98px) {
