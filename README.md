@@ -6,7 +6,7 @@ Link to Trello Gantt chart: file:///C:/Users/Allaw/Downloads/placker_gantt_expor
 
 Link to design prototype: https://xd.adobe.com/view/8cce3ffd-13a5-42cd-8492-50ad539a4b50-d99d/
 
-Link to style guide: https://xd.adobe.com/view/ca6bf7a4-9780-4d58-a9eb-fede7273000c-9f38/
+Link to style guide: https://xd.adobe.com/view/81b2c771-b8f9-4f89-a31a-62ee9f043d63-d4e1/
 
 Link to hosted application demo: https://noxb.netlify.app/
 
