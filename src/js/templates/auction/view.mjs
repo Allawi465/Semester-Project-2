@@ -9,7 +9,7 @@ export function viewTemplate(listings) {
         <div class="card shadow-sm bg-dark text-white shadow-lg p-3 mb-5 rounded me-3" style="border: none;">
             <div class="card-header d-flex justify-content-between" style="flex-wrap: wrap;">
                 <a type="button" class="link-profile text-white" data-bs-toggle="modal" data-bs-target="#loginModel" href="/profiles.html?name=${listings.seller.name}" style="text-decoration: none";> 
-                    <div class="d-flex flex-row align-items-center" >
+                    <div class="d-flex flex-row align-items-center my-2" >
                         <div
                             class="rounded-circle overflow-hidden d-flex justify-content-center align-item-center me-2">
                             <img src="${listings.seller.avatar}"  width="50" height="50" alt="profile avatar"
