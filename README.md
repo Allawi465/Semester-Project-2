@@ -1,12 +1,14 @@
 # Semester Project 2
 
-Link to Trello board: https://trello.com/b/IfquJs3N/social-media-application
+Link to Trello board: https://placker.com/app#/gantt/view/sgqubzkpp4uf4?e=b&s=p37b9e
 
-Link to Trello kanban board: https://trello.com/b/IfquJs3N/social-media-application
+Link to Trello kanban board: file:///C:/Users/Allaw/Downloads/placker_gantt_export_202212181206.pdf
 
-Link to design prototype: https://trello.com/b/IfquJs3N/social-media-application
+Link to design prototype: https://xd.adobe.com/view/8cce3ffd-13a5-42cd-8492-50ad539a4b50-d99d/
 
 Link to style guide: https://trello.com/b/IfquJs3N/social-media-application
+
+Link to hosted application demo: https://noxb.netlify.app/
 
 ## Description
 
