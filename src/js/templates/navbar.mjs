@@ -18,4 +18,5 @@ export function renderNavbarImage() {
   navbarImages.src = avatar;
   navbarName.innerHTML = name;
   navbarCredit.innerHTML = `${dollar}${credits}`;
+  navbarImages.alt = `${name} avatar`;
 }

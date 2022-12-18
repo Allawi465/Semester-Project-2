@@ -12,7 +12,7 @@ export function viewTemplate(listings) {
                     <div class="d-flex flex-row align-items-center my-2" >
                         <div
                             class="rounded-circle overflow-hidden d-flex justify-content-center align-item-center me-2">
-                            <img src="${listings.seller.avatar}"  width="50" height="50" alt="profile avatar"
+                            <img src="${listings.seller.avatar}"  width="50" height="50" alt="${listings.seller.name} avatar"
                                 class="rounded-circle profile-images-topBar">
                         </div>
                         <span class="font-weight-bol text-capitalize">${listings.seller.name}</span>
@@ -21,10 +21,10 @@ export function viewTemplate(listings) {
                 <p class="card-text"><small class="created" style="color: #bac8d5;">${listings.created}</small></p>
             </div>
             <div class="img-container my-2 mx-2"> 
-                <img src="${listings.media}" onerror="this.src='/images/default-upload-min.jpg' "alt="item image">
+                <img src="${listings.media}" onerror="this.src='/images/default-upload-min.jpg' "alt="image of ${listings.title}>
             </div>
             <div class="card-body">
-                <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-between my-3">
                     <div class="card-title text-break" style="max-width: 250px;"> 
                         <h5 class="card-title me-2 card-text-listings">${listings.title}</h5>
                     </div>

@@ -11,7 +11,7 @@ export function viewProfilesListing(listings) {
                     <div class="d-flex flex-row align-items-center">
                       <div
                           class="rounded-circle overflow-hidden d-flex justify-content-center align-item-center me-2">
-                          <img src=""  width="50" height="50" alt="profile avatar"
+                          <img src=""  width="50" height="50" alt=""
                               class="rounded-circle profiles-images">
                       </div>
                       <span class="font-weight-bol text-capitalize profiles-name">${listings.bidderName}</span>

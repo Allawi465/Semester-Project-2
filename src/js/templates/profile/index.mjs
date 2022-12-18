@@ -82,7 +82,7 @@ export function viewProfileBets(listings) {
                   <div class="d-flex flex-row align-items-center">
                       <div
                           class="rounded-circle overflow-hidden d-flex justify-content-center align-item-center me-2">
-                          <img src="${avatar}"  width="50" height="50" alt=""
+                          <img src="${avatar}"  width="50" height="50" alt="${name} avatar"
                               class="rounded-circle profile-images-topBar">
                       </div>
                       <span class="font-weight-bol text-capitalize">${name}</span>

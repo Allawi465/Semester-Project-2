@@ -91,6 +91,7 @@ export async function profileBid() {
 export function renderProfileCard(name, avatar, credit, listings, win) {
   profileName.innerHTML = name;
   profileAvatar.src = avatar;
+  profileAvatar.alt = `${name} avatar`;
   credits.innerHTML = `${dollar}${credit}`;
   listingsLength.innerHTML = listings;
   WinsLength.innerHTML = win;
