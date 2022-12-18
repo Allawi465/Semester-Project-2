@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="This is the profile page for NOxB, Auction website"
+      content="This is the Homepage for NOxB, Auction website"
     />
-    <title>NOxB | Profile</title>
+    <title>NOxB | Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,14 +24,14 @@
       crossorigin="anonymous"
       defer
     ></script>
-    <script src="./src/js/main.mjs" type="module" defer></script>
+    <script src="../../src/js/main.mjs" type="module" defer></script>
   </head>
 
   <body class="p-0 m-0 border-0">
     <header>
       <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <div class="nav-container container-xl justify-content-between">
-          <a class="navbar-brand fs-1 active" href="/index.html">NOxB</a>
+          <a class="navbar-brand fs-1 active" href="/noxb/home/">NOxB</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -47,13 +47,18 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav" style="margin: auto">
               <li class="nav-item">
-                <a class="nav-link" href="/index.html">Home</a>
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/index.html"
+                  >Home</a
+                >
               </li>
               <li class="nav-item">
                 <a
-                  class="nav-link active"
-                  href="/profile.html"
-                  aria-current="page"
+                  class="nav-link profile-link"
+                  href="/noxb/profile/"
+                  style="display: none"
                   >Profile</a
                 >
               </li>
@@ -75,7 +80,7 @@
                 title="Profile menu"
               >
                 <a
-                  href="/profile.html"
+                  href="/noxb/profile/"
                   class="d-flex align-items-center link-light text-decoration-none dropdown-toggle"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
@@ -88,10 +93,7 @@
                     class="navbarImages rounded-circle me-1"
                   />
                   <strong class="navbarName text-capitalize me-1"></strong>
-                  <span
-                    class="navbarCredit badge bg-white"
-                    style="color: black"
-                  ></span>
+                  <span class="navbarCredit badge bg-white text-black"></span>
                 </a>
                 <ul class="dropdown-menu text-small shadow">
                   <li>
@@ -118,7 +120,7 @@
                     <hr class="dropdown-divider" />
                   </li>
                   <li>
-                    <a href="/index.html" class="dropdown-item signOut">
+                    <a href="/noxb/home/" class="dropdown-item signOut">
                       Sign out
                     </a>
                   </li>
@@ -129,13 +131,162 @@
         </div>
       </nav>
 
+      <div class="modal fade" id="loginModel" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header p-5 pb-4 border-bottom-0">
+              <h1 class="fw-bold mb-0 fs-2 sigIn">Sign in</h1>
+              <button
+                type="button"
+                class="btn-close close-login"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body p-5 pt-0">
+              <p><strong class="errorMessage px-1"></strong></p>
+              <form id="loginForm">
+                <div class="form-floating mb-3">
+                  <input
+                    type="email"
+                    name="email"
+                    class="form-control rounded-3"
+                    id="floatingInput"
+                    placeholder="name@stud.noroff.no"
+                    required
+                    pattern="[\w\-.]+@(stud.)?noroff.no$"
+                    title="The email value must be a valid noroff.no email. Example: name@stud.noroff.no"
+                  />
+                  <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="password"
+                    name="password"
+                    class="form-control rounded-3"
+                    id="floatingPasswords"
+                    placeholder="Password"
+                    required
+                    minlength="8"
+                  />
+                  <label for="floatingPasswords">Password</label>
+                </div>
+                <button
+                  class="w-100 mb-2 btn btn-lg rounded-3 btn-primary"
+                  type="submit"
+                >
+                  Sign in
+                </button>
+              </form>
+              <hr class="my-4" />
+              <h2 class="fs-5 fw-bold mb-3">Sign up</h2>
+              <button
+                class="w-100 py-2 mb-2 btn btn-outline-dark rounded-3"
+                type="submit"
+                data-bs-toggle="modal"
+                data-bs-target="#registerModel"
+              >
+                Sign up
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div
         class="modal fade"
-        id="settings"
+        id="registerModel"
         tabindex="-1"
-        aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header p-5 pb-4 border-bottom-0">
+              <h1 class="fw-bold mb-0 fs-2">Sign Up</h1>
+              <button
+                type="button"
+                class="btn-close close-register"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body p-5 pt-0">
+              <p><strong class="error px-1"></strong></p>
+              <form id="registerForm">
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    name="name"
+                    class="form-control rounded-3"
+                    id="floatingInputName"
+                    required
+                    pattern="^[\w]+$"
+                    placeholder="name"
+                    title="The name value must not contain punctuation symbols apart from underscore (_). Example: my_user12"
+                  />
+                  <label for="floatingInputName">Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="email"
+                    name="email"
+                    class="form-control rounded-3"
+                    id="floatingInputEmail"
+                    placeholder="name@stud.noroff.no"
+                    required
+                    pattern="[\w\-.]+@(stud.)?noroff.no$"
+                    title="The email value must be a valid noroff.no email. Example: name@stud.noroff.no"
+                  />
+                  <label for="floatingInputEmail">Email address</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="url"
+                    name="avatar"
+                    class="form-control rounded-3"
+                    id="floatingAvatar"
+                    placeholder="avatar"
+                  />
+                  <label for="floatingAvatar">Avatar</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="password"
+                    name="password"
+                    class="form-control rounded-3"
+                    id="floatingPassword"
+                    placeholder="Password"
+                    required
+                    minlength="8"
+                  />
+                  <label for="floatingPassword">Password</label>
+                </div>
+                <button
+                  class="w-100 mb-2 btn btn-lg rounded-3 btn-primary"
+                  type="submit"
+                >
+                  Sign Up
+                </button>
+                <small class="text-muted"
+                  >By clicking Sign up, you agree to the terms of use.</small
+                >
+              </form>
+              <hr class="my-4" />
+              <h2 class="fs-5 fw-bold mb-3">Sign in</h2>
+              <button
+                class="w-100 py-2 mb-2 btn btn-outline-dark rounded-3"
+                type="submit"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModel"
+              >
+                Sign in
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="settings" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header p-5 pb-4 border-bottom-0">
@@ -148,7 +299,7 @@
               ></button>
             </div>
             <div class="modal-body p-5 pt-0">
-              <p class="errorMessage-settings"></p>
+              <p><strong class="errorMessage-settings"></strong></p>
               <p><strong class="px-1">Change you Avatar:</strong></p>
               <form id="setting">
                 <div class="form-floating mb-3">
@@ -156,10 +307,10 @@
                     type="url"
                     name="avatar"
                     class="form-control rounded-3"
-                    id="floatingAvatar"
+                    id="floatingAvatars"
                     placeholder="avatar"
                   />
-                  <label for="floatingAvatar">Avatar</label>
+                  <label for="floatingAvatars">Avatar</label>
                 </div>
                 <button
                   class="w-100 mb-2 btn btn-lg rounded-3 btn-primary"
@@ -175,16 +326,95 @@
     </header>
 
     <main>
-      <div
-        class="message alert alert-dark mt-2"
-        role="alert"
-        style="display: none"
-      ></div>
+      <div class="container aboutUs" style="display: none">
+        <div class="row featurette justify-content-center">
+          <div class="col-md-7">
+            <h2 class="featurette-heading fw-normal lh-1">
+              <span class="AboutUsHeading">NOxB</span>
+              <span style="color: #424242">is an auction website</span>
+            </h2>
+            <p class="lead mb-4">
+              This auction website gives users a chance to sell items and buy
+              items. Users are given 1000 credits to use on the site, but they
+              can get credits by selling items as much as they want.
+              Non-registered users can search through listings, but registered
+              users can only make bids on listings.
+            </p>
+            <div class="d-grid gap- col-6 mx-auto">
+              <button
+                class="btn btn-outline-dark join-us-btn"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#registerModel"
+              >
+                Join Us
+              </button>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <img
+              src="/images/homePage.jpg"
+              alt=""
+              class="img-thumbnail"
+              style="border: unset"
+            />
+          </div>
+        </div>
+      </div>
 
-      <div class="container profile-card mt-4">
-        <div class="d-flex justify-content-center">
+      <div class="container auction-container mt-4">
+        <div
+          class="d-flex justify-content-between mx-2"
+          style="flex-wrap: wrap"
+        >
+          <h2 class="mt-2 latest-auction">Latest Auction</h2>
+          <div class="form-search mt-1">
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+                id="searchInput"
+              />
+            </form>
+          </div>
+        </div>
+
+        <div
+          class="d-flex justify-content-center mt-1"
+          id="sortDiv"
+          style="width: fit-content"
+        >
+          <button
+            class="btn btn-primary mx-1 my-1 noBids"
+            type="button"
+            id="withNoBids"
+            disabled
+          >
+            No bids yet
+          </button>
+          <button
+            class="btn btn-outline-dark mx-1 my-1 withBids"
+            type="button"
+            id="withBids"
+          >
+            With bids
+          </button>
+        </div>
+
+        <div
+          class="message alert alert-dark my-2"
+          role="alert"
+          style="display: none"
+        ></div>
+
+        <div
+          class="row renderAuction row-cols-1 row-cols-s-1 row-cols-md-2 row-cols-xl-3 g-3 mt-2"
+          style="min-height: 1000px"
+        >
           <div
-            class="spinner-grow my-4"
+            class="spinner-grow my-2"
             role="status"
             id="spinner"
             style="margin: auto"
@@ -192,121 +422,6 @@
             <span class="visually-hidden">Loading...</span>
           </div>
         </div>
-        <div class="card text-white bg-dark">
-          <div class="card-body tet-white">
-            <div class="text-center">
-              <img
-                src=""
-                class="rounded-circle mt-2 profil-page-images"
-                width="100"
-                height="100"
-                alt="profile avatar"
-              />
-            </div>
-            <div class="text-center mt-2">
-              <h2 class="text-capitalize profile-name"></h2>
-              <span class="badge bg-white fs-5 text-black mb-0 profile-credits">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  class="mb-1 me-1"
-                  fill="currentColor"
-                  class="bi bi-coin"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932 0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853 0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9H5.5zm2.177-2.166c-.59-.137-.91-.416-.91-.836 0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91 0 .542-.412.914-1.135.982V8.518l.087.02z"
-                  />
-                  <path
-                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
-                  />
-                  <path
-                    d="M8 13.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11zm0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"
-                  />
-                </svg>
-              </span>
-              <div class="d-flex flex-row profil-info mt-3">
-                <div class="col fs-6">
-                  <p class="mb-1 listings-length"></p>
-                  <strong>Listings</strong>
-                </div>
-                <div class="col fs-6">
-                  <p class="mb-1 bids-length"></p>
-                  <strong>Bids</strong>
-                </div>
-                <div class="col fs-6">
-                  <p class="mb-1 wins-length"></p>
-                  <strong>wins</strong>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container accordion-flush mt-5">
-        <div
-          class="message alert alert-dark"
-          role="alert"
-          style="display: none"
-        ></div>
-        <div class="accordion" id="accordionPanelsStayOpenExample">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-              <button
-                class="accordion-button"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#panelsStayOpen-collapseOne"
-                aria-expanded="true"
-                aria-controls="panelsStayOpen-collapseOne"
-              >
-                Listings
-              </button>
-            </h2>
-            <div
-              id="panelsStayOpen-collapseOne"
-              class="accordion-collapse collapse show"
-              aria-labelledby="panelsStayOpen-headingOne"
-            >
-              <div class="accordion-body">
-                <div
-                  class="row renderAuction row-cols-1 row-cols-s-1 row-cols-md-2 row-cols-xl-3 g-3 mt-2"
-                ></div>
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#panelsStayOpen-collapseTwo"
-                aria-expanded="false"
-                aria-controls="panelsStayOpen-collapseTwo"
-              >
-                Bids
-              </button>
-            </h2>
-            <div
-              id="panelsStayOpen-collapseTwo"
-              class="accordion-collapse collapse"
-              aria-labelledby="panelsStayOpen-headingTwo"
-            >
-              <div class="accordion-body">
-                <div
-                  class="row renderBets row-cols-1 row-cols-s-1 row-cols-md-2 row-cols-xl-3 g-3 mt-2"
-                ></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="d-grid gap-2 d-sm-flex justify-content-sm-center mt-5"
-        ></div>
       </div>
 
       <div
@@ -390,7 +505,7 @@
                 <div class="cloneImg d-flex flex-row"></div>
                 <div class="form-floating mb-3">
                   <input
-                    type="tags"
+                    type="text"
                     name="tags"
                     class="form-control rounded-3 tags"
                     id="floatingTags"
@@ -431,139 +546,8 @@
           </div>
         </div>
       </div>
-
-      <div
-        class="modal fade"
-        id="updateListing"
-        data-bs-backdrop="static"
-        data-bs-keyboard="false"
-        tabindex="-1"
-        aria-labelledby="staticBackdropLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5 UpdateTitle" id="staticBackdropLabel">
-                Update the listing
-              </h1>
-              <button
-                type="button"
-                class="btn-close close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <div class="error-update error"></div>
-              <form id="UpdateListing">
-                <div class="form-floating mb-3">
-                  <input
-                    type="text"
-                    name="title"
-                    class="form-control rounded-3"
-                    id="floatingInput"
-                    placeholder="item"
-                    required
-                  />
-                  <label for="floatingInput">Title</label>
-                </div>
-                <div class="form-floating mb-3">
-                  <textarea
-                    class="form-control rounded-3"
-                    id="floatingTextarea"
-                    name="description"
-                    rows="3"
-                    required
-                  ></textarea>
-                  <label for="floatingTextare">Description</label>
-                </div>
-                <div class="cloneImg d-flex flex-row"></div>
-                <div class="form-floating mb-3">
-                  <input
-                    type="text"
-                    name="tags"
-                    class="form-control rounded-3"
-                    id="floatingTags"
-                    placeholder="Tags"
-                  />
-                  <label for="floatingTags">Tags separate by comma</label>
-                </div>
-                <button
-                  class="w-100 mb-2 btn btn-lg rounded-3 btn-outline-success"
-                  type="submit"
-                >
-                  Update
-                </button>
-                <small style="color: #595959"
-                  >Your item will be sold to the highest bidder when the
-                  deadline date take off.</small
-                >
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-dark close"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="modal fade"
-        id="deleteListing"
-        data-bs-backdrop="static"
-        data-bs-keyboard="false"
-        tabindex="-1"
-        aria-labelledby="staticBackdropLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5 deleteTitle" id="staticBackdropLabel">
-                Delete the listing
-              </h1>
-              <button
-                type="button"
-                class="btn-close close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <div class="error-message error"></div>
-              <small class="mx-2 fs-6"
-                >Are you sure you want to delete this Listings?</small
-              >
-              <button
-                class="w-100 mb-2 btn btn-lg rounded-3 btn-outline-danger my-2 deleteButton"
-                type="submit"
-              >
-                Delete
-              </button>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-dark close"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <hr class="featurette-divider" />
     </main>
-
+    <hr class="featurette-divider" />
     <footer
       class="container-fluid position-sticky bottom-0 py-3"
       style="display: none"
