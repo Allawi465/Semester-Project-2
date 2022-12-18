@@ -6,7 +6,6 @@ import {
   containerViewLists,
   spinner,
 } from '../index.mjs';
-import { listingsById } from '../../api/auction/viewById.mjs';
 import {
   profileAvatar,
   profileName,
@@ -17,7 +16,6 @@ import {
 
 export const container = document.querySelector('.profile-card');
 export const containerBets = document.querySelector('.renderBets');
-export const containerWins = document.querySelector('.renderWins');
 
 /**
  * view profile from api call name
@@ -32,9 +30,6 @@ export async function viewProfile() {
   const winsLength = profile.wins.length;
   const listingsLength = listings.length;
 
-  if (profile.wins.length === 0) {
-    containerWins.innerHTML = 'No wins yet';
-  }
   if (listings.length === 0) {
     containerViewLists.innerHTML = 'No listings yet';
   }
@@ -54,7 +49,6 @@ export async function viewProfile() {
 
   spinner.classList.remove('spinner-grow', 'my-4');
   templates.renderListings(sorterDate, containerViewLists);
-  winsGetListings(profile.wins);
 }
 
 /**
@@ -86,20 +80,6 @@ export async function profileBid() {
 
   const bidLength = document.querySelector('.bids-length');
   bidLength.innerHTML = bets.length;
-}
-
-/**
- * view profile wins with foreach
- * @param {listingsById} get listings by id
- * @param {break} if wins hit 6
- */
-
-export async function winsGetListings(arg) {
-  for (let i = 0; i < arg.length; i++) {
-    const wins = await listingsById(arg[i]);
-    templates.profileTemplateWins(wins, containerWins);
-    if (arg[i] === arg[5]) break;
-  }
 }
 
 /**

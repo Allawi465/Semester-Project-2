@@ -6,10 +6,9 @@ import {
   containerViewLists,
   spinner,
   renderProfileCard,
-  winsGetListings,
 } from '../index.mjs';
 
-import { containerBets, containerWins } from '../profile/index.mjs';
+import { containerBets } from '../profile/index.mjs';
 
 /**
  * view profile from api call name
@@ -42,12 +41,7 @@ export async function viewProfiles() {
   if (listings.length === 0) {
     containerViewLists.innerHTML = 'No listings yet';
   }
-  if (profile.wins.length === 0) {
-    containerWins.innerHTML = 'No wins yet';
-  }
-
   templates.renderProfilesListings(sorterDate, containerViewLists);
-  winsGetListings(profile.wins);
 
   const nameHtml = document.querySelectorAll('.profiles-name');
   const avatarHtml = document.querySelectorAll('.profiles-images');
