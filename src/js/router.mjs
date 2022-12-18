@@ -12,7 +12,37 @@ export default function router() {
   const path = location.pathname;
 
   switch (path) {
-    case '/index.html':
+    case '/noxb/item/':
+      listener.registerNewUsers();
+      listener.authValidation();
+      listener.loginUsers();
+      listener.changeAvatar();
+      listener.addItemToAuction();
+      listener.viewId();
+      listener.makeBid();
+      listener.profileNavLink();
+      listener.logOut();
+      break;
+    case '/noxb/profile/':
+      listener.authValidation();
+      listener.changeAvatar();
+      listener.addItemToAuction();
+      listener.viewProfile();
+      listener.profileBid();
+      listener.deleteAListing();
+      listener.editAListings();
+      listener.logOut();
+      break;
+    case '/noxb/profiles/':
+      listener.authValidation();
+      listener.changeAvatar();
+      listener.addItemToAuction();
+      listener.profileNavLink();
+      listener.viewProfiles();
+      listener.ProfilesBid();
+      listener.logOut();
+      break;
+    case '/noxb/home/':
       listener.viewListings();
       listener.sorterViewListings();
       listener.registerNewUsers();
@@ -25,37 +55,7 @@ export default function router() {
       listener.homeAboutUs();
       listener.logOut();
       break;
-    case '/item.html':
-      listener.registerNewUsers();
-      listener.authValidation();
-      listener.loginUsers();
-      listener.changeAvatar();
-      listener.addItemToAuction();
-      listener.viewId();
-      listener.makeBid();
-      listener.profileNavLink();
-      listener.logOut();
-      break;
-    case '/profile.html':
-      listener.authValidation();
-      listener.changeAvatar();
-      listener.addItemToAuction();
-      listener.viewProfile();
-      listener.profileBid();
-      listener.deleteAListing();
-      listener.editAListings();
-      listener.logOut();
-      break;
-    case '/profiles.html':
-      listener.authValidation();
-      listener.changeAvatar();
-      listener.addItemToAuction();
-      listener.profileNavLink();
-      listener.viewProfiles();
-      listener.ProfilesBid();
-      listener.logOut();
-      break;
     default:
-      location.href = '/index.html';
+      location.href = '/noxb/home/';
   }
 }

@@ -47,7 +47,7 @@ export function viewProfileListing(listings) {
               <div class="card-footer mb-2">
                   <div class="d-flex justify-content-between align-items-center" style="flex-wrap: wrap;">
                       <a type="button" class="btn btn-outline-light mb-2"
-                      href="/item.html?id=${listings.id}">View</a>   
+                      href="/noxb/item/?id=${listings.id}">View</a>   
                       <small class="fs-6 text fw-bold endDate" style="color: #bac8d5;">Ends ${listings.endsAt}</small>
                   </div>
               </div>
@@ -106,7 +106,7 @@ export function viewProfileBets(listings) {
               <div class="card-footer mb-2">
                   <div class="d-flex justify-content-between align-items-center">
                       <a type="button" class="btn btn-outline-light me-2"
-                      href="/item.html?id=${listings.listing.id}">View</a>   
+                      href="/noxb/item/?id=${listings.listing.id}">View</a>   
                   </div>
               </div>
           </div>

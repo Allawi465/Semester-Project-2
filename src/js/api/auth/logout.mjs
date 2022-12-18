@@ -10,5 +10,5 @@ export function logout() {
   localStorage.remove('token');
   localStorage.remove('credits');
   location.reload();
-  location.href = '/index.html';
+  location.href = '/noxb/home/';
 }
