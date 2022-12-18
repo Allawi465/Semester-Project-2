@@ -2,7 +2,7 @@
 
 Link to Trello board: https://trello.com/b/VphlnoYO
 
-Link to Trello Gantt chart  file:///C:/Users/Allaw/Downloads/placker_gantt_export_202212181206.pdf
+Link to Trello Gantt chart: file:///C:/Users/Allaw/Downloads/placker_gantt_export_202212181206.pdf
 
 Link to design prototype: https://xd.adobe.com/view/8cce3ffd-13a5-42cd-8492-50ad539a4b50-d99d/
 
