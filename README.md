@@ -33,7 +33,7 @@ npm run build
 
 Project is configured to run deployment on Netlify on push to branch "master" Deploy static content to Pages
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/8552669a-6d88-4835-9bfd-c0fd1087fc3f/deploy-status)](https://app.netlify.com/sites/sage-malabi-3e4962/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8552669a-6d88-4835-9bfd-c0fd1087fc3f/deploy-status)](https://app.netlify.com/sites/noxb/deploys)
 
 Project link: https://github.com/Allawi465/Semester-Project-2
 
