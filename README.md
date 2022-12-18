@@ -6,7 +6,7 @@ Link to Trello Gantt chart: file:///C:/Users/Allaw/Downloads/placker_gantt_expor
 
 Link to design prototype: https://xd.adobe.com/view/8cce3ffd-13a5-42cd-8492-50ad539a4b50-d99d/
 
-Link to style guide: 
+Link to style guide: https://xd.adobe.com/view/ca6bf7a4-9780-4d58-a9eb-fede7273000c-9f38/
 
 Link to hosted application demo: https://noxb.netlify.app/
 
@@ -78,6 +78,7 @@ The project was just build with
   - prettier: "^2.7.1",
   - sass: "^1.54.8",
   - live-server: "^1.1.0"
+  - jsdoc: "^4.0.0",
   
   ## Files that are ignored inside .gitignored
 
@@ -90,6 +91,7 @@ The project was just build with
   ## Configurations
   
   Project is configured to run prettier on all files on-save
+  
   Project is configured to run eslint --fix as pre-commit hook
   
   ## Eslint configurations
