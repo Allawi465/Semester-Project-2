@@ -1,15 +1,5 @@
 # Semester Project 2
 
-Link to Trello board: https://trello.com/b/VphlnoYO
-
-Link to Trello Gantt chart: file:///C:/Users/Allaw/Downloads/placker_gantt_export_202212181206.pdf
-
-Link to design prototype: https://xd.adobe.com/view/8cce3ffd-13a5-42cd-8492-50ad539a4b50-d99d/
-
-Link to style guide: https://xd.adobe.com/view/81b2c771-b8f9-4f89-a31a-62ee9f043d63-d4e1/
-
-Link to hosted application demo: https://noxb.netlify.app/
-
 ## Description
 
 This is my semester project 2 for at Noroff Front-end development. we had crate an auction site where users can add items to be bid on and bid on items other users have put up for auction. we had 5 weeks to build the projects from start to finish, the the target group I chose is for everybody that need to sell things. 
