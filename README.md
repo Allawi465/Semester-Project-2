@@ -1,4 +1,5 @@
 # Semester Project 2
+![Skjermbilde (82)](https://github.com/Allawi465/Semester-Project-2/assets/91701833/3aef926a-f648-4b34-bdc7-bef4a1e0ec21)
 
 ## Description
 
@@ -26,8 +27,6 @@ npm run build
 Project is configured to run deployment on Netlify on push to branch "master" Deploy static content to Pages
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/8552669a-6d88-4835-9bfd-c0fd1087fc3f/deploy-status)](https://app.netlify.com/sites/noxb/deploys)
-
-Project link: https://github.com/Allawi465/Semester-Project-2
 
 ## Assignment Brief
 
